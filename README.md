@@ -1,2 +1,2 @@
 # penguin-bot
-differential-drive robot with onboard vision
+> documentation coming soon

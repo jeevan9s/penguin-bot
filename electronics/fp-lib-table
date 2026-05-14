@@ -14,4 +14,5 @@
   (lib (name "EEH_ZK1V101XP")(type "KiCad")(uri "${KIPRJMOD}/footprints/EEH_ZK1V101XP")(options "")(descr ""))
   (lib (name "TPS5405DR")(type "KiCad")(uri "${KIPRJMOD}/footprints/TPS5405DR")(options "")(descr ""))
   (lib (name "SMT-0540-S-R")(type "KiCad")(uri "${KIPRJMOD}/footprints/SMT-0540-S-R")(options "")(descr ""))
+  (lib (name "B04B_PASK_JST")(type "KiCad")(uri "${KIPRJMOD}/footprints/B04B_PASK_JST")(options "")(descr ""))
 )

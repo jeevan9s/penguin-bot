@@ -28865,7 +28865,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 125.4252 86.36 0)
 			(effects
 				(font
@@ -28892,7 +28892,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
+		(property "JLCPCB" "C49678"
 			(at 124.46 82.55 0)
 			(effects
 				(font
@@ -47176,7 +47176,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "EEH_ZK1V101XP:CAP_EEHZK1V101XP"
+		(property "Footprint" "EEE_FK1V101P:CAP_EEEFK1V101P"
 			(at 517.8552 69.85 0)
 			(effects
 				(font

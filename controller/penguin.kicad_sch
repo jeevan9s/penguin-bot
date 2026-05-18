@@ -11935,12 +11935,6 @@
 		(uuid "e9d13f1a-5316-41c8-8191-d95b4aabdc00")
 	)
 	(junction
-		(at 478.79 78.74)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "edbcd9ed-94d1-499f-a43e-dce54a9aa4d0")
-	)
-	(junction
 		(at 53.34 93.98)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -11963,6 +11957,10 @@
 		(uuid "0be58e3c-b2da-4ae7-8501-e30285118710")
 	)
 	(no_connect
+		(at 259.08 191.77)
+		(uuid "10186a49-cd86-45ad-8eb1-e9aa2df5f6ac")
+	)
+	(no_connect
 		(at 322.58 207.01)
 		(uuid "13a26459-7737-4f15-8d57-aaf4ea9b157d")
 	)
@@ -11975,16 +11973,16 @@
 		(uuid "27162126-1136-4ba4-8269-80e1f2a96ae5")
 	)
 	(no_connect
+		(at 259.08 194.31)
+		(uuid "2fcca147-d23a-4ccd-8d30-a389af2a9352")
+	)
+	(no_connect
 		(at 210.82 307.34)
 		(uuid "33a6c2ad-c1e2-4548-bce3-fbc08aba7b3b")
 	)
 	(no_connect
 		(at 461.01 215.9)
 		(uuid "345d27e1-734a-432e-8cd7-731bc0e563d1")
-	)
-	(no_connect
-		(at 292.1 214.63)
-		(uuid "457d7238-4ab8-47fd-a004-aa828b16312f")
 	)
 	(no_connect
 		(at 223.52 207.01)
@@ -12025,6 +12023,14 @@
 	(no_connect
 		(at 516.89 229.87)
 		(uuid "eed07760-2b82-4896-89c9-c95cb9ae2d8c")
+	)
+	(no_connect
+		(at 259.08 189.23)
+		(uuid "fc0d5a7d-1d15-4672-b679-5688942c9278")
+	)
+	(no_connect
+		(at 502.92 308.61)
+		(uuid "fc582831-7f83-42df-8b2f-d4342fd0b481")
 	)
 	(wire
 		(pts
@@ -12655,16 +12661,6 @@
 			(type default)
 		)
 		(uuid "456daff9-bfdf-49e2-9953-9a9d5f328227")
-	)
-	(wire
-		(pts
-			(xy 340.36 113.03) (xy 341.63 113.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "45724a90-0c5d-4a85-be7e-c8ed67de6605")
 	)
 	(wire
 		(pts
@@ -13948,7 +13944,7 @@
 	)
 	(wire
 		(pts
-			(xy 478.79 78.74) (xy 478.79 81.28)
+			(xy 478.79 73.66) (xy 478.79 81.28)
 		)
 		(stroke
 			(width 0)
@@ -14186,16 +14182,6 @@
 			(type default)
 		)
 		(uuid "decd4312-b740-4e7a-a931-ee049f041ad6")
-	)
-	(wire
-		(pts
-			(xy 478.79 73.66) (xy 478.79 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dedf87b6-053b-4994-af96-a907b21d70c0")
 	)
 	(wire
 		(pts
@@ -15651,6 +15637,28 @@
 			)
 		)
 	)
+	(global_label "L_SERVO"
+		(shape input)
+		(at 292.1 209.55 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "117e86ef-d893-48fc-9590-2e2cf38cb6ea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 281.0715 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "MOTA_IN1"
 		(shape input)
 		(at 478.79 99.06 180)
@@ -15796,28 +15804,6 @@
 		(uuid "20b66cbb-6d3e-4aaa-8c53-a6a9fb226565")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 391.16 328.7267 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "ENC_A_PH2"
-		(shape input)
-		(at 322.58 191.77 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "2350ee1c-e7ef-4490-8254-61f281f7826f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 336.1485 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16201,72 +16187,6 @@
 			)
 		)
 	)
-	(global_label "R_SERVO"
-		(shape input)
-		(at 341.63 113.03 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "390d0f0d-1682-4aa0-abd5-8b1f1de68020")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 352.9004 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "ENC_A_PH1"
-		(shape input)
-		(at 322.58 189.23 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "39e6105f-177b-419f-be53-7e9741251e71")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 336.1485 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "ENC_B_PH1"
-		(shape input)
-		(at 322.58 184.15 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3c9b06c1-66ac-4100-a164-a6243da4afc3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 336.3299 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "S3_BOOT"
 		(shape input)
 		(at 378.46 229.87 0)
@@ -16280,6 +16200,28 @@
 		(uuid "408239d1-beba-43ba-bc0e-ed626ea391c5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 389.7304 229.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ENC_B_PH1"
+		(shape input)
+		(at 322.58 186.69 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "43295ef8-38bd-4827-9a70-bbaa1d036252")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 336.3299 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16329,28 +16271,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "CAM_HREF"
-		(shape input)
-		(at 292.1 212.09 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "48676560-753d-4538-97e6-2bee8323bc21")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 279.4991 212.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -16641,6 +16561,28 @@
 			)
 		)
 	)
+	(global_label "ENC_A_PH1"
+		(shape input)
+		(at 322.58 191.77 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "61f90243-5aa1-4a0a-a96f-0b4bda9acea2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 336.1485 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "S3_BOOT"
 		(shape input)
 		(at 292.1 194.31 180)
@@ -16685,24 +16627,24 @@
 			)
 		)
 	)
-	(global_label "CAM_VSYNC"
+	(global_label "ENC_B_PH2"
 		(shape input)
-		(at 292.1 209.55 180)
+		(at 322.58 189.23 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "65db3cb8-ac4d-4858-8741-41b4e50f9fbe")
+		(uuid "65fb40a9-df51-4cc7-9f24-143f38ae1c9e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 278.35 209.55 0)
+			(at 336.3299 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -17059,28 +17001,6 @@
 			)
 		)
 	)
-	(global_label "IMU_INT"
-		(shape input)
-		(at 502.92 308.61 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7f111381-ecec-4242-baaa-893f51fb43a6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 513.1624 308.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "CAM_DVDD"
 		(shape input)
 		(at 262.89 336.55 90)
@@ -17209,6 +17129,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "R_SERVO"
+		(shape input)
+		(at 292.1 207.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8ac4e1a1-6ad2-482a-87a1-53ce7b9f8b63")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 280.8296 207.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -17675,28 +17617,6 @@
 			)
 		)
 	)
-	(global_label "L_SERVO"
-		(shape input)
-		(at 340.36 115.57 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a26477f1-aa68-4e9b-9e84-16b235493eb6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 351.3885 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "BUZZ_EN"
 		(shape input)
 		(at 424.18 172.72 180)
@@ -17983,28 +17903,6 @@
 			)
 		)
 	)
-	(global_label "IMU_INT"
-		(shape input)
-		(at 292.1 207.01 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "bafa5647-be9b-49b8-a4b7-2e241de964b5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 281.8576 207.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "SCL"
 		(shape input)
 		(at 393.7 335.28 90)
@@ -18093,28 +17991,6 @@
 			)
 		)
 	)
-	(global_label "ENC_B_PH2"
-		(shape input)
-		(at 322.58 186.69 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c4dddf51-e0d9-4444-8ab3-6c572bf3f544")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 336.3299 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "VBATT"
 		(shape input)
 		(at 40.64 256.54 180)
@@ -18133,6 +18009,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CAM_HREF"
+		(shape input)
+		(at 322.58 184.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c6582082-df40-4c37-ad33-6617d0b96a92")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 335.1809 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -18199,6 +18097,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "R_SERVO"
+		(shape input)
+		(at 340.36 115.57 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c9d4957d-0365-4e27-a960-37a189fb0499")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 351.6304 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -18463,6 +18383,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ENC_A_PH2"
+		(shape input)
+		(at 292.1 214.63 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "dc5d7e06-d942-4a31-af90-85b9812e1a6f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 278.5315 214.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -18797,6 +18739,28 @@
 			)
 		)
 	)
+	(global_label "L_SERVO"
+		(shape input)
+		(at 340.36 113.03 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f59d35db-470a-47ad-9d52-c16a2253c742")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 351.3885 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "CAM_DVDD"
 		(shape input)
 		(at 35.56 198.12 180)
@@ -18898,6 +18862,28 @@
 		(uuid "f8e8afab-cf99-4243-b354-3bf79fd58d06")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 286.4539 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CAM_VSYNC"
+		(shape input)
+		(at 292.1 212.09 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f9ec78b1-9ef5-49d1-8f34-2151b80f1783")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 278.35 212.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21509,208 +21495,6 @@
 			(project "pan-controller"
 				(path "/8a7aabef-78a8-4170-ae98-14ad6542e983"
 					(reference "#PWR030")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 336.55 115.57 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "08bde5e7-0e23-4798-ac18-57025360481d")
-		(property "Reference" "R31"
-			(at 336.55 118.364 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "330"
-			(at 336.55 115.57 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 336.55 117.348 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C25104"
-			(at 336.55 115.57 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Availability" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MF" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MP" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Package" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Purchase" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 336.55 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "6e551932-7a5a-4d75-b2df-3eefb97552ac")
-		)
-		(pin "1"
-			(uuid "37dc8beb-9afb-4af4-8bd8-35b169c106d9")
-		)
-		(instances
-			(project "penguin"
-				(path "/8a7aabef-78a8-4170-ae98-14ad6542e983"
-					(reference "R31")
 					(unit 1)
 				)
 			)
@@ -38632,208 +38416,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 336.55 113.03 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "83ca5756-b553-431c-b509-f6bb5daf2f28")
-		(property "Reference" "R30"
-			(at 336.55 110.49 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "330"
-			(at 336.55 113.03 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 336.55 114.808 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C25104"
-			(at 336.55 113.03 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Availability" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MF" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MP" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Package" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Purchase" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 336.55 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "57f1809f-21af-48e1-a708-9f06848921aa")
-		)
-		(pin "1"
-			(uuid "10131059-95e8-4151-a016-7795112a07cb")
-		)
-		(instances
-			(project "penguin"
-				(path "/8a7aabef-78a8-4170-ae98-14ad6542e983"
-					(reference "R30")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 187.96 346.71 90)
 		(unit 1)
@@ -51230,6 +50812,208 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 336.55 113.03 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d873f94b-e170-41e6-a4cf-8addc0dc0acb")
+		(property "Reference" "R31"
+			(at 336.55 110.998 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330"
+			(at 336.55 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 336.55 114.808 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C25104"
+			(at 336.55 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Availability" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MP" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "dfa3bd20-1025-47d4-9c97-10b4840c29d3")
+		)
+		(pin "1"
+			(uuid "9445b237-859a-41fd-9123-b6fd51c1fd00")
+		)
+		(instances
+			(project "penguin"
+				(path "/8a7aabef-78a8-4170-ae98-14ad6542e983"
+					(reference "R31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
 		(at 344.17 62.23 90)
 		(unit 1)
@@ -52429,6 +52213,209 @@
 			(project "pan-controller"
 				(path "/8a7aabef-78a8-4170-ae98-14ad6542e983"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 336.55 115.57 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e6608379-0a78-42b3-96f2-70f65580e401")
+		(property "Reference" "R30"
+			(at 336.296 117.856 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330"
+			(at 336.55 115.57 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 336.55 117.348 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C25104"
+			(at 336.55 115.57 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Availability" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MP" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "bef0ff95-eade-45bd-8858-9a7250d63881")
+		)
+		(pin "1"
+			(uuid "8cc43684-0902-4fcf-a174-0591fe0af219")
+		)
+		(instances
+			(project "penguin"
+				(path "/8a7aabef-78a8-4170-ae98-14ad6542e983"
+					(reference "R30")
 					(unit 1)
 				)
 			)

@@ -19154,16 +19154,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C116509"
-			(at 71.12 915.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 49.53 120.65 0)
 			(effects
@@ -19282,6 +19272,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 49.53 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C116509"
 			(at 49.53 120.65 0)
 			(effects
 				(font
@@ -19630,15 +19629,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 383.54 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 383.54 176.53 0)
 			(effects
@@ -19757,6 +19747,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 383.54 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 383.54 176.53 0)
 			(effects
 				(font
@@ -19832,15 +19831,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25744"
-			(at 154.94 320.04 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 154.94 320.04 0)
 			(effects
@@ -19959,6 +19949,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 154.94 320.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
 			(at 154.94 320.04 0)
 			(effects
 				(font
@@ -20036,15 +20035,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25803"
-			(at 419.1 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 419.1 115.57 0)
 			(effects
@@ -20163,6 +20153,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 419.1 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
 			(at 419.1 115.57 0)
 			(effects
 				(font
@@ -20574,15 +20573,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 505.46 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 505.46 64.77 0)
 			(effects
@@ -20776,15 +20766,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C2289"
-			(at 121.92 317.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Digikey" ""
 			(at 121.92 317.5 0)
 			(effects
@@ -20938,6 +20919,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C2289"
+			(at 121.92 317.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "15f37a9f-24f3-479c-8a8d-7849d2f0f29e")
 		)
@@ -20999,15 +20989,6 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 165.1 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C49326779"
 			(at 165.1 157.48 0)
 			(effects
 				(font
@@ -21142,6 +21123,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C49326779"
+			(at 165.1 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9de497fa-74f5-401e-861d-ebe927b60e97")
 		)
@@ -21228,15 +21218,6 @@
 			)
 		)
 		(property "LCSC" "C5178541"
-			(at 501.65 222.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C5178541"
 			(at 501.65 222.25 0)
 			(effects
 				(font
@@ -21549,15 +21530,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25744"
-			(at 218.44 207.01 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 218.44 207.01 0)
 			(effects
@@ -21676,6 +21648,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 218.44 207.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
 			(at 218.44 207.01 0)
 			(effects
 				(font
@@ -21753,15 +21734,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15850"
-			(at 317.5 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 317.5 127 0)
 			(effects
@@ -21880,6 +21852,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 317.5 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 317.5 127 0)
 			(effects
 				(font
@@ -21957,15 +21938,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15849"
-			(at 262.89 340.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 262.89 340.36 0)
 			(effects
@@ -22084,6 +22056,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 262.89 340.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 262.89 340.36 0)
 			(effects
 				(font
@@ -22162,7 +22143,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C140242"
+		(property "LCSC" "C140242"
 			(at 398.78 116.84 0)
 			(effects
 				(font
@@ -22527,15 +22508,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C23186"
-			(at 520.7 209.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "946cf57c-f3e8-4189-8d91-fd6441b3b433")
 		)
@@ -22660,15 +22632,6 @@
 			)
 		)
 		(property "Description" "Light emitting diode (YELLOW)"
-			(at 438.15 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C72038"
 			(at 438.15 229.87 0)
 			(effects
 				(font
@@ -22803,6 +22766,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C72038"
+			(at 438.15 229.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7519b2ef-9650-4acb-93f1-4ddbb3f1fade")
 		)
@@ -22873,15 +22845,6 @@
 			)
 		)
 		(property "LCSC" "C1588"
-			(at 406.4 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C1588"
 			(at 406.4 83.82 0)
 			(effects
 				(font
@@ -23083,15 +23046,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25900"
-			(at 511.81 175.26 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 511.81 175.26 0)
 			(effects
@@ -23210,6 +23164,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 511.81 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25900"
 			(at 511.81 175.26 0)
 			(effects
 				(font
@@ -23287,15 +23250,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C1581"
-			(at 328.93 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 328.93 127 0)
 			(effects
@@ -23414,6 +23368,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 328.93 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1581"
 			(at 328.93 127 0)
 			(effects
 				(font
@@ -23491,15 +23454,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C1581"
-			(at 233.68 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 233.68 181.61 0)
 			(effects
@@ -23618,6 +23572,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 233.68 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1581"
 			(at 233.68 181.61 0)
 			(effects
 				(font
@@ -23892,15 +23855,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25804"
-			(at 25.4 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 25.4 255.27 0)
 			(effects
@@ -24019,6 +23973,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 25.4 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
 			(at 25.4 255.27 0)
 			(effects
 				(font
@@ -24096,15 +24059,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C49326779"
-			(at 154.94 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 154.94 255.27 0)
 			(effects
@@ -24223,6 +24177,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 154.94 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C49326779"
 			(at 154.94 255.27 0)
 			(effects
 				(font
@@ -24299,15 +24262,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25104"
-			(at 429.26 205.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 429.26 205.74 0)
 			(effects
@@ -24426,6 +24380,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 429.26 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25104"
 			(at 429.26 205.74 0)
 			(effects
 				(font
@@ -24636,15 +24599,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C544801"
-			(at 494.03 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 494.03 88.9 0)
 			(effects
@@ -24763,6 +24717,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 494.03 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C544801"
 			(at 494.03 88.9 0)
 			(effects
 				(font
@@ -25144,15 +25107,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15849"
-			(at 234.95 302.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 234.95 302.26 0)
 			(effects
@@ -25271,6 +25225,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 234.95 302.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 234.95 302.26 0)
 			(effects
 				(font
@@ -25412,15 +25375,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C136227"
-			(at 107.95 78.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 107.95 78.74 0)
 			(effects
@@ -25539,6 +25493,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 107.95 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C136227"
 			(at 107.95 78.74 0)
 			(effects
 				(font
@@ -25681,15 +25644,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C186700"
-			(at 247.65 300.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 247.65 300.99 0)
 			(effects
@@ -25808,6 +25762,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 247.65 300.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C186700"
 			(at 247.65 300.99 0)
 			(effects
 				(font
@@ -26028,15 +25991,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15195"
-			(at 124.46 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 124.46 119.38 0)
 			(effects
@@ -26155,6 +26109,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 124.46 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15195"
 			(at 124.46 119.38 0)
 			(effects
 				(font
@@ -26361,7 +26324,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C6333215"
+		(property "LCSC" "C6333215"
 			(at 457.2 351.79 0)
 			(effects
 				(font
@@ -26782,15 +26745,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C29277"
-			(at 184.15 353.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 184.15 353.06 0)
 			(effects
@@ -26917,6 +26871,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C29277"
+			(at 184.15 353.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b4f47caa-1988-403a-ac4a-60d506e64413")
 		)
@@ -26984,7 +26947,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C6333215"
+		(property "LCSC" "C6333215"
 			(at 476.25 351.79 0)
 			(effects
 				(font
@@ -27260,15 +27223,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C561514 "
-			(at 367.03 207.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 367.03 207.01 0)
 			(effects
@@ -27387,6 +27341,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 367.03 207.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C561514 "
 			(at 367.03 207.01 0)
 			(effects
 				(font
@@ -27462,15 +27425,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C72041"
-			(at 436.88 205.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 436.88 205.74 0)
 			(effects
@@ -27589,6 +27543,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 436.88 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C72041"
 			(at 436.88 205.74 0)
 			(effects
 				(font
@@ -27732,15 +27695,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 509.27 314.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 509.27 314.96 0)
 			(effects
@@ -27859,6 +27813,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 509.27 314.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 509.27 314.96 0)
 			(effects
 				(font
@@ -28000,15 +27963,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C8218"
-			(at 77.47 331.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 77.47 331.47 0)
 			(effects
@@ -28127,6 +28081,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 77.47 331.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C8218"
 			(at 77.47 331.47 0)
 			(effects
 				(font
@@ -28204,15 +28167,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 129.54 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 129.54 255.27 0)
 			(effects
@@ -28331,6 +28285,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 129.54 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 129.54 255.27 0)
 			(effects
 				(font
@@ -28406,15 +28369,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25104"
-			(at 78.74 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 78.74 125.73 0)
 			(effects
@@ -28533,6 +28487,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 78.74 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25104"
 			(at 78.74 125.73 0)
 			(effects
 				(font
@@ -28673,15 +28636,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C2290"
-			(at 312.42 322.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 312.42 322.58 0)
 			(effects
@@ -28800,6 +28754,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 312.42 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2290"
 			(at 312.42 322.58 0)
 			(effects
 				(font
@@ -28877,15 +28840,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 184.15 340.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 184.15 340.36 0)
 			(effects
@@ -29004,6 +28958,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 184.15 340.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 184.15 340.36 0)
 			(effects
 				(font
@@ -29535,15 +29498,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C2297"
-			(at 85.09 331.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 85.09 331.47 0)
 			(effects
@@ -29662,6 +29616,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 85.09 331.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2297"
 			(at 85.09 331.47 0)
 			(effects
 				(font
@@ -29870,15 +29833,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15850"
-			(at 370.84 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 370.84 176.53 0)
 			(effects
@@ -29997,6 +29951,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 370.84 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 370.84 176.53 0)
 			(effects
 				(font
@@ -30333,15 +30296,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C22765"
-			(at 49.53 129.54 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 49.53 129.54 0)
 			(effects
@@ -30460,6 +30414,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 49.53 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22765"
 			(at 49.53 129.54 0)
 			(effects
 				(font
@@ -30537,15 +30500,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C49326779"
-			(at 176.53 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 176.53 157.48 0)
 			(effects
@@ -30664,6 +30618,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 176.53 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C49326779"
 			(at 176.53 157.48 0)
 			(effects
 				(font
@@ -30741,15 +30704,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C2869734"
-			(at 148.59 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 148.59 193.04 0)
 			(effects
@@ -30868,6 +30822,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 148.59 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2869734"
 			(at 148.59 193.04 0)
 			(effects
 				(font
@@ -30957,15 +30920,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C52923"
-			(at 372.11 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 372.11 210.82 0)
 			(effects
@@ -31084,6 +31038,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 372.11 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C52923"
 			(at 372.11 210.82 0)
 			(effects
 				(font
@@ -31289,15 +31252,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25087"
-			(at 427.99 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 427.99 172.72 0)
 			(effects
@@ -31416,6 +31370,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 427.99 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25087"
 			(at 427.99 172.72 0)
 			(effects
 				(font
@@ -31493,15 +31456,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 177.8 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 177.8 255.27 0)
 			(effects
@@ -31620,6 +31574,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 177.8 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 177.8 255.27 0)
 			(effects
 				(font
@@ -31697,15 +31660,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C49678"
-			(at 124.46 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 124.46 82.55 0)
 			(effects
@@ -31824,6 +31778,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 124.46 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C49678"
 			(at 124.46 82.55 0)
 			(effects
 				(font
@@ -31901,15 +31864,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15849"
-			(at 234.95 340.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 234.95 340.36 0)
 			(effects
@@ -32028,6 +31982,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 234.95 340.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 234.95 340.36 0)
 			(effects
 				(font
@@ -32246,15 +32209,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25804"
-			(at 71.12 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 71.12 90.17 0)
 			(effects
@@ -32450,15 +32404,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C23228"
-			(at 114.3 317.5 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 114.3 317.5 0)
 			(effects
@@ -32577,6 +32522,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 114.3 317.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23228"
 			(at 114.3 317.5 0)
 			(effects
 				(font
@@ -32789,15 +32743,6 @@
 			)
 		)
 		(property "LCSC" "C14663"
-			(at 317.5 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C14663"
 			(at 317.5 67.31 0)
 			(effects
 				(font
@@ -33194,15 +33139,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C23228"
-			(at 40.64 331.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 40.64 331.47 0)
 			(effects
@@ -33329,6 +33265,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C23228"
+			(at 40.64 331.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "da862d98-cace-4645-9ef7-a651e145ebb3")
 		)
@@ -33352,7 +33297,7 @@
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "65f60299-549a-48bc-ab70-31c485189bdc")
 		(property "Reference" "D4"
 			(at 471.932 206.502 0)
@@ -33694,15 +33639,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C1581"
-			(at 173.99 328.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 173.99 328.93 0)
 			(effects
@@ -33821,6 +33757,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 173.99 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1581"
 			(at 173.99 328.93 0)
 			(effects
 				(font
@@ -34093,15 +34038,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 185.42 196.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 185.42 196.85 0)
 			(effects
@@ -34220,6 +34156,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 185.42 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 185.42 196.85 0)
 			(effects
 				(font
@@ -34297,15 +34242,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C488409"
-			(at 154.94 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 154.94 133.35 0)
 			(effects
@@ -34424,6 +34360,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 154.94 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C488409"
 			(at 154.94 133.35 0)
 			(effects
 				(font
@@ -34519,15 +34464,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C29277"
-			(at 113.03 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 113.03 82.55 0)
 			(effects
@@ -34646,6 +34582,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 113.03 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C29277"
 			(at 113.03 82.55 0)
 			(effects
 				(font
@@ -34918,15 +34863,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C1565"
-			(at 383.54 123.19 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 383.54 123.19 0)
 			(effects
@@ -35045,6 +34981,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 383.54 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1536"
 			(at 383.54 123.19 0)
 			(effects
 				(font
@@ -35185,15 +35130,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25744"
-			(at 303.53 297.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 303.53 297.18 0)
 			(effects
@@ -35312,6 +35248,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 303.53 297.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
 			(at 303.53 297.18 0)
 			(effects
 				(font
@@ -35456,15 +35401,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C1581"
-			(at 457.2 215.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 457.2 215.9 0)
 			(effects
@@ -35583,6 +35519,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 457.2 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1581"
 			(at 457.2 215.9 0)
 			(effects
 				(font
@@ -35725,15 +35670,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 74.93 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 74.93 129.54 0)
 			(effects
@@ -35852,6 +35788,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 74.93 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 74.93 129.54 0)
 			(effects
 				(font
@@ -35931,15 +35876,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C41348109"
-			(at 71.12 81.28 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 71.12 81.28 0)
 			(effects
@@ -36058,6 +35994,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 71.12 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C41348109"
 			(at 71.12 81.28 0)
 			(effects
 				(font
@@ -36202,15 +36147,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C12530"
-			(at 495.3 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 495.3 71.12 0)
 			(effects
@@ -36329,6 +36265,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 495.3 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C12530"
 			(at 495.3 71.12 0)
 			(effects
 				(font
@@ -36406,15 +36351,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25092"
-			(at 195.58 318.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 195.58 318.77 0)
 			(effects
@@ -36533,6 +36469,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 195.58 318.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25092"
 			(at 195.58 318.77 0)
 			(effects
 				(font
@@ -36676,15 +36621,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25803"
-			(at 137.16 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 137.16 119.38 0)
 			(effects
@@ -36803,6 +36739,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 137.16 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
 			(at 137.16 119.38 0)
 			(effects
 				(font
@@ -36945,15 +36890,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25104"
-			(at 304.8 322.58 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 304.8 322.58 0)
 			(effects
@@ -37072,6 +37008,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 304.8 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25104"
 			(at 304.8 322.58 0)
 			(effects
 				(font
@@ -37432,15 +37377,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C49326779"
-			(at 424.18 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 424.18 120.65 0)
 			(effects
@@ -37559,6 +37495,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 424.18 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C49326779"
 			(at 424.18 120.65 0)
 			(effects
 				(font
@@ -37634,15 +37579,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25744"
-			(at 374.65 309.88 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 374.65 309.88 0)
 			(effects
@@ -37761,6 +37697,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 374.65 309.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
 			(at 374.65 309.88 0)
 			(effects
 				(font
@@ -37836,15 +37781,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C2297"
-			(at 48.26 317.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 48.26 317.5 0)
 			(effects
@@ -37963,6 +37899,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 48.26 317.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2297"
 			(at 48.26 317.5 0)
 			(effects
 				(font
@@ -38089,15 +38034,6 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 34.29 231.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C8545"
 			(at 34.29 231.14 0)
 			(effects
 				(font
@@ -38341,15 +38277,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C2297"
-			(at 81.28 317.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 81.28 317.5 0)
 			(effects
@@ -38468,6 +38395,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 81.28 317.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2297"
 			(at 81.28 317.5 0)
 			(effects
 				(font
@@ -38545,15 +38481,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25092"
-			(at 185.42 318.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 185.42 318.77 0)
 			(effects
@@ -38672,6 +38599,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 185.42 318.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25092"
 			(at 185.42 318.77 0)
 			(effects
 				(font
@@ -38750,15 +38686,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "BZT52C12"
-			(at 76.2 82.55 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 76.2 82.55 0)
 			(effects
@@ -38877,6 +38804,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 76.2 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "BZT52C12"
 			(at 76.2 82.55 0)
 			(effects
 				(font
@@ -39556,15 +39492,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25744"
-			(at 372.11 233.68 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 372.11 233.68 0)
 			(effects
@@ -39683,6 +39610,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 372.11 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
 			(at 372.11 233.68 0)
 			(effects
 				(font
@@ -39761,15 +39697,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15850"
-			(at 521.97 314.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 521.97 314.96 0)
 			(effects
@@ -39888,6 +39815,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 521.97 314.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 521.97 314.96 0)
 			(effects
 				(font
@@ -40161,15 +40097,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15850"
-			(at 185.42 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 185.42 210.82 0)
 			(effects
@@ -40296,6 +40223,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C15850"
+			(at 185.42 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "bffad7fd-ef9e-4522-b948-aaacc3fe60eb")
 		)
@@ -40318,7 +40254,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "929753eb-9350-4f67-b14c-8e71f493103e")
 		(property "Reference" "D5"
@@ -40442,15 +40378,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25819"
-			(at 49.53 349.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 49.53 349.25 0)
 			(effects
@@ -40569,6 +40496,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 49.53 349.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25819"
 			(at 49.53 349.25 0)
 			(effects
 				(font
@@ -40751,7 +40687,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 479.7552 73.66 0)
 			(effects
 				(font
@@ -40770,15 +40706,6 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 478.79 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C15195"
 			(at 478.79 69.85 0)
 			(effects
 				(font
@@ -40905,6 +40832,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 478.79 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15195"
 			(at 478.79 69.85 0)
 			(effects
 				(font
@@ -40980,15 +40916,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 118.11 212.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 118.11 212.09 0)
 			(effects
@@ -41107,6 +41034,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 118.11 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 118.11 212.09 0)
 			(effects
 				(font
@@ -41185,15 +41121,6 @@
 			)
 		)
 		(property "LCSC" "C1588"
-			(at 345.44 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C1588"
 			(at 345.44 83.82 0)
 			(effects
 				(font
@@ -41626,15 +41553,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C23186"
-			(at 520.7 212.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "0f5bc148-2d42-434b-8ba3-d5aaa1366ee7")
 		)
@@ -41769,15 +41687,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C2869734"
-			(at 148.59 215.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 148.59 215.9 0)
 			(effects
@@ -41896,6 +41805,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 148.59 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2869734"
 			(at 148.59 215.9 0)
 			(effects
 				(font
@@ -41984,15 +41902,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C561514 "
-			(at 367.03 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 367.03 229.87 0)
 			(effects
@@ -42119,6 +42028,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C561514 "
+			(at 367.03 229.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "93ffcf37-23da-4d4a-875e-c5a53925ee3c")
 		)
@@ -42186,7 +42104,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C81598"
+		(property "LCSC" "C81598"
 			(at 453.39 163.83 0)
 			(effects
 				(font
@@ -42589,15 +42507,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C1581"
-			(at 158.75 331.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 158.75 331.47 0)
 			(effects
@@ -42716,6 +42625,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 158.75 331.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1581"
 			(at 158.75 331.47 0)
 			(effects
 				(font
@@ -42796,15 +42714,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C629439"
-			(at 241.3 209.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 241.3 209.55 0)
 			(effects
@@ -42923,6 +42832,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 241.3 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C629439"
 			(at 241.3 209.55 0)
 			(effects
 				(font
@@ -43172,15 +43090,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C22765"
-			(at 40.64 317.5 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 40.64 317.5 0)
 			(effects
@@ -43299,6 +43208,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 40.64 317.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22765"
 			(at 40.64 317.5 0)
 			(effects
 				(font
@@ -43375,15 +43293,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C187450"
-			(at 156.21 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 156.21 153.67 0)
 			(effects
@@ -43502,6 +43411,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 156.21 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C187450"
 			(at 156.21 153.67 0)
 			(effects
 				(font
@@ -43577,15 +43495,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 133.35 133.35 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 133.35 133.35 0)
 			(effects
@@ -43704,6 +43613,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 133.35 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 133.35 133.35 0)
 			(effects
 				(font
@@ -44237,15 +44155,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C2297"
-			(at 48.26 331.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 48.26 331.47 0)
 			(effects
@@ -44364,6 +44273,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 48.26 331.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2297"
 			(at 48.26 331.47 0)
 			(effects
 				(font
@@ -44439,15 +44357,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25744"
-			(at 374.65 304.8 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 374.65 304.8 0)
 			(effects
@@ -44566,6 +44475,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 374.65 304.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
 			(at 374.65 304.8 0)
 			(effects
 				(font
@@ -44838,15 +44756,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C22765"
-			(at 73.66 317.5 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 73.66 317.5 0)
 			(effects
@@ -44965,6 +44874,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 73.66 317.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22765"
 			(at 73.66 317.5 0)
 			(effects
 				(font
@@ -45107,7 +45025,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C5521727"
+		(property "LCSC" "C5521727"
 			(at 412.75 111.76 0)
 			(effects
 				(font
@@ -45240,15 +45158,6 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 40.64 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C182476"
 			(at 40.64 251.46 0)
 			(effects
 				(font
@@ -45426,15 +45335,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25104"
-			(at 114.3 306.07 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 114.3 306.07 0)
 			(effects
@@ -45553,6 +45453,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 114.3 306.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25104"
 			(at 114.3 306.07 0)
 			(effects
 				(font
@@ -45872,15 +45781,6 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 45.72 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C25804"
 			(at 45.72 240.03 0)
 			(effects
 				(font
@@ -46315,15 +46215,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C2289"
-			(at 121.92 306.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Digikey" ""
 			(at 121.92 306.07 0)
 			(effects
@@ -46477,6 +46368,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C2289"
+			(at 121.92 306.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c6635edb-0324-4938-9f74-a30991d5811d")
 		)
@@ -46499,7 +46399,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "bea20d98-9095-4969-aa6b-6986ef604eeb")
 		(property "Reference" "BZ1"
 			(at 453.39 175.006 90)
@@ -46654,16 +46554,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C908265"
-			(at 78.74 1047.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 46.99 152.4 0)
 			(effects
@@ -46782,6 +46672,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 46.99 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C908265"
 			(at 46.99 152.4 0)
 			(effects
 				(font
@@ -46874,15 +46773,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C20917"
-			(at 440.69 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 440.69 172.72 0)
 			(effects
@@ -47001,6 +46891,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 440.69 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C20917"
 			(at 440.69 172.72 0)
 			(effects
 				(font
@@ -47081,15 +46980,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C2980300"
-			(at 307.34 207.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 307.34 207.01 0)
 			(effects
@@ -47208,6 +47098,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 307.34 207.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2980300"
 			(at 307.34 207.01 0)
 			(effects
 				(font
@@ -47424,15 +47323,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 118.11 189.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 118.11 189.23 0)
 			(effects
@@ -47551,6 +47441,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 118.11 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 118.11 189.23 0)
 			(effects
 				(font
@@ -47832,15 +47731,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C73478"
-			(at 247.65 339.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 247.65 339.09 0)
 			(effects
@@ -47959,6 +47849,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 247.65 339.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C73478"
 			(at 247.65 339.09 0)
 			(effects
 				(font
@@ -48377,15 +48276,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C72038"
-			(at 430.53 229.87 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 430.53 229.87 0)
 			(effects
@@ -48504,6 +48394,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 430.53 229.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C72038"
 			(at 430.53 229.87 0)
 			(effects
 				(font
@@ -48648,15 +48547,6 @@
 			)
 		)
 		(property "LCSC" "C14663"
-			(at 379.73 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C14663"
 			(at 379.73 67.31 0)
 			(effects
 				(font
@@ -48861,7 +48751,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C94048"
+		(property "LCSC" "C94048"
 			(at 487.68 316.23 0)
 			(effects
 				(font
@@ -49105,15 +48995,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25744"
-			(at 434.34 176.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 434.34 176.53 0)
 			(effects
@@ -49232,6 +49113,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 434.34 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
 			(at 434.34 176.53 0)
 			(effects
 				(font
@@ -49307,15 +49197,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C1565"
-			(at 184.15 123.19 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 184.15 123.19 0)
 			(effects
@@ -49434,6 +49315,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 184.15 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1536"
 			(at 184.15 123.19 0)
 			(effects
 				(font
@@ -49509,15 +49399,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25900"
-			(at 511.81 177.8 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 511.81 177.8 0)
 			(effects
@@ -49636,6 +49517,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 511.81 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25900"
 			(at 511.81 177.8 0)
 			(effects
 				(font
@@ -49713,15 +49603,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15849"
-			(at 166.37 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 166.37 255.27 0)
 			(effects
@@ -49840,6 +49721,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 166.37 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 166.37 255.27 0)
 			(effects
 				(font
@@ -49917,15 +49807,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15850"
-			(at 516.89 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 516.89 64.77 0)
 			(effects
@@ -50044,6 +49925,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 516.89 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 516.89 64.77 0)
 			(effects
 				(font
@@ -50119,15 +50009,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25744"
-			(at 176.53 123.19 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 176.53 123.19 0)
 			(effects
@@ -50246,6 +50127,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 176.53 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
 			(at 176.53 123.19 0)
 			(effects
 				(font
@@ -50583,15 +50473,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15849"
-			(at 261.62 302.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 261.62 302.26 0)
 			(effects
@@ -50710,6 +50591,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 261.62 302.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 261.62 302.26 0)
 			(effects
 				(font
@@ -50851,15 +50741,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C6186"
-			(at 143.51 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 143.51 251.46 0)
 			(effects
@@ -50978,6 +50859,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 143.51 251.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C6186"
 			(at 143.51 251.46 0)
 			(effects
 				(font
@@ -51263,15 +51153,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 299.72 300.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 299.72 300.99 0)
 			(effects
@@ -51390,6 +51271,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 299.72 300.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 299.72 300.99 0)
 			(effects
 				(font
@@ -51465,15 +51355,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25104"
-			(at 336.55 113.03 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 336.55 113.03 0)
 			(effects
@@ -51592,6 +51473,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 336.55 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25104"
 			(at 336.55 113.03 0)
 			(effects
 				(font
@@ -51950,15 +51840,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15850"
-			(at 373.38 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 373.38 114.3 0)
 			(effects
@@ -52077,6 +51958,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 373.38 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 373.38 114.3 0)
 			(effects
 				(font
@@ -52670,15 +52560,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25744"
-			(at 383.54 210.82 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 383.54 210.82 0)
 			(effects
@@ -52797,6 +52678,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 383.54 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
 			(at 383.54 210.82 0)
 			(effects
 				(font
@@ -52873,15 +52763,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25104"
-			(at 336.55 115.57 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 336.55 115.57 0)
 			(effects
@@ -53000,6 +52881,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 336.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25104"
 			(at 336.55 115.57 0)
 			(effects
 				(font
@@ -53075,15 +52965,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25744"
-			(at 374.65 307.34 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 374.65 307.34 0)
 			(effects
@@ -53202,6 +53083,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 374.65 307.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
 			(at 374.65 307.34 0)
 			(effects
 				(font
@@ -53408,15 +53298,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25104"
-			(at 92.71 123.19 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 92.71 123.19 0)
 			(effects
@@ -53535,6 +53416,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 92.71 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25104"
 			(at 92.71 123.19 0)
 			(effects
 				(font
@@ -53677,15 +53567,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C25803"
-			(at 39.37 349.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 39.37 349.25 0)
 			(effects
@@ -53804,6 +53685,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 39.37 349.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
 			(at 39.37 349.25 0)
 			(effects
 				(font
@@ -54143,15 +54033,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C1581"
-			(at 464.82 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 464.82 171.45 0)
 			(effects
@@ -54270,6 +54151,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 464.82 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1581"
 			(at 464.82 171.45 0)
 			(effects
 				(font
@@ -54605,15 +54495,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C202112 "
-			(at 182.88 302.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 182.88 302.26 0)
 			(effects
@@ -54732,6 +54613,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 182.88 302.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C202112 "
 			(at 182.88 302.26 0)
 			(effects
 				(font
@@ -54921,15 +54811,6 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 52.07 236.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C8218"
 			(at 52.07 236.22 0)
 			(effects
 				(font
@@ -55174,15 +55055,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C8678"
-			(at 147.32 157.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 147.32 157.48 0)
 			(effects
@@ -55301,6 +55173,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 147.32 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C8678"
 			(at 147.32 157.48 0)
 			(effects
 				(font
@@ -55511,15 +55392,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15850"
-			(at 365.76 332.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 365.76 332.74 0)
 			(effects
@@ -55638,6 +55510,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 365.76 332.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 365.76 332.74 0)
 			(effects
 				(font
@@ -55715,15 +55596,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 88.9 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 88.9 129.54 0)
 			(effects
@@ -55842,6 +55714,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 88.9 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 88.9 129.54 0)
 			(effects
 				(font
@@ -55919,15 +55800,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C14663"
-			(at 373.38 332.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 373.38 332.74 0)
 			(effects
@@ -56046,6 +55918,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 373.38 332.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
 			(at 373.38 332.74 0)
 			(effects
 				(font
@@ -56319,15 +56200,6 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C15850"
-			(at 119.38 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Availability" ""
 			(at 119.38 132.08 0)
 			(effects
@@ -56446,6 +56318,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 119.38 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 119.38 132.08 0)
 			(effects
 				(font

@@ -32,7 +32,7 @@ I built penguin cause I wanted to create an intelligent robot from the ground up
       <img src="/media/images/penguin_controller_front_3D.png">
     </td>
     <td width="50%">
-      <img src="/media/images/penguin_controller_front_3D.png">
+      <img src="/media/images/penguin_controller_back_3D.png">
     </td>
   </tr>
   <tr>

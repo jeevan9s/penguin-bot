@@ -17,7 +17,16 @@ Hybrid differential legged-wheeled biped rover for embodied AI, computer vision,
   - [Overview](#overview)
   - [Features](#features)
   - [Architecture](#architecture)
+    - [Systems](#systems)
   - [Hardware](#hardware)
+    - [Power](#power)
+    - [MCU](#mcu)
+    - [Sensors](#sensors)
+    - [Vision](#vision)
+    - [Actuators](#actuators)
+  - [Mechanical](#mechanical)
+    - [Chassis](#chassis)
+    - [Leg Assembly](#leg-assembly)
   - [Firmware](#firmware)
   - [Repository Structure](#repository-structure)
   - [Gallery](#gallery)
@@ -50,8 +59,18 @@ I built penguin cause I wanted to create an intelligent robot from the ground up
 ## Features 
 
 ## Architecture 
+### Systems 
 
 ## Hardware 
+### Power
+### MCU
+### Sensors 
+### Vision
+### Actuators
+
+## Mechanical 
+### Chassis 
+### Leg Assembly
 
 ## Firmware
 

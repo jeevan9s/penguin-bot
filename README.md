@@ -24,7 +24,7 @@ Hybrid differential legged-wheeled biped rover for embodied AI, computer vision,
 
 </details>
 
-I built penguin cause I wanted to build an intelligent robot from the ground up. 
+I built penguin cause I wanted to create an intelligent robot from the ground up. 
 
 <table>
   <tr>

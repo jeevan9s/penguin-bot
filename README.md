@@ -29,10 +29,10 @@ I built penguin cause I wanted to create an intelligent robot from the ground up
 <table>
   <tr>
     <td width="50%">
-      <img src="/media/images/penguin_front_3D.png">
+      <img src="/media/images/penguin_controller_front_3D.png">
     </td>
     <td width="50%">
-      <img src="/media/images/penguin_front_3D.png">
+      <img src="/media/images/penguin_controller_front_3D.png">
     </td>
   </tr>
   <tr>

@@ -82,10 +82,10 @@ Below is a list of features from power circuits to various peripherals.
 - cool silkscreen penguin. 
 
 ### Mechanical 
-- 
-
-
-
+- Three-layer internal stackup for housing motors, controller board, and routing cables.
+- Integrated vents and ports for sensors and devices, air flow, and weight reduction.
+- Hybrid locomotion system with wheels and legs.
+- Multi-bar leg assembly - pivot arm, mounting arm (hip), leg. 
 
 ## Architecture 
 ### Systems 

@@ -101,33 +101,33 @@ I encourage you to clone the repo or you use [KiCanvas](https://kicanvas.org/) t
 
 **Power Entry**
 <p align="center">
-  <img src="/media/images/circuits/pwr/power_entry.png" width="700">
+  <img src="/media/images/circuits/pwr/power_entry.png" width="500">
 </p>
 
 **Battery-Management-System (BMS)**
 <p align="center">
-  <img src="/media/images/circuits/pwr/bms.png" width="700">
+  <img src="/media/images/circuits/pwr/bms.png" width="500">
 </p>
 
 **Voltage Regulation (I)**
 <p align="center">
-  <img src="/media/images/circuits/pwr/buck.png" width="700">
+  <img src="/media/images/circuits/pwr/buck.png" width="500">
 </p>
 
 **5V ORing**
 <p align="center">
-  <img src="/media/images/circuits/pwr/oring.png" width="700">
+  <img src="/media/images/circuits/pwr/oring.png" width="500">
 </p>
 
 
 **Voltage Regulation (II)**
 <p align="center">
-  <img src="/media/images/circuits/pwr/ldo.png" width="700">
+  <img src="/media/images/circuits/pwr/ldo.png" width="500">
 </p>
 
 **Controlled Motor Power Delivery**
 <p align="center">
-  <img src="/media/images/circuits/pwr/cmos.png" width="700">
+  <img src="/media/images/circuits/pwr/cmos.png" width="500">
 </p>
 
 **Voltage Sensing**

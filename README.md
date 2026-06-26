@@ -66,6 +66,26 @@ Now its June, and I'm documenting everything and writing
 firmware.
 
 ## Features 
+### Controller
+The controller is powered by a 7.4V LiPo Battery and driven by an ESP32-S3 (N16 1U).
+
+Below is a list of features from power circuits to various peripherals. 
+- Power-entry circuitry with OC/OV protetction, RPP, PI-filter, and dual-mosfet BMS.
+- Regulation circuit featuring buck converter, 5V ORing, and LDO for logic power (3V3) 
+- ESP32-S3 breakout circuitry with USB differential routing, S3 boot mode selection and reset toggle. 
+- Controlled power delivery via CMOS circuits for all actuator power. 
+- N20 motors with encoders for wheels driven by a DRV8833 chip. 
+- DS3218 20kg Servo motors for hip joints, driven by PWM signals from S3. 
+- OV2640 camera with FPC connector and three-level voltage regulation. 
+- I2C bus with three ToF sensors, OLED screen, and GPIO expander.
+- Audible and visual indicators. 
+- cool silkscreen penguin. 
+
+### Mechanical 
+- 
+
+
+
 
 ## Architecture 
 ### Systems 

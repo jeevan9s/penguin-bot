@@ -58,11 +58,12 @@ I built penguin cause I wanted to create an intelligent robot from the ground up
 Put simply, Penguin is a platform for experimentation with intelligent robotics. 
 
 The project began as a simpler, maze-solving rover for a course project (MREN 178 - DSA). My team couldn't deliver the rover in time
-so we scaled down. I had already started with hardware, which pushed me to adopt the project into my own, with the the intent to expand it past maze-solving.  
+so we scaled down. I had already started with hardware, which pushed me to adopt the project into my own, with the intent to expand it past maze-solving.  
 
 After that term (Winter '26), I designed a controller PCB and the necessary compoments for the chassis. 
 
-Now its June, and I'm documenting everything.
+Now its June, and I'm documenting everything and writing
+firmware.
 
 ## Features 
 

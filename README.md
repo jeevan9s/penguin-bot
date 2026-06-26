@@ -16,15 +16,17 @@ Hybrid differential legged-wheeled biped rover for embodied AI, computer vision,
     - [Status](#status)
   - [Overview](#overview)
   - [Features](#features)
+    - [Controller](#controller)
+    - [Mechanical](#mechanical)
   - [Architecture](#architecture)
     - [Systems](#systems)
-  - [Hardware](#hardware)
+  - [Electrical](#electrical)
     - [Power](#power)
     - [MCU](#mcu)
     - [Sensors](#sensors)
     - [Vision](#vision)
     - [Actuators](#actuators)
-  - [Mechanical](#mechanical)
+  - [Mechanical](#mechanical-1)
     - [Chassis](#chassis)
     - [Leg Assembly](#leg-assembly)
   - [Firmware](#firmware)
@@ -73,7 +75,7 @@ Below is a list of features from power circuits to various peripherals.
 - Power-entry circuitry with OC/OV protetction, RPP, PI-filter, and dual-mosfet BMS.
 - Regulation circuit featuring buck converter, 5V ORing, and LDO for logic power (3V3) 
 - ESP32-S3 breakout circuitry with USB differential routing, S3 boot mode selection and reset toggle. 
-- Controlled power delivery via CMOS circuits for all actuator power. 
+- Controlled power delivery via CMOS circuits for main motor power. 
 - N20 motors with encoders for wheels driven by a DRV8833 chip. 
 - DS3218 20kg Servo motors for hip joints, driven by PWM signals from S3. 
 - OV2640 camera with FPC connector and three-level voltage regulation. 
@@ -90,8 +92,16 @@ Below is a list of features from power circuits to various peripherals.
 ## Architecture 
 ### Systems 
 
-## Hardware 
+## Electrical 
+This section provides low-level explanations of the significant circuits of each "module" of the controller.
+
+I encourage you to clone the repo or you use [KiCanvas](https://kicanvas.org/) to look at the schematic and board files. 
+
 ### Power
+<p align="center">
+  <img src="/media/images/circuits/power_entry.png" width="700">
+</p>
+
 ### MCU
 ### Sensors 
 ### Vision

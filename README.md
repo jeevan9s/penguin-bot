@@ -102,6 +102,10 @@ I encourage you to clone the repo or you use [KiCanvas](https://kicanvas.org/) t
   <img src="/media/images/circuits/power_entry.png" width="700">
 </p>
 
+<p align="center">
+  <img src="/media/images/circuits/bms.png" width="700">
+</p>
+
 ### MCU
 ### Sensors 
 ### Vision

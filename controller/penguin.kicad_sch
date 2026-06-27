@@ -14683,17 +14683,6 @@
 		)
 		(uuid ff6b15e6-8e2c-40a0-99b1-98b1b86a5645)
 	)
-	(text "addr: 0x20"
-		(exclude_from_sim no)
-		(at 224.79 236.728 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 5 5 5 1)
-			)
-		)
-		(uuid "07af1ba7-0109-4c20-aaeb-1525efc2db17")
-	)
 	(text "VBATT Regulation"
 		(exclude_from_sim no)
 		(at 111.252 105.156 0)
@@ -14763,7 +14752,9 @@
 		(effects
 			(font
 				(size 1.27 1.27)
-				(color 0 0 0 1)
+				(thickness 0.254)
+				(bold yes)
+				(color 195 236 231 1)
 			)
 		)
 		(uuid "271d8ad2-6839-4343-a0a7-a8af80b1ae9c")
@@ -14856,17 +14847,6 @@
 			)
 		)
 		(uuid "52e911b2-af7d-415a-9041-b02fae149fe3")
-	)
-	(text "*place as close \nas possible \nto headers"
-		(exclude_from_sim no)
-		(at 380.492 84.328 0)
-		(effects
-			(font
-				(size 0.762 0.762)
-				(color 0 0 0 1)
-			)
-		)
-		(uuid "55924f2f-6b39-4a8e-bee6-822e7bf0f717")
 	)
 	(text "BATT_N -> BMS -> "
 		(exclude_from_sim no)
@@ -15183,17 +15163,6 @@
 			)
 		)
 		(uuid "dc21efd3-549b-487c-9452-72559a4f8940")
-	)
-	(text "*place as close \nas possible \nto headers"
-		(exclude_from_sim no)
-		(at 317.5 85.09 0)
-		(effects
-			(font
-				(size 0.762 0.762)
-				(color 0 0 0 1)
-			)
-		)
-		(uuid "e085aae8-dfac-4988-b4f4-a2f3a0e9833a")
 	)
 	(text "VBATT\n| \nSW\n|\n\n"
 		(exclude_from_sim no)
@@ -15927,28 +15896,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "R_SERVO"
-		(shape input)
-		(at 331.47 240.03 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "29477d33-e580-41aa-8f0b-0295b9582b56")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 342.7404 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -18413,28 +18360,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "L_SERVO"
-		(shape input)
-		(at 331.47 242.57 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "dd38f83b-ceb7-4057-8da0-462c31f2143f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 342.4985 242.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)

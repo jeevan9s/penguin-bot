@@ -315,7 +315,7 @@ The sensors are connected through a single 7-Pin Molex Nano-Fit header, connecti
 
 Decoupling capacitors and shutdown pull-ups are placed locally. 
 <p align="center">
-  <img src="/media/images/circuits/periphs/sense.png" width="300">
+  <img src="/media/images/circuits/periphs/sens.png" width="300">
 </p>
 
 **Additional I2C Devices**

@@ -241,8 +241,40 @@ R_2 = \frac{100\,000 \cdot 2.8}{7.4 - 2.8}
 $$
 
 ### Microcontroller
+The controller is driven by an ESP32-S3-WROOM-1U-N16 microcontroller.
+
+The `U` and `N16` model was selected for layout flexibility and memory capacity (16MB).
+
+A `MCP23017` GPIO expander was used to accomodate space for all digital inputs/outputs. 
+
+**Digital IO**
+<p align="center">
+  <img src="/media/images/circuits/mcu/s3.png" width="500">
+</p>
+
+**Mode Select and Reset Toggle**
+<p align="center">
+  <img src="/media/images/circuits/mcu/s3_toggles.png" width="500">
+</p>
+
+The S3 can be put into **BOOT** mode and **RESET** with onboard buttons.
+
+**BOOT** mode determines whether the chip runs existing code from flash memory or waits to download new firmware.
+- The ESP32 samples the **BOOT** pin (`GPIO0`) during reset to determine the boot mode.
+- It is **active-low**: when pulled to **GND** during reset, the chip enters UART bootloader mode for flashing firmware.
+- The circuit uses a momentary push-button to **GND** and a `10kΩ` pull-up resistor to ensure a defined high state during normal operation.
+
+| BOOT0 Level | Boot Mode |
+|-------------|-----------|
+| HIGH | Programming Mode |
+| LOW | Memory Mode |
+
+**RESET** controls the Enable (EN) pin which is the ON/OFF (reset) switch for the ESP32.
+- It is **active-low**: when pulled to **GND** it turns off the chip, and when released, it restarts.
+- The circuit consists of a momentary push-button, a pull-up resistor to ensure the chip is enabled by default, and a `1µF` capacitor to filter out button noise.
 
 ### Motor Drivers
+
 
 ### Sensor Interfaces
 

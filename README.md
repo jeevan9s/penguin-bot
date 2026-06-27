@@ -24,8 +24,8 @@ Hybrid differential legged-wheeled biped rover for embodied AI, computer vision,
     - [Power System](#power-system)
     - [Microcontroller](#microcontroller)
     - [Motor Drivers](#motor-drivers)
-    - [Sensor Interfaces](#sensor-interfaces)
     - [Vision Interface](#vision-interface)
+    - [Sensor and I2C Interface](#sensor-and-i2c-interface)
   - [Mechanical](#mechanical-1)
     - [Chassis](#chassis)
     - [Leg Assembly](#leg-assembly)
@@ -245,7 +245,7 @@ The controller is driven by an ESP32-S3-WROOM-1U-N16 microcontroller.
 
 The `U` and `N16` model was selected for layout flexibility and memory capacity (16MB).
 
-A `MCP23017` GPIO expander was used to accomodate space for all digital inputs/outputs. 
+A `MCP23017` GPIO expander was used to accomodate space for all digital inputs/outputs (via `I2C`)
 
 **Digital IO**
 <p align="center">
@@ -288,9 +288,45 @@ The connector has decoupling on the power supply, and series resistors on the si
   <img src="/media/images/circuits/motors/servo_in.png" width="300">
 </p>
 
-### Sensor Interfaces
-
 ### Vision Interface
+The controller interfaces with an `OV2640` camera via FPC-connector. 
+
+The camera is configured in **8-bit** mode using adjacent digital pins for frames. 
+<p align="center">
+  <img src="/media/images/circuits/periphs/cam.png" width="300">
+</p>
+
+Power supply is divided into three levels: 
+- `DVDD`: **1.2V**
+- `AVDD`: **2.8V**
+- `DOVDD`: **3.3V**
+
+These conversions are acheived through the use of fixed-output-voltage LDOs (`LP5907MFX`) with local decoupling. 
+
+Series low-resistance resistors were added on the camera's clock signals (PCLK, XCLK) in series for signal integrity and EMI reduction. 
+- I used only `S3` pins, not expander pins, for the data pins `D2-D9` and `HREF`, `VSYNC` pins. 
+
+### Sensor and I2C Interface
+The controller interfaces with three `VL53L0X` Time-of-Flight (ToF) sensors for ranging (obstacle detection, SLAM - potentially). 
+
+This interface is achieved through `I2C`. 
+
+The sensors are connected through a single 7-Pin Molex Nano-Fit header, connecting the sensor power, I2C clock and data signals, and the shutdown `XSHUT` pins of each sensor. 
+
+Decoupling capacitors and shutdown pull-ups are placed locally. 
+<p align="center">
+  <img src="/media/images/circuits/periphs/sense.png" width="300">
+</p>
+
+**Additional I2C Devices**
+- IMU (LSM6DSL)
+- Mini OLED Screen
+- OV2640 Cam
+
+**Indicator Components**
+- RGB LED
+- Passive LEDs for simple indication
+- Buzzer for audible indication
 
 ## Mechanical 
 ### Chassis 

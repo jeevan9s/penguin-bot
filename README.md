@@ -225,8 +225,7 @@ This controlled power line, `VMOT = 7.4V` powers the supply voltage of the `DRV8
 **Voltage Sensing**
 
 A resistor divider circuit is used to produce a signal to be read by the S3's internal ADC.
-$$
-$$
+
 - $R_1 = 100\,\mathrm{k\Omega}$
 - $V_{batt} = 7.4\,\mathrm{V}$
 - $V_{out} = 2.8\,\mathrm{V}$

@@ -254,7 +254,7 @@ A `MCP23017` GPIO expander was used to accomodate space for all digital inputs/o
 
 **Mode Select and Reset Toggle**
 <p align="center">
-  <img src="/media/images/circuits/mcu/s3_toggles.png" width="500">
+  <img src="/media/images/circuits/mcu/s3_toggles.png" width="300">
 </p>
 
 The S3 can be put into **BOOT** mode and **RESET** with onboard buttons.

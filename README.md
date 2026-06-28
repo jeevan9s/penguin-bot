@@ -97,6 +97,8 @@ This section provides low-level explanations of the significant circuits of each
 
 I encourage you to clone the repo or you use [KiCanvas](https://kicanvas.org/) to look at the schematic and board files. 
 
+All electronics were designed with **KiCad**.
+
 ### Power System
 
 **Power Entry**
@@ -254,7 +256,7 @@ A `MCP23017` GPIO expander was used to accomodate space for all digital inputs/o
 
 **Mode Select and Reset Toggle**
 <p align="center">
-  <img src="/media/images/circuits/mcu/s3_toggles.png" width="300">
+  <img src="/media/images/circuits/mcu/s3_toggles.png" width="400">
 </p>
 
 The S3 can be put into **BOOT** mode and **RESET** with onboard buttons.
@@ -278,14 +280,14 @@ The `N20` wheel hub motors are driven by a `DRV8833` chip, and their encoder sig
 
 They are connected via 6-Pin Molex Nano-Fit (2.50mm Pitch) headers, and feature decoupling across the motor terminals and on the encoder power supply. 
 <p align="center">
-  <img src="/media/images/circuits/motors/mtr_in.png" width="300">
+  <img src="/media/images/circuits/motors/mtr_in.png" width="400">
 </p>
 
 The **Servo** hip motors are driven by PWM signals from the `S3`, and are connected by a single 4-Pin Molex Nano-Fit header. 
 
 The connector has decoupling on the power supply, and series resistors on the signal lines to improve signal integrity and reduce noise. 
 <p align="center">
-  <img src="/media/images/circuits/motors/servo_in.png" width="300">
+  <img src="/media/images/circuits/motors/servo_in.png" width="400">
 </p>
 
 ### Vision Interface
@@ -293,7 +295,7 @@ The controller interfaces with an `OV2640` camera via FPC-connector.
 
 The camera is configured in **8-bit** mode using adjacent digital pins for frames. 
 <p align="center">
-  <img src="/media/images/circuits/periphs/cam.png" width="300">
+  <img src="/media/images/circuits/periphs/cam.png" width="500">
 </p>
 
 Power supply is divided into three levels: 
@@ -315,7 +317,7 @@ The sensors are connected through a single 7-Pin Molex Nano-Fit header, connecti
 
 Decoupling capacitors and shutdown pull-ups are placed locally. 
 <p align="center">
-  <img src="/media/images/circuits/periphs/sens.png" width="300">
+  <img src="/media/images/circuits/periphs/sens.png" width="400">
 </p>
 
 **Additional I2C Devices**
@@ -329,8 +331,122 @@ Decoupling capacitors and shutdown pull-ups are placed locally.
 - Buzzer for audible indication
 
 ## Mechanical 
+This section provides insight on the mechanical components of Penguin: the chassis and leg assembly. 
+
+In no way am I a CAD-expert, so this was definitely a learning experience with lots of iteration. 
+
+Projected geomtery was clutch.
+
+I used Fusion360 to design everything.   
+
 ### Chassis 
+The chassis consists of several components attatched with pegs and magnets.
+
+<p align="center">
+  <img src="/media/images/penguin_body_front_3D.png" width="500">
+</p>
+
+**Base Plate**
+
+The base plate forms the start of the internal stack-up. 
+
+It contains Servo pads for the hip motors to rest on, a port for an ON/OFF switch, and a battery slot with vents. 
+
+It acts as the "floor" of the Servo bay and the bottom of the chassis. 
+
+It connects to the rest of the chassis through pegs to insert into the inside face of each wall. 
+
+<p align="center">
+  <img src="/media/images/cad/chassis/base.png" width="400">
+</p>
+
+**Mid Plate**
+
+The mid-plate is the rough center of the internal stack-up. 
+
+It is the mounting point for the controller board and connects to internal shelves on each side wall.
+
+This inner section above the mid-plate and under the lid forms the controller bay. 
+
+<p align="center">
+  <img src="/media/images/cad/chassis/mid.png" width="400">
+</p>
+
+**Side Walls**
+<table><tr><td width="50%"><img src="/media/images/cad/chassis/lwall.png"></td><td width="50%"><img src="/media/images/cad/chassis/rwall.png"></td></tr></table>
+
+The side-walls enclose the internal stack-up, and provide mounting points for several chassis components. 
+
+They have cutouts for the Servo shafts, arm joints, and house components like the external antenna and RGB indicators. 
+
+The top face has short holes for magnets that align with holes on the lid. 
+
+**Nose**
+<p align="center">
+  <img src="/media/images/cad/chassis/nose_s.png" width="400">
+</p>
+
+The nose contains ports for the ToF sensors, OLED screen, and an RGB indicator. 
+
+There is also a cable port connecting to the controller bay for routing. 
+
+It mounts to each walls with pegs, and has short holes for magnets that align with holes on the lid.
+
+**Stern**
+<p align="center">
+  <img src="/media/images/cad/chassis/stern.png" width="400">
+</p>
+
+The stern features a USB-port and fits inside the walls.
+
+It uses M3 screws to secure it in place. 
+
+**Lid**
+<p align="center">
+  <img src="/media/images/cad/chassis/lid.png" width="400">
+</p>
+
+The lid contains a porthole for the camera, and is magnetically mounted on the top surface of the walls and nose. 
+
 ### Leg Assembly
+<p align="center">
+  <img src="/media/images/cad/legs/leg_assembly.png" width="400">
+</p>
+
+The leg assembly consists of the Servo mounting arm, pivot arm, and the wheel hub assembly. 
+
+**Mounting Arm**
+<p align="center">
+  <img src="/media/images/cad/legs/mounting_arm.png" width="400">
+</p>
+
+
+This is the contact point between the leg assembly and the hip motor, it's responsible for driving the assembly. 
+
+The Servo uses the disc-horn, and fits into a cutout on the mounting arm, and is secured in with the stock machine screw into the shaft. 
+
+The end of the arm mounts onto the wheel hub assembly using bearings on each hole, an M3 shoulder bolt, and a nut. 
+
+**Pivot Arm**
+<p align="center">
+  <img src="/media/images/cad/legs/pivot.png" width="400">
+</p>
+
+The pivot arm maintains proper orientation for the assembly as the suspension moves up and down. 
+
+It uses the same mounting as the mounting arm (bearing, shoulder bolt, nut), and is mounted slightly higher at a 40° angle on the wheel hub assembly. 
+
+
+**Wheel Hub Assembly**
+<p align="center">
+  <img src="/media/images/cad/legs/leg.png" width="400">
+</p>
+
+This component houses the N20 motors through a cutout and U-Channel cover to secure them.
+
+The top of the assembly contains the two mounting points for the pivot and mounting arms. 
+
+Cables are routed up the back side of it. 
 
 ## Firmware
 

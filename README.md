@@ -357,7 +357,7 @@ It acts as the "floor" of the Servo bay and the bottom of the chassis.
 It connects to the rest of the chassis through pegs to insert into the inside face of each wall. 
 
 <p align="center">
-  <img src="/media/images/cad/chassis/sens.png" width="300">
+  <img src="/media/images/cad/chassis/base.png" width="300">
 </p>
 
 **Mid Plate**
@@ -369,11 +369,11 @@ It is the mounting point for the controller board and connects to internal shelv
 This inner section above the mid-plate and under the lid forms the controller bay. 
 
 <p align="center">
-  <img src="/media/images/cad/chassis/sens.png" width="300">
+  <img src="/media/images/cad/chassis/mid.png" width="300">
 </p>
 
 **Side Walls**
-<table><tr><td width="50%"><img src="/media/images/cad/chassis/sens.png"></td><td width="50%"><img src="/media/images/cad/chassis/sens.png"></td></tr></table>
+<table><tr><td width="50%"><img src="/media/images/cad/chassis/lwall.png"></td><td width="50%"><img src="/media/images/cad/chassis/rwall.png"></td></tr></table>
 
 The side-walls enclose the internal stack-up, and provide mounting points for several chassis components. 
 
@@ -382,7 +382,7 @@ They have cutouts for the Servo shafts, arm joints, and house components like th
 The top face has short holes for magnets that align with holes on the lid. 
 
 **Nose**
-<table><tr><td width="50%"><img src="/media/images/cad/chassis/sens.png"></td><td width="50%"><img src="/media/images/cad/chassis/sens.png"></td></tr></table>
+<table><tr><td width="50%"><img src="/media/images/cad/chassis/nose_s.png"></td><td width="50%"><img src="/media/images/cad/chassis/nose_f.png"></td></tr></table>
 
 The nose contains ports for the ToF sensors, OLED screen, and an RGB indicator. 
 
@@ -392,7 +392,7 @@ It mounts to each walls with pegs, and has short holes for magnets that align wi
 
 **Stern**
 <p align="center">
-  <img src="/media/images/cad/chassis/sens.png" width="300">
+  <img src="/media/images/cad/chassis/stern.png" width="300">
 </p>
 
 The stern features a USB-port and fits inside the walls.
@@ -401,19 +401,21 @@ It uses M3 screws to secure it in place.
 
 **Lid**
 <p align="center">
-  <img src="/media/images/cad/chassis/sens.png" width="300">
+  <img src="/media/images/cad/chassis/lid.png" width="300">
 </p>
 
 The lid contains a porthole for the camera, and is magnetically mounted on the top surface of the walls and nose. 
 
 ### Leg Assembly
-<table><tr><td width="50%"><img src="/media/images/cad/legs/sens.png"></td><td width="50%"><img src="/media/images/cad/legs/sens.png"></td></tr></table>
+<p align="center">
+  <img src="/media/images/cad/legs/leg_assembly.png" width="300">
+</p>
 
 The leg assembly consists of the Servo mounting arm, pivot arm, and the wheel hub assembly. 
 
 **Mounting Arm**
 <p align="center">
-  <img src="/media/images/cad/chassis/sens.png" width="300">
+  <img src="/media/images/cad/legs/mounting_arm.png" width="300">
 </p>
 
 
@@ -425,7 +427,7 @@ The end of the arm mounts onto the wheel hub assembly using bearings on each hol
 
 **Pivot Arm**
 <p align="center">
-  <img src="/media/images/cad/chassis/sens.png" width="300">
+  <img src="/media/images/cad/legs/pivot.png" width="300">
 </p>
 
 The pivot arm maintains proper orientation for the assembly as the suspension moves up and down. 
@@ -435,7 +437,7 @@ It uses the same mounting as the mounting arm (bearing, shoulder bolt, nut), and
 
 **Wheel Hub Assembly**
 <p align="center">
-  <img src="/media/images/cad/chassis/sens.png" width="300">
+  <img src="/media/images/cad/legs/leg.png" width="300">
 </p>
 
 This component houses the N20 motors through a cutout and U-Channel cover to secure them.

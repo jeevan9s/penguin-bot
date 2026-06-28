@@ -256,7 +256,7 @@ A `MCP23017` GPIO expander was used to accomodate space for all digital inputs/o
 
 **Mode Select and Reset Toggle**
 <p align="center">
-  <img src="/media/images/circuits/mcu/s3_toggles.png" width="300">
+  <img src="/media/images/circuits/mcu/s3_toggles.png" width="400">
 </p>
 
 The S3 can be put into **BOOT** mode and **RESET** with onboard buttons.
@@ -280,14 +280,14 @@ The `N20` wheel hub motors are driven by a `DRV8833` chip, and their encoder sig
 
 They are connected via 6-Pin Molex Nano-Fit (2.50mm Pitch) headers, and feature decoupling across the motor terminals and on the encoder power supply. 
 <p align="center">
-  <img src="/media/images/circuits/motors/mtr_in.png" width="300">
+  <img src="/media/images/circuits/motors/mtr_in.png" width="400">
 </p>
 
 The **Servo** hip motors are driven by PWM signals from the `S3`, and are connected by a single 4-Pin Molex Nano-Fit header. 
 
 The connector has decoupling on the power supply, and series resistors on the signal lines to improve signal integrity and reduce noise. 
 <p align="center">
-  <img src="/media/images/circuits/motors/servo_in.png" width="300">
+  <img src="/media/images/circuits/motors/servo_in.png" width="400">
 </p>
 
 ### Vision Interface
@@ -317,7 +317,7 @@ The sensors are connected through a single 7-Pin Molex Nano-Fit header, connecti
 
 Decoupling capacitors and shutdown pull-ups are placed locally. 
 <p align="center">
-  <img src="/media/images/circuits/periphs/sens.png" width="300">
+  <img src="/media/images/circuits/periphs/sens.png" width="400">
 </p>
 
 **Additional I2C Devices**
@@ -383,7 +383,7 @@ The top face has short holes for magnets that align with holes on the lid.
 
 **Nose**
 <p align="center">
-  <img src="/media/images/cad/legs/nose_s.png" width="400">
+  <img src="/media/images/cad/chassis/nose_s.png" width="400">
 </p>
 
 The nose contains ports for the ToF sensors, OLED screen, and an RGB indicator. 

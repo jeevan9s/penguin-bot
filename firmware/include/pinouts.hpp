@@ -7,8 +7,9 @@
  * PENGUIN
  */
 
+#pragma once
  
- #include <cstdint>
+#include <cstdint>
 
 namespace Pins {
     namespace MCU {
@@ -42,10 +43,10 @@ namespace Pins {
 
     // MCP23017 IO expander
     namespace MCP {
-        constexpr uint8_t DBG_LED       = 0;  // GPA0
-        constexpr uint8_t WIFI_LED      = 1;  // GPA1
+        constexpr uint8_t WIFI_LED       = 0;  // GPA0
+        constexpr uint8_t DBG_LED      = 1;  // GPA1
         constexpr uint8_t CAM_LED    = 2;  // GPA2
-        constexpr uint8_t RGB_DATA      = 3;  // GPA3
+        // constexpr uint8_t RGB_DATA      = 3;  // GPA3 - mistake, won't be able to use 
         constexpr uint8_t BUZZ_EN       = 4;  // GPA4
         constexpr uint8_t CAM_PWR_EN       = 5;  // GPA5
         constexpr uint8_t CAM_PWDN_EN   = 6;  // GPA6

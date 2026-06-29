@@ -1,0 +1,52 @@
+# =========================
+# PlatformIO
+# =========================
+.pio/
+.piolibdeps/
+libdeps/
+.vscode/
+
+# Build output
+build/
+.pio/build/
+
+# Environment cache
+.pioenvs/
+.piolibdeps/
+
+# =========================
+# Unity / test artifacts
+# =========================
+test/*.o
+test/*.out
+test/*.elf
+test/*.bin
+
+# PlatformIO test results
+test_results/
+.pio/test/
+*.test.log
+
+
+*.bin
+*.elf
+*.map
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+*.code-workspace
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Python (PlatformIO tools)
+# =========================
+__pycache__/
+*.pyc

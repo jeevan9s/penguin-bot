@@ -1,7 +1,7 @@
 
 /**
  * @file        config.cpp
- * @brief       System configuration.
+ * @brief       System configuration and utility.
  * @author      Jeevan Sanchez
  * @date        2026-06-29
  *
@@ -47,4 +47,13 @@ void led_startup(void) {
     delay(200);
     mcp.digitalWrite(Pins::MCP::CAM_LED, LOW);
     delay(200); 
+}
+
+void blinkDebug(int count, int delay) {
+    for(int i = 0; i < count; i++) {
+        mcp.digitalWrite(Pins::MCP::DBG_LED, HIGH);
+        delay(delay);
+        mcp.digitalWrite(Pins::MCP::DBG_LED, LOW);
+        delay(delay);
+    }
 }

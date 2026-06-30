@@ -19,6 +19,7 @@ void run_test_bench()
         Serial.println("1 : LEDs");
         Serial.println("2 : WIFI");
         Serial.println("3 : IMU");
+        Serial.println("4 : POWER");
         Serial.println("x : Exit");
 
         while (!Serial.available())
@@ -36,9 +37,15 @@ void run_test_bench()
 
             case '2':
                 test_wifi(ssid, pswd); 
+                break;
 
             case '3':
                 test_imu(); 
+                break;
+            
+            case '4':
+                test_pwr();
+                break;
 
             case 'x':
             case 'X':

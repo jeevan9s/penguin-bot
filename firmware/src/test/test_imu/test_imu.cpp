@@ -33,9 +33,9 @@ void test_imu()
         sensors_event_t temp;
         imu.getEvent(&accel, &gyro, &temp);
 
-        Serial.printf("Accel X: %.2f, Y: %.2f, Z: %.2f | Gyro X: %.2f, Y: %.2f, Z: %.2f\n", 
+        Serial.printf("Accel X: %.2f, Y: %.2f, Z: %.2f | Gyro X: %.2f, Y: %.2f, Z: %.2f | Temp: %.2f\n", 
                       accel.acceleration.x, accel.acceleration.y, accel.acceleration.z,
-                      gyro.gyro.x, gyro.gyro.y, gyro.gyro.z);
+                      gyro.gyro.x, gyro.gyro.y, gyro.gyro.z, temp.temperature);
                       
         delay(350);
     }

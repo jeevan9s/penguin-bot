@@ -330,6 +330,11 @@ Decoupling capacitors and shutdown pull-ups are placed locally.
 - Passive LEDs for simple indication
 - Buzzer for audible indication
 
+### Bugs
+- Mirrored the CAM header pinouts
+ - Using a mirror cable to solve, not the worst bug since I would have had to use an extender cable anyways.
+ - Buzzer and RGB LED data pins connected to MCP but needs S3 clock signals.
+
 ## Mechanical 
 This section provides insight on the mechanical components of Penguin: the chassis and leg assembly. 
 

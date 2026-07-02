@@ -19,7 +19,7 @@ extern Adafruit_MCP23X17 mcp;
 
 bool init_mcp(void);
 void led_startup(void);
-void blinkDebug(int count, int delay = 200);
+void blinkDebug(int count, int delayMs = 200);
 
 // WIFI creds
 extern const char* ssid;

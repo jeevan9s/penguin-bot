@@ -49,11 +49,11 @@ void led_startup(void) {
     delay(200); 
 }
 
-void blinkDebug(int count, int delay) {
+void blinkDebug(int count, int delayMs) {
     for(int i = 0; i < count; i++) {
         mcp.digitalWrite(Pins::MCP::DBG_LED, HIGH);
-        delay(delay);
+        delay(delayMs);
         mcp.digitalWrite(Pins::MCP::DBG_LED, LOW);
-        delay(delay);
+        delay(delayMs);
     }
 }

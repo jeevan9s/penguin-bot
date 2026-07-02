@@ -15,6 +15,7 @@
 #include "test_wifi.hpp"
 #include "test_imu.hpp"
 #include "test_pwr.hpp"
+#include "test_cam.hpp"
 
 // enum class TestMode = {
 //     None, 

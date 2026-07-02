@@ -29508,7 +29508,7 @@
 		(descr "Hirose FH12, FFC/FPC connector, FH12-24S-0.5SH, 24 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator")
 		(tags "connector Hirose FH12 horizontal")
 		(property "Reference" "J2"
-			(at 0 0.95 180)
+			(at 0 0.95 360)
 			(layer "F.SilkS")
 			(uuid "1756733f-a746-4fbe-aad0-70bc1bbf3cfe")
 			(effects
@@ -29556,7 +29556,7 @@
 			)
 		)
 		(property "Value" "CAM_HEADER"
-			(at 0 5.6 0)
+			(at 0 5.6 360)
 			(layer "F.Fab")
 			(uuid "8e51be15-de4d-481a-8425-33a102f7cdff")
 			(effects
@@ -30087,7 +30087,7 @@
 			(uuid "b8f5ef44-5241-44fc-9c15-3eddbb46ebda")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 3.7 0)
+			(at 0 3.7 360)
 			(layer "F.Fab")
 			(uuid "da81eff6-4e8d-4171-8df7-1564927493d9")
 			(effects
@@ -80140,14 +80140,6 @@
 		(uuid "0db9f40b-b3a6-4d80-b71a-e8254bc46607")
 	)
 	(via
-		(at 136.925 114.95)
-		(size 0.6)
-		(drill 0.3)
-		(layers "F.Cu" "B.Cu")
-		(net 2)
-		(uuid "0dcc4519-4f66-4a4d-8530-bee02b718d79")
-	)
-	(via
 		(at 180.8 64.325)
 		(size 0.6)
 		(drill 0.3)
@@ -81440,14 +81432,6 @@
 		(uuid "7b0b6c53-364c-4d5f-b80c-1266fcd7b14a")
 	)
 	(via
-		(at 137.675 114.95)
-		(size 0.6)
-		(drill 0.3)
-		(layers "F.Cu" "B.Cu")
-		(net 2)
-		(uuid "7bdd0213-afec-4910-ab63-d58d2b3b2eed")
-	)
-	(via
 		(at 179.475 108.1)
 		(size 0.6)
 		(drill 0.3)
@@ -82391,14 +82375,6 @@
 		(uuid "d0abd598-0cb3-4b74-bbe0-839cb44e7aaf")
 	)
 	(via
-		(at 146.73 115.8)
-		(size 0.6)
-		(drill 0.3)
-		(layers "F.Cu" "B.Cu")
-		(net 2)
-		(uuid "d1d7382f-19dc-450a-a975-54a7bbcf44a1")
-	)
-	(via
 		(at 115.4625 98.34)
 		(size 0.6)
 		(drill 0.3)
@@ -82706,14 +82682,6 @@
 		(layers "F.Cu" "B.Cu")
 		(net 2)
 		(uuid "ee6ec3bc-eac7-49c2-bb0a-b287e70db652")
-	)
-	(via
-		(at 147.48 115.8)
-		(size 0.6)
-		(drill 0.3)
-		(layers "F.Cu" "B.Cu")
-		(net 2)
-		(uuid "eebe345f-cd50-4bb2-a135-dd0837dff92f")
 	)
 	(via
 		(at 108.85 99.75)
@@ -86068,6 +86036,22 @@
 		(layer "F.Cu")
 		(net 48)
 		(uuid "d59d45b0-d648-45f9-b3d0-90e2faea9b01")
+	)
+	(via
+		(at 146.73 115.8)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net 48)
+		(uuid "d1d7382f-19dc-450a-a975-54a7bbcf44a1")
+	)
+	(via
+		(at 147.48 115.8)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net 48)
+		(uuid "eebe345f-cd50-4bb2-a135-dd0837dff92f")
 	)
 	(segment
 		(start 143.41 105.7525)
@@ -92005,6 +91989,22 @@
 		(layer "F.Cu")
 		(net 128)
 		(uuid "f04841ec-f213-4e4c-b742-8bb4d6969528")
+	)
+	(via
+		(at 136.925 114.95)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net 128)
+		(uuid "0dcc4519-4f66-4a4d-8530-bee02b718d79")
+	)
+	(via
+		(at 137.675 114.95)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net 128)
+		(uuid "7bdd0213-afec-4910-ab63-d58d2b3b2eed")
 	)
 	(zone
 		(net 2)

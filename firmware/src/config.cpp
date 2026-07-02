@@ -49,11 +49,21 @@ void led_startup(void) {
     delay(200); 
 }
 
-void blinkDebug(int count, int delayMs) {
+void blinkLED(uint8_t ledPin, int count, int delayMs) {
     for(int i = 0; i < count; i++) {
-        mcp.digitalWrite(Pins::MCP::DBG_LED, HIGH);
+        mcp.digitalWrite(ledPin, HIGH);
         delay(delayMs);
-        mcp.digitalWrite(Pins::MCP::DBG_LED, LOW);
+        mcp.digitalWrite(ledPin, LOW);
         delay(delayMs);
+    }
+}
+
+void scanI2C() {
+    Serial.println("scanning I2C bus...");
+    for(byte address = 1; address < 127; address++) {
+        Wire.beginTransmission(address);
+        if (Wire.endTransmission() == 0) {
+            Serial.printf("Found device at 0x%02X\n", address);
+        }
     }
 }

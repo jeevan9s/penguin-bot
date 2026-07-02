@@ -20,6 +20,7 @@ void run_test_bench()
         Serial.println("2 : WIFI");
         Serial.println("3 : IMU");
         Serial.println("4 : POWER");
+        Serial.println("5 : CAMERA");
         Serial.println("x : Exit");
 
         while (!Serial.available())
@@ -45,6 +46,10 @@ void run_test_bench()
             
             case '4':
                 test_pwr();
+                break;
+
+            case '5':
+                setup_cam();
                 break;
 
             case 'x':

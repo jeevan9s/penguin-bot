@@ -14,6 +14,8 @@
 // ENABLE: VMOT, CAM_PWR
 // SENSE: VBATT
 
+extern Adafruit_MCP23X17 mcp;
+
 void test_pwr(void) {
     for (int i = 1; i <= 3; i++) {
         switch(i) {
@@ -23,15 +25,15 @@ void test_pwr(void) {
                 int raw = analogRead(Pins::MCU::VBATT_SENSE);
                 float voltage = (raw / 4095.0) * 3.3 * ((100.0 + 47.0) / 47.0);
                 Serial.printf("VBATT sense: %.2fV\n", voltage);
-                blinkDebug(1);
+                blinkLED(Pins::MCP::DBG_LED, 1);
                 break; }
 
             case 2: {
                 // VMOT EN
                 Serial.println("enabling VMOT [7.4V]"); 
                 mcp.digitalWrite(Pins::MCP::VMOT_EN, HIGH);    
-                blinkDebug(2);
-                delay(5000);
+                blinkLED(Pins::MCP::DBG_LED, 1);
+                delay(10000);
                 mcp.digitalWrite(Pins::MCP::VMOT_EN, LOW); 
                 break; }
             
@@ -39,8 +41,8 @@ void test_pwr(void) {
                 // CAM AVDD DVDD EN
                 Serial.println("enabling CAM power [AVDD = 2.8V, DVDD = 1.2V]");
                 mcp.digitalWrite(Pins::MCP::CAM_PWR_EN, HIGH);    
-                blinkDebug(3);
-                delay(5000);
+                blinkLED(Pins::MCP::DBG_LED, 1);
+                delay(10000);
                 mcp.digitalWrite(Pins::MCP::CAM_PWR_EN, LOW);
                 break; }
             

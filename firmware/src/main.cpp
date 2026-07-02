@@ -16,6 +16,7 @@ void displayMenu()
 {
     Serial.println("\n--- PENGUIN ---");
     Serial.println(" [t] : launch test bench");
+    Serial.println(" [s] : scan I2C bus");
     Serial.println("------------------------");
 }
 
@@ -25,9 +26,26 @@ void runTaskT()
     run_test_bench();
 }
 
+void runTaskS() 
+{
+    enable_cam();
+    startCameraClock();
+    delay(50);
+
+    Serial.println("\n>> ---scanning I2C bus");
+    scanI2C();
+    delay(1000);
+}
+
+
 void setup()
 {
     Serial.begin(38400);
+
+    pinMode(Pins::MCU::MCP_RESET, OUTPUT);
+    digitalWrite(Pins::MCU::MCP_RESET, HIGH);
+
+    delay(50);
 
     while (!Serial && millis() < 4000) {
         delay(10);
@@ -48,6 +66,8 @@ void setup()
     mcp.pinMode(Pins::MCP::CAM_LED, OUTPUT);
     mcp.pinMode(Pins::MCP::DBG_LED, OUTPUT);
     mcp.pinMode(Pins::MCP::WIFI_LED, OUTPUT);
+
+    mcp.pinMode(Pins::MCP::VMOT_EN, OUTPUT);
 
     led_startup();
     displayMenu();
@@ -71,6 +91,12 @@ void loop()
             case 't':
             case 'T':
                 runTaskT();
+                displayMenu(); 
+                break;
+
+            case 's':
+            case 'S':
+                runTaskS();
                 displayMenu(); 
                 break;
                 

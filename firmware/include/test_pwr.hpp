@@ -8,5 +8,6 @@
  */
 
 #include "pinouts.hpp"
+#include <Adafruit_MCP23X17.h>
 
 void test_pwr(void);

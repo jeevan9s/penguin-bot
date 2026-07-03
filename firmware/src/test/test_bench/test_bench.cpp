@@ -8,7 +8,7 @@
  */
 
 #include <Arduino.h>
-#include "config.hpp"       
+#include "config.hpp"
 #include "test_bench.hpp"
 
 void run_test_bench()
@@ -21,6 +21,7 @@ void run_test_bench()
         Serial.println("3 : IMU");
         Serial.println("4 : POWER");
         Serial.println("5 : CAMERA");
+        Serial.println("6 : MOTORS");
         Serial.println("x : Exit");
 
         while (!Serial.available())
@@ -32,29 +33,33 @@ void run_test_bench()
 
         switch (choice)
         {
-            case '1':
-                test_leds();
-                break;
+        case '1':
+            test_leds();
+            break;
 
-            case '2':
-                test_wifi(ssid, pswd); 
-                break;
+        case '2':
+            test_wifi(ssid, pswd);
+            break;
 
-            case '3':
-                test_imu(); 
-                break;
-            
-            case '4':
-                test_pwr();
-                break;
+        case '3':
+            test_imu();
+            break;
 
-            case '5':
-                setup_cam();
-                break;
+        case '4':
+            test_pwr();
+            break;
 
-            case 'x':
-            case 'X':
-                return;
+        case '5':
+            setup_cam();
+            break;
+
+        case '6':
+            test_motors();
+            break;
+
+        case 'x':
+        case 'X':
+            return;
         }
     }
 }

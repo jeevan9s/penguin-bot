@@ -16,6 +16,7 @@
 #include "test_imu.hpp"
 #include "test_pwr.hpp"
 #include "test_cam.hpp"
+#include "test_mtr.hpp"
 
 // enum class TestMode = {
 //     None, 

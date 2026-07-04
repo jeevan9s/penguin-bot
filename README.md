@@ -26,6 +26,7 @@ Hybrid differential legged-wheeled biped rover for embodied AI, computer vision,
     - [Motor Drivers](#motor-drivers)
     - [Vision Interface](#vision-interface)
     - [Sensor and I2C Interface](#sensor-and-i2c-interface)
+    - [Bugs](#bugs)
   - [Mechanical](#mechanical-1)
     - [Chassis](#chassis)
     - [Leg Assembly](#leg-assembly)
@@ -40,10 +41,10 @@ I built penguin cause I wanted to create an intelligent robot from the ground up
 <table>
   <tr>
     <td width="50%">
-      <img src="/media/images/penguin_controller_front_3D.png">
+      <img src="/media/images/penguin_controller_front.jpg">
     </td>
     <td width="50%">
-      <img src="/media/images/penguin_controller_back_3D.png">
+      <img src="/media/images/penguin_controller_back.jpg">
     </td>
   </tr>
   <tr>
@@ -52,6 +53,14 @@ I built penguin cause I wanted to create an intelligent robot from the ground up
     </td>
     <td width="50%">
       <img src="media/images/penguin_body_side_3D.png">
+    </td>
+  </tr>
+    <tr>
+    <td width="50%">
+      <img src="/media/images/penguin_controller_front_3D.png">
+    </td>
+    <td width="50%">
+      <img src="/media/images/penguin_controller_back_3D.png">
     </td>
   </tr>
 </table>
@@ -64,8 +73,7 @@ so we scaled down. I had already started with hardware, which pushed me to adopt
 
 After that term (Winter '26), I designed a controller PCB and the necessary compoments for the chassis. 
 
-Now its June, and I'm documenting everything and writing
-firmware.
+Now its July, and I'm documenting everything and writing firmware.
 
 ## Features 
 ### Controller
@@ -331,9 +339,8 @@ Decoupling capacitors and shutdown pull-ups are placed locally.
 - Buzzer for audible indication
 
 ### Bugs
-- Mirrored the CAM header pinouts
- - Using a mirror cable to solve, not the worst bug since I would have had to use an extender cable anyways.
- - Buzzer and RGB LED data pins connected to MCP but needs S3 clock signals.
+- Misoriented cam header -- fixed with an extenison board + B-Type FPC cable
+- Buzzer and RGB LED pins need clock signal but wired to MCP pins. 
 
 ## Mechanical 
 This section provides insight on the mechanical components of Penguin: the chassis and leg assembly. 
@@ -458,6 +465,13 @@ Cables are routed up the back side of it.
 ## Repository Structure 
 
 ## Gallery 
+
+<p align="center">
+  <img src="/media/images/penguin_selfie.png" width="850">
+</p>
+<h3 style="font-size: 0.85em; font-weight: 300; font-style: italic; color: #4a4a4a;">
+  <em> first selfie | 2026/07/04</em>
+</h3>
 
 ---
 Jeevan Sanchez, 2026

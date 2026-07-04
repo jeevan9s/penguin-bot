@@ -41,10 +41,10 @@ I built penguin cause I wanted to create an intelligent robot from the ground up
 <table>
   <tr>
     <td width="50%">
-      <img src="/media/images/penguin_controller_front.png">
+      <img src="/media/images/penguin_controller_front.jpg">
     </td>
     <td width="50%">
-      <img src="/media/images/penguin_controller_back.png">
+      <img src="/media/images/penguin_controller_back.jpg">
     </td>
   </tr>
   <tr>
@@ -468,10 +468,10 @@ Cables are routed up the back side of it.
 ## Gallery 
 
 <p align="center">
-  <img src="/media/images/circuits/pwr/power_entry.png" width="850">
+  <img src="/media/images/penguin_selfie.png" width="850">
 </p>
-<h3 style="font-size: smaller; font-style: italic; color: grey;">
-  <em>Penguin's first selfie; 2026/07/04</em>
+<h3 style="font-size: 0.85em; font-weight: 300; font-style: italic; color: #4a4a4a;">
+  <em> first selfie | 2026/07/04</em>
 </h3>
 
 ---

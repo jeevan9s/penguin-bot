@@ -73,8 +73,7 @@ so we scaled down. I had already started with hardware, which pushed me to adopt
 
 After that term (Winter '26), I designed a controller PCB and the necessary compoments for the chassis. 
 
-Now its June, and I'm documenting everything and writing
-firmware.
+Now its July, and I'm documenting everything and writing firmware.
 
 ## Features 
 ### Controller

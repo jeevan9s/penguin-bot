@@ -340,6 +340,7 @@ Decoupling capacitors and shutdown pull-ups are placed locally.
 
 ### Bugs
 - Misoriented cam header -- fixed with an extenison board + B-Type FPC cable
+- DRV8833 VM and VINT pins missing GND connection
 - Buzzer and RGB LED pins need clock signal but wired to MCP pins. 
 
 ## Mechanical 

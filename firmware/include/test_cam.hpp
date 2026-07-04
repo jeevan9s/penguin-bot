@@ -16,4 +16,8 @@
 void startCameraClock();
 void enable_cam();
 void setup_cam();
-void test_cam();
+
+void test_cam_serial();
+
+void setup_wifi();
+void test_cam_wifi();

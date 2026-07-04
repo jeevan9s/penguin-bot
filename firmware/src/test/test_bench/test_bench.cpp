@@ -55,7 +55,9 @@ void run_test_bench()
             setup_cam();
             delay(1000);
 
-            test_cam();
+            // test_cam_serial();
+            setup_wifi();
+            test_cam_wifi();
             break;
 
         case '6':

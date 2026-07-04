@@ -21,6 +21,7 @@ bool init_mcp(void);
 void led_startup(void);
 void blinkLED(uint8_t ledPin, int count, int delayMs=200);
 void scanI2C();
+void recoverI2C();
 
 // WIFI creds
 extern const char* ssid;

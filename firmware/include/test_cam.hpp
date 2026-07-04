@@ -13,6 +13,7 @@
 #include "pinouts.hpp"
 #include "config.hpp"
 
+void startCameraClock();
 void enable_cam();
 void setup_cam();
 void test_cam();

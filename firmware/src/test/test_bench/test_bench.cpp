@@ -10,6 +10,7 @@
 #include <Arduino.h>
 #include "config.hpp"
 #include "test_bench.hpp"
+#include "config.hpp"
 
 void run_test_bench()
 {
@@ -50,7 +51,11 @@ void run_test_bench()
             break;
 
         case '5':
+            recoverI2C();
             setup_cam();
+            delay(1000);
+
+            test_cam();
             break;
 
         case '6':

@@ -16,7 +16,7 @@ const char* pswd = "jeevan1--";
 Adafruit_MCP23X17 mcp;
 
 bool init_mcp(void) {
-    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL);
+    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL, 100000);
     
     if (!mcp.begin_I2C()) {
         return false; 
@@ -66,4 +66,23 @@ void scanI2C() {
             Serial.printf("Found device at 0x%02X\n", address);
         }
     }
+}
+
+void recoverI2C() {
+    pinMode(Pins::MCU::SCL, INPUT_PULLUP);
+    pinMode(Pins::MCU::SDA, INPUT_PULLUP);
+    delay(10);
+
+    pinMode(Pins::MCU::SCL, OUTPUT);
+    for (int i = 0; i < 16; i++) {
+        digitalWrite(Pins::MCU::SCL, HIGH);
+        delayMicroseconds(20);
+        digitalWrite(Pins::MCU::SCL, LOW);
+        delayMicroseconds(20);
+        
+        if (digitalRead(Pins::MCU::SDA) == HIGH) break;
+    }
+    
+    Wire.end();
+    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL);
 }

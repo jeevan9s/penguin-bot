@@ -28,8 +28,12 @@ void runTaskT()
 
 void runTaskS() 
 {
-    enable_cam();
     startCameraClock();
+    delay(50);
+
+
+    recoverI2C();
+    enable_cam();
     delay(50);
 
     Serial.println("\n>> ---scanning I2C bus");
@@ -37,10 +41,9 @@ void runTaskS()
     delay(1000);
 }
 
-
 void setup()
 {
-    Serial.begin(38400);
+    Serial.begin(921600);
 
     pinMode(Pins::MCU::MCP_RESET, OUTPUT);
     digitalWrite(Pins::MCU::MCP_RESET, HIGH);
@@ -80,6 +83,7 @@ void loop()
         displayMenu();
         menuShown = true;
     }
+
 
     if (Serial.available() > 0) 
     {

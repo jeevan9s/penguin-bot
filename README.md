@@ -469,9 +469,8 @@ Cables are routed up the back side of it.
 <p align="center">
   <img src="/media/images/penguin_selfie.png" width="850">
 </p>
-<h3 style="font-size: 0.85em; font-weight: 300; font-style: italic; color: #4a4a4a;">
-  <em> first selfie | 2026/07/04</em>
-</h3>
+
+### first selfie | 2026/07/04</em>
 
 ---
 Jeevan Sanchez, 2026

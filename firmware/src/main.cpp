@@ -28,12 +28,12 @@ void runTaskT()
 
 void runTaskS() 
 {
-    startCameraClock();
-    delay(50);
+    // startCameraClock();
+    // delay(50);
 
 
     recoverI2C();
-    enable_cam();
+    // enable_cam();
     delay(50);
 
     Serial.println("\n>> ---scanning I2C bus");
@@ -69,8 +69,6 @@ void setup()
     mcp.pinMode(Pins::MCP::CAM_LED, OUTPUT);
     mcp.pinMode(Pins::MCP::DBG_LED, OUTPUT);
     mcp.pinMode(Pins::MCP::WIFI_LED, OUTPUT);
-
-    mcp.pinMode(Pins::MCP::VMOT_EN, OUTPUT);
 
     led_startup();
     displayMenu();

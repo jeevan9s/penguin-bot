@@ -34,11 +34,16 @@ void printTicks(unsigned long durationMs) {
 }
 
 void motorSetup() {
+    servo.attach(Pins::MCU::L_SERVO); 
+    servo.write(90); 
+    
     mcp.digitalWrite(Pins::MCP::VMOT_EN, HIGH); 
-    delay(50);
+    delay(500);
 
     pinMode(Pins::MCU::MOTA_IN1, OUTPUT); 
     pinMode(Pins::MCU::MOTA_IN2, OUTPUT); 
+    pinMode(Pins::MCU::MOTB_IN1, OUTPUT); 
+    pinMode(Pins::MCU::MOTB_IN2, OUTPUT); 
 
     pinMode(Pins::MCU::ENC_A_PH1, INPUT_PULLUP); 
     pinMode(Pins::MCU::ENC_A_PH2, INPUT_PULLUP); 
@@ -65,16 +70,23 @@ void sweepServo()
 
 void runDCMotors() {
     Serial.println("driving motor [FWD]");
+    digitalWrite(Pins::MCU::MOTB_IN2, LOW);
+    digitalWrite(Pins::MCU::MOTB_IN1, HIGH); 
     digitalWrite(Pins::MCU::MOTA_IN2, LOW);
     digitalWrite(Pins::MCU::MOTA_IN1, HIGH); 
+    
     printTicks(2000);
 
     Serial.println("driving motor [OFF]");
+    digitalWrite(Pins::MCU::MOTB_IN2, LOW);
+    digitalWrite(Pins::MCU::MOTB_IN1, LOW);
     digitalWrite(Pins::MCU::MOTA_IN2, LOW);
     digitalWrite(Pins::MCU::MOTA_IN1, LOW);
     printTicks(1000);
 
     Serial.println("driving motor [REV]");
+    digitalWrite(Pins::MCU::MOTB_IN1, LOW);
+    digitalWrite(Pins::MCU::MOTB_IN2, HIGH);
     digitalWrite(Pins::MCU::MOTA_IN1, LOW);
     digitalWrite(Pins::MCU::MOTA_IN2, HIGH); 
     printTicks(2000);
@@ -86,14 +98,14 @@ void test_motors() {
 
    motorSetup();
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 1; i++) {
         switch(i) {
-            case 0:
-                Serial.println("testing SERVOS---");
-                sweepServo(); 
-                break;
+            // case 0:
+            //     Serial.println("testing SERVOS---");
+            //     sweepServo(); 
+            //     break;
             
-            case 1: 
+            case 0: 
                 Serial.println("testing N20 motors---");
                 runDCMotors();
                 break;

@@ -12,6 +12,9 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <Adafruit_MCP23X17.h>
+#include <LSM6DSM.h>
+
+extern LSM6DSM imu;
 
 #include "pinouts.hpp"
 

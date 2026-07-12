@@ -10,8 +10,7 @@
 #pragma once
 
 #include "pinouts.hpp"
-#include <Adafruit_LSM6DSL.h>
-
+#include <LSM6DSM/src/LSM6DSM.h>
 
 void test_imu(); 
 

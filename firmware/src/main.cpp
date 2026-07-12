@@ -12,6 +12,8 @@
 
 bool menuShown = false;
 
+LSM6DSM imu;
+
 void displayMenu() 
 {
     Serial.println("\n--- PENGUIN ---");
@@ -69,6 +71,12 @@ void setup()
     mcp.pinMode(Pins::MCP::CAM_LED, OUTPUT);
     mcp.pinMode(Pins::MCP::DBG_LED, OUTPUT);
     mcp.pinMode(Pins::MCP::WIFI_LED, OUTPUT);
+
+    imu.init(); 
+    Serial.println("IMU --calibrating | hold still"); 
+    delay(100);
+    imu.calibrateGyro(200); 
+    Serial.println("IMU --calibrated"); 
 
     led_startup();
     displayMenu();

@@ -11,6 +11,8 @@
 
 #include <Arduino.h>
 #include <Wire.h>
+#include <WiFi.h>
+
 #include <Adafruit_MCP23X17.h>
 #include <LSM6DSM.h>
 

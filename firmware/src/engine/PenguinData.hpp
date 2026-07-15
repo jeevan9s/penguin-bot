@@ -11,10 +11,6 @@
 
 struct IMUData
 {
-    float pitch;
-    float roll;
-    float yaw;
-
     float accX;
     float accY;
     float accZ;
@@ -22,6 +18,18 @@ struct IMUData
     float gyX;
     float gyY;
     float gyZ;
+
+    float temp; 
+
+    Rotation angles; 
+
+};
+
+struct Rotation 
+{
+    float pitch; 
+    float roll; 
+    float yaw;
 };
 
 struct BattData

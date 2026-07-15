@@ -21,9 +21,13 @@
 class CAMDriver {
     public:
         bool begin(); 
-        bool capture(); 
+        camera_fb_t* capture(); 
+        void release(camera_fb_t*);
 
     private:
         void enable_cam(); 
         void enable_clk(); 
+
+        extern Adafruit_MCP23X17 mcp; 
+        bool camera_initialized = false;
 };

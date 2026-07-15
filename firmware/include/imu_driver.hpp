@@ -19,5 +19,5 @@ class IMUDriver {
         IMUData read(); 
 
     private:
-        Rotation calculatePitch(float gx, float gy, float gz); 
+        Rotation calculateAngles(float gx, float gy, float gz); 
 };

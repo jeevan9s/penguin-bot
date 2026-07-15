@@ -10,11 +10,11 @@
 #include "imu_driver.hpp"
 #include "config.hpp"
 
-bool begin() {
+bool IMUDriver::begin() {
     if (!imu.init(0x6A, Wire)) return false; 
 }
 
-IMUData read() {
+IMUData IMUDriver::read() {
     IMUData _imu; 
 
     if (imu.dataReady()) {
@@ -29,7 +29,7 @@ IMUData read() {
             _imu.accY = imu.accY(); 
             _imu.temp = imu.readTemp(); 
 
-            Rotation angles = calculatePitch(imu.gyX, imu.gyY, imu.gyZ)
+            Rotation angles = calculateAngles(imu.gyX, imu.gyY, imu.gyZ)
 
             _imu.angles = angles; 
     }
@@ -38,7 +38,7 @@ IMUData read() {
     return _imu; 
 }
 
-Rotation calculatePitch(float gx, float gy, float gz) {
+Rotation IMUDriver::calculateAngles(float gx, float gy, float gz) {
     ///
     
 }

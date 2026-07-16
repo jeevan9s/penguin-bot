@@ -56,6 +56,9 @@ bool CAMDriver::begin()
         return false;
     }
 
+    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL);
+    Wire.setClock(100000);
+
     camera_initialized = true;
 
     sensor_t *s = esp_camera_sensor_get();
@@ -69,17 +72,20 @@ bool CAMDriver::begin()
     return true;
 }
 
-camera_fb_t* CAMDriver::capture() {
-    camera_fb_t* fb = esp_camera_fb_get(); // pointer to a frame buffer
+camera_fb_t *CAMDriver::capture()
+{
+    camera_fb_t *fb = esp_camera_fb_get(); // pointer to a frame buffer
 
-     if (!fb) return nullptr; // capture failure
+    if (!fb)
+        return nullptr; // capture failure
 
-     return fb;   
+    return fb;
 }
 
-
-void CAMDriver::release(camera_fb_t* fb) {
-    if (fb) esp_camera_fb_return(fb); 
+void CAMDriver::release(camera_fb_t *fb)
+{
+    if (fb)
+        esp_camera_fb_return(fb);
 }
 
 void CAMDriver::enable_clk()

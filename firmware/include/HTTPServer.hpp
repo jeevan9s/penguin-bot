@@ -24,6 +24,7 @@ public:
 private:
     AsyncWebServer server;
     WebSocketServer websocket;
-    CameraStream cameraStream; 
     CAMDriver& camera_;
+    CameraStream cameraStream; 
+
 };

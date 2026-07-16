@@ -23,13 +23,15 @@ void run_dashboard()
     {
         delay(500);
         Serial.print(".");
+        // Serial.print("["); 
+        // Serial.print(WiFi.status()); 
+        // Serial.print("]");
     }
 
     Serial.println();
 
     Serial.print("IP: ");
     Serial.println(WiFi.localIP());
-
 
     http.begin();
 

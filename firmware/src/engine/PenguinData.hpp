@@ -62,9 +62,9 @@ struct TOFData
     bool wheelSlipping;
 };
 
-struct HealthData
-{
-    health imuStatus;
-    health camStatus;
-    health tofStatus;
-};
+// struct HealthData
+// {
+//     health imuStatus;
+//     health camStatus;
+//     health tofStatus;
+// };

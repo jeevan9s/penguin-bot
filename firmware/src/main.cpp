@@ -11,6 +11,7 @@
 #include "test_bench.hpp"
 #include "Dashboard.hpp"
 #include "PenguinState.hpp"
+#include "cam_driver.hpp"
 
 bool menuShown = false;
 
@@ -79,6 +80,14 @@ void setup()
     else
     {
         Serial.println("MCP init failure");
+    }
+
+    if (cameraDriver.begin()) {
+        Serial.println("CAM --initialized");
+    }
+    else
+    {
+        Serial.println("CAM init failure");
     }
 
     mcp.pinMode(Pins::MCP::CAM_LED, OUTPUT);

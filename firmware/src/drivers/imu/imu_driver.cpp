@@ -36,14 +36,14 @@ IMUData IMUDriver::read()
         _imu.gyZ = imu.gyZ();
         _imu.temp = imu.readTemp();
 
-        c_angles = calculateAngles(imu.gyX(), imu.gyY(), imu.gyZ());
+        c_angles = calculateAngles(imu.gyX(), imu.gyY(), imu.gyZ(),imu.accX(), imu.accY(), imu.accZ());
 
         _imu.angles = c_angles;
     }
     return _imu;
 }
 
-Rotation IMUDriver::calculateAngles(float gx, float gy, float gz)
+Rotation IMUDriver::calculateAngles(float gx, float gy, float gz, float ax, float ay, float az)
 {
     uint32_t current_time = millis();
     float dt = (current_time - last_timestamp) / 1000.0f;
@@ -52,8 +52,19 @@ Rotation IMUDriver::calculateAngles(float gx, float gy, float gz)
     if (dt > 0.1f)
         dt = 0.01f; // handle lag spikes
 
-    c_angles.pitch += gx * dt;
-    c_angles.roll += gy * dt;
+    // accelerometer-derived tilt 
+    float accel_pitch = atan2(ay, sqrt(ax * ax + az * az)) * 180.0f / PI;
+    float accel_roll  = atan2(-ax, az) * 180.0f / PI;
+
+    // gyro integration 
+    float gyro_pitch = c_angles.pitch + gx * dt;
+    float gyro_roll  = c_angles.roll + gy * dt;
+
+    // filter: mostly trust gyro short-term, slowly correct with accel
+    const float alpha = 0.98f;
+    c_angles.pitch = alpha * gyro_pitch + (1.0f - alpha) * accel_pitch;
+    c_angles.roll  = alpha * gyro_roll  + (1.0f - alpha) * accel_roll;
+
     c_angles.yaw += gz * dt;
 
     return c_angles;

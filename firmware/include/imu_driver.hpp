@@ -13,6 +13,8 @@
 #include <LSM6DSM/src/LSM6DSM.h>
 #include "PenguinData.hpp"
 
+extern LSM6DSM imu;
+
 class IMUDriver {
     public:
         bool begin(); 
@@ -20,6 +22,6 @@ class IMUDriver {
 
     private:
         Rotation calculateAngles(float gx, float gy, float gz); 
-        Rotation c_angles = {0.0f, 0.0f, 0.0f}
+        Rotation c_angles = {0.0f, 0.0f, 0.0f};
         uint32_t last_timestamp = 0; // ms
 };

@@ -36,9 +36,9 @@ IMUData IMUDriver::read()
         _imu.gyZ = imu.gyZ();
         _imu.temp = imu.readTemp();
 
-        angles = calculateAngles(imu.gyX(), imu.gyY(), imu.gyZ());
+        c_angles = calculateAngles(imu.gyX(), imu.gyY(), imu.gyZ());
 
-        _imu.angles = angles;
+        _imu.angles = c_angles;
     }
     return _imu;
 }

@@ -1,0 +1,40 @@
+/**
+ * @file        WebSocketServer.cpp
+ * @brief       Handles client connect, disconnect, telemetry
+ * @author      Jeevan Sanchez
+ * @date        2026-07-15
+ *
+ * PENGUIN
+ */
+
+#include <Arduino.h>
+#include "WebSocketServer.hpp"
+
+WebSocketServer::WebSocketServer(AsyncWebServer& server) {
+    server.addHandler(&ws);
+}
+
+void WebSocketServer::begin() {
+    ws.onEvent([this](AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len) {
+        if (type == WS_EVT_CONNECT)    this->clientConnected = true;
+        if (type == WS_EVT_DISCONNECT) this->clientConnected = false;
+    });
+}
+
+void WebSocketServer::update(const PenguinState &state) {
+    ws.cleanupClients();
+    
+    if (millis() - lastTelemetryTime < 100) return; 
+    lastTelemetryTime = millis(); 
+
+    JsonDocument doc; 
+
+    Telemetry::serialize(state, doc); 
+
+    String payload; 
+    serializeJson(doc, payload);
+
+    // Serial.println("websocket PAYLOAD: " + payload);
+
+    ws.textAll(payload); 
+}

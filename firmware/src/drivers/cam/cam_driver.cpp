@@ -12,7 +12,7 @@
 bool CAMDriver::begin()
 {
     if (camera_initialized)
-        return;
+        return true;
     Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL);
     Wire.setClock(100000);
 
@@ -69,7 +69,7 @@ bool CAMDriver::begin()
     return true;
 }
 
-camera_fb_t *capture() {
+camera_fb_t* CAMDriver::capture() {
     camera_fb_t* fb = esp_camera_fb_get(); // pointer to a frame buffer
 
      if (!fb) return nullptr; // capture failure
@@ -78,7 +78,7 @@ camera_fb_t *capture() {
 }
 
 
-void release(camera_fb_t* fb) {
+void CAMDriver::release(camera_fb_t* fb) {
     if (fb) esp_camera_fb_return(fb); 
 }
 

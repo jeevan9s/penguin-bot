@@ -9,17 +9,35 @@
 
 #include "config.hpp"
 #include "test_bench.hpp"
+#include "Dashboard.hpp"
+#include "PenguinState.hpp"
 
 bool menuShown = false;
 
+CAMDriver cameraDriver;
+
+HTTPServer http{cameraDriver};
+
+bool dashboardRunning = false;
 LSM6DSM imu;
+
+PenguinState currentState;
+IMUDriver imuDriver;
 
 void displayMenu() 
 {
     Serial.println("\n--- PENGUIN ---");
+    Serial.println("[SPACE] launch dashboard");
     Serial.println(" [t] : launch test bench");
     Serial.println(" [s] : scan I2C bus");
     Serial.println("------------------------");
+}
+
+
+void runTaskSpace() 
+{
+    Serial.println("\n>> ---launching dashboard");
+    run_dashboard();
 }
 
 void runTaskT() 
@@ -30,12 +48,7 @@ void runTaskT()
 
 void runTaskS() 
 {
-    // startCameraClock();
-    // delay(50);
-
-
     recoverI2C();
-    // enable_cam();
     delay(50);
 
     Serial.println("\n>> ---scanning I2C bus");
@@ -84,6 +97,12 @@ void setup()
 
 void loop()
 {
+    currentState.imu = imuDriver.read();
+
+    if (dashboardRunning) {
+        http.update(currentState);
+    }
+
     if (!menuShown && millis() > 5000) 
     {
         displayMenu();
@@ -115,6 +134,10 @@ void loop()
                 displayMenu();
                 break;
 
+            case ' ':
+                runTaskSpace(); 
+                break;
+        
             case '\n':
             case '\r':
                 break;

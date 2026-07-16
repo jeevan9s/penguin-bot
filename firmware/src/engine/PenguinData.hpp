@@ -9,6 +9,22 @@
 
 #pragma once
 
+struct Rotation 
+{
+    float pitch; 
+    float roll; 
+    float yaw;
+};
+
+enum struct health
+{
+    OFFLINE,
+    INITIALIZED,
+    ACTIVE,
+    STANDBY
+};
+
+
 struct IMUData
 {
     float accX;
@@ -23,13 +39,6 @@ struct IMUData
 
     Rotation angles; 
 
-};
-
-struct Rotation 
-{
-    float pitch; 
-    float roll; 
-    float yaw;
 };
 
 struct BattData
@@ -58,12 +67,4 @@ struct HealthData
     health imuStatus;
     health camStatus;
     health tofStatus;
-};
-
-enum health
-{
-    OFFLINE,
-    INITIALIZED,
-    ACTIVE,
-    STANDBY
 };

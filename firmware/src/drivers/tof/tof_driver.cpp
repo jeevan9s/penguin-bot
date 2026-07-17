@@ -2,7 +2,7 @@
  * @file        tof_driver.cpp
  * @brief       Implementation of ToF Sensor driver for reading proximity and obstacle detection. 
  * @author      Jeevan Sanchez
- * @date        2026-07-14
+ * @date        2026-07-17
  * 
  * Uses the Adafruit VL530LX Library
  *

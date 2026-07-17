@@ -2,7 +2,7 @@
  * @file        tof_driver.hpp
  * @brief       Class definition of ToF Sensor driver for reading proximity and obstacle detection.
  * @author      Jeevan Sanchez
- * @date        2026-07-14
+ * @date        2026-07-17
  *
  * Uses the Pololu VL530LX Library
  *

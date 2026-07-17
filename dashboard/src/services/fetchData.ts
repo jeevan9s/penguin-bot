@@ -1,7 +1,6 @@
 // fetch TELEMETRY data 
 
-import {type PenguinData, type IMUData, DEFAULT_PENGUIN_DATA } from "../types";
-
+import {type PenguinData, type IMUData, DEFAULT_PENGUIN_DATA, type BattData, type TOFData } from "../types";
 
 function parseIMU(imu: any): IMUData { 
   return { 
@@ -20,9 +19,28 @@ function parseIMU(imu: any): IMUData {
   } 
 } 
 
+function parseBattData(batt:any): BattData {
+  return {
+    voltage: batt.voltage, 
+    soc: batt.soc, 
+    connected: batt.connected,
+  }
+}
+
+function parseTOFData(sens:any): TOFData {
+  return {
+    proximity: sens.proximity, 
+    obstacleDetected: sens.obstacleDetected,
+  }
+}
+
 export default function parsePenguinData(data: any): PenguinData {
     return {
         ...DEFAULT_PENGUIN_DATA,
         imu: parseIMU(data.imu),
+        battery: parseBattData(data.battery),
+        sensL: parseTOFData(data.sensL),
+        sensM: parseTOFData(data.sensM),
+        sensR: parseTOFData(data.sensR),
     };
 }

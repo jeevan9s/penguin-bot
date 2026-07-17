@@ -11,7 +11,6 @@
 #include "test_bench.hpp"
 #include "Dashboard.hpp"
 #include "PenguinState.hpp"
-#include "cam_driver.hpp"
 
 bool menuShown = false;
 
@@ -24,6 +23,10 @@ LSM6DSM imu;
 
 PenguinState currentState;
 IMUDriver imuDriver;
+BattDataDriver battDriver; 
+TOFDriver sensor1(Pins::MCP::TOF_XSHUT_1, 0x31);
+TOFDriver sensor2(Pins::MCP::TOF_XSHUT_2, 0x32);
+TOFDriver sensor3(Pins::MCP::TOF_XSHUT_3, 0x33);
 
 void displayMenu() 
 {
@@ -106,7 +109,9 @@ void setup()
 
 void loop()
 {
+    // replace with scheduler
     currentState.imu = imuDriver.read();
+    currentState.battery = battDriver.read();
 
     if (dashboardRunning) {
         http.update(currentState);

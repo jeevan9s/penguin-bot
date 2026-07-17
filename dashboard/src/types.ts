@@ -33,7 +33,6 @@ export interface MotorData  {
 export interface TOFData  {
     proximity: number; 
     obstacleDetected: boolean; 
-    wheelSlipping: boolean;
 }
 
 

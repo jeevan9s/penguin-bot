@@ -13,11 +13,21 @@
 #include "PenguinData.hpp"
 #include "config.hpp"
 
-extern Adafruit_MCP23X17 mcp;
+class BattDataDriver
+{
+public:
+    BattData read(); 
 
-class BattDataDriver {
-    public:
-        float battVoltage(); 
-        float battSOC(); 
-        bool isConnected(); 
+private:
+    float battVoltage();
+    float battSOC();
+    bool isConnected();
+
+    const float ESP32_VREF = 3.3;
+    const float VSENSE_R1 = 100.0;
+    const float VSENSE_R2 = 47.0;
+    const float BATT_CAPACITY = 100.0;
+
+    const float V_MIN = 6.4f;
+    const float V_MAX = 8.4f;
 };

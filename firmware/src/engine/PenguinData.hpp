@@ -59,7 +59,6 @@ struct TOFData
 {
     float proximity;
     bool obstacleDetected;
-    bool wheelSlipping;
 };
 
 // struct HealthData

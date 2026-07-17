@@ -15,17 +15,17 @@ struct PenguinState {
     
     BattData battery; 
 
-    TOFData sensor_L;
+    TOFData sensL;
     
-    TOFData sensor_M; 
+    TOFData sensM; 
 
-    TOFData sensor_R;
+    TOFData sensR;
 
-    MotorData motor_L; 
+    MotorData motorL; 
 
-    MotorData motor_R; 
+    MotorData motorR; 
 
-    HealthData system; 
+    // HealthData system; 
 };
 
 extern PenguinState penguinState; 

@@ -17,5 +17,8 @@
 
 #include "PenguinState.hpp"
 #include "imu_driver.hpp"
+#include "cam_driver.hpp"
+#include "batt_data_driver.hpp"
+#include "tof_driver.hpp"
 
 void run_dashboard();

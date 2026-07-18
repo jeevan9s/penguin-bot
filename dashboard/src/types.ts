@@ -26,7 +26,7 @@ export interface BattData  {
 
 export interface MotorData  {
     position: number; 
-    rpm: number; 
+    RPM: number; 
     running: boolean;
 }
 
@@ -41,8 +41,8 @@ export interface PenguinData {
     
     battery: BattData; 
 
-    motorA: MotorData; 
-    motorB: MotorData; 
+    motorR: MotorData; 
+    motorL: MotorData; 
 
     sensL: TOFData; 
     sensM: TOFData; 

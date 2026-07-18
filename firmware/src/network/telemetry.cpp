@@ -18,6 +18,9 @@ void Telemetry::serialize(const PenguinState &state, JsonDocument &doc) {
     JsonObject sensL = doc["sensL"].to<JsonObject>(); 
     JsonObject sensM = doc["sensM"].to<JsonObject>(); 
     JsonObject sensR = doc["sensR"].to<JsonObject>(); 
+    JsonObject motorL = doc["motorL"].to<JsonObject>(); 
+    JsonObject motorR = doc["motorR"].to<JsonObject>(); 
+    
 
     imu["pitch"] = state.imu.angles.pitch;
     imu["roll"] = state.imu.angles.roll;
@@ -41,4 +44,12 @@ void Telemetry::serialize(const PenguinState &state, JsonDocument &doc) {
 
     sensR["proximity"] = state.sensR.proximity; 
     sensR["obstacleDetected"] = state.sensR.obstacleDetected;
+
+    motorL["position"] = state.motorL.position; 
+    motorL["RPM"] = state.motorL.RPM;
+    motorL["running"] = state.motorL.running; 
+
+    motorR["position"] = state.motorR.position; 
+    motorR["RPM"] = state.motorR.RPM;
+    motorR["running"] = state.motorR.running; 
 }

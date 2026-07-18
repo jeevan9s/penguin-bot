@@ -11,7 +11,7 @@
 
 #include <Arduino.h>
 #include "config.hpp"
-#include "PenguinData.hpp"
+ #include "state/PenguinData.hpp"
 
 #include "esp_camera.h"
 #include "sensor.h"

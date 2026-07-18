@@ -8,7 +8,7 @@
  */
 
 #pragma once
-#include "PenguinData.hpp"
+ #include "state/PenguinData.hpp"
 
 struct PenguinState {
     IMUData imu; 

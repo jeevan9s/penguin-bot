@@ -15,6 +15,7 @@ float BattDataDriver::battVoltage()
     int raw = analogRead(Pins::MCU::VBATT_SENSE);
 
     float voltage = (raw / 4095.0) * ESP32_VREF * ((VSENSE_R1 + VSENSE_R2) / VSENSE_R2); // 12-bit (0-4095)
+    return voltage;
 }
 
 float BattDataDriver::battSOC()

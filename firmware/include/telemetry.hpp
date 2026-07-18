@@ -10,7 +10,7 @@
 #pragma once
 #include <Arduino.h>
 #include <ArduinoJson.h>
-#include "PenguinState.hpp"
+ #include "state/PenguinState.hpp"
 
 class Telemetry
 {

@@ -11,7 +11,7 @@
 
 #include <Arduino.h>
 #include <LSM6DSM/src/LSM6DSM.h>
-#include "PenguinData.hpp"
+ #include "state/PenguinData.hpp"
 
 extern LSM6DSM imu;
 

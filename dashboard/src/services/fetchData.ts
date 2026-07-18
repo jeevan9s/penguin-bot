@@ -1,6 +1,6 @@
 // fetch TELEMETRY data 
 
-import {type PenguinData, type IMUData, DEFAULT_PENGUIN_DATA, type BattData, type TOFData } from "../types";
+import {type PenguinData, type IMUData, DEFAULT_PENGUIN_DATA, type BattData, type TOFData, type MotorData } from "../types";
 
 function parseIMU(imu: any): IMUData { 
   return { 
@@ -34,6 +34,14 @@ function parseTOFData(sens:any): TOFData {
   }
 }
 
+function parseMotorData(motor:any): MotorData {
+  return {
+    position: motor.position, 
+    RPM: motor.RPM, 
+    running: motor.running,
+  }
+}
+
 export default function parsePenguinData(data: any): PenguinData {
     return {
         ...DEFAULT_PENGUIN_DATA,
@@ -42,5 +50,7 @@ export default function parsePenguinData(data: any): PenguinData {
         sensL: parseTOFData(data.sensL),
         sensM: parseTOFData(data.sensM),
         sensR: parseTOFData(data.sensR),
+        motorL: parseMotorData(data.motorL), 
+        motorR: parseMotorData(data.motorR),
     };
 }

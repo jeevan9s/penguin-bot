@@ -20,7 +20,7 @@ export interface IMUData  {
 
 export interface BattData  {
     voltage: number; 
-    soc: number; 
+    SOC: number; 
     connected: boolean;
 }
 
@@ -72,37 +72,34 @@ export const DEFAULT_PENGUIN_DATA: PenguinData = {
 
     battery: {
         voltage: 0,
-        soc: 0,
+        SOC: 0,
         connected: false,
     },
 
-    motorA: {
+    motorL: {
         position: 0,
-        rpm: 0,
+        RPM: 0,
         running: false,
     },
 
-    motorB: {
+    motorR: {
         position: 0,
-        rpm: 0,
+        RPM: 0,
         running: false,
     },
 
     sensL: {
         proximity: 0,
         obstacleDetected: false,
-        wheelSlipping: false,
     },
 
     sensM: {
         proximity: 0,
         obstacleDetected: false,
-        wheelSlipping: false,
     },
 
     sensR: {
         proximity: 0,
         obstacleDetected: false,
-        wheelSlipping: false,
     },
 };

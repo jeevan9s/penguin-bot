@@ -15,6 +15,11 @@ const char* pswd = "Rexdale2024";
 
 Adafruit_MCP23X17 mcp;
 
+int blinksRemaining = 0;
+unsigned long lastBlink = 0;
+uint8_t activeBlinkPin = 0;
+int blinkCount = 0;
+
 bool init_mcp(void) {
     Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL, 100000);
     
@@ -85,4 +90,18 @@ void recoverI2C() {
     
     Wire.end();
     Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL);
+}
+
+// non-blocking led stuff
+void blinkP(uint8_t pin, int count) {
+    if (blinksRemaining == 0) blinksRemaining = count * 2;
+
+    if (millis() - lastBlink > 200) {
+        lastBlink = millis();
+        bool current = mcp.digitalRead(pin);
+        mcp.digitalWrite(pin, !current);
+        blinksRemaining--;
+
+        if (blinksRemaining == 0) mcp.digitalWrite(pin, LOW);
+    }
 }

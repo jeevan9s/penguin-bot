@@ -20,10 +20,11 @@ function parseIMU(imu: any): IMUData {
 } 
 
 function parseBattData(batt:any): BattData {
+  batt = batt ?? {};
   return {
-    voltage: batt.voltage, 
-    soc: batt.soc, 
-    connected: batt.connected,
+    voltage: batt.voltage ?? 0,
+    SOC: batt.SOC ?? batt.soc ?? 0,
+    connected: batt.connected ?? false,
   }
 }
 
@@ -46,7 +47,7 @@ export default function parsePenguinData(data: any): PenguinData {
     return {
         ...DEFAULT_PENGUIN_DATA,
         imu: parseIMU(data.imu),
-        battery: parseBattData(data.battery),
+        battery: parseBattData(data.battery ?? data.batt),
         sensL: parseTOFData(data.sensL),
         sensM: parseTOFData(data.sensM),
         sensR: parseTOFData(data.sensR),

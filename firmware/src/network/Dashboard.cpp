@@ -15,23 +15,23 @@ extern bool dashboardRunning;
 
 void run_dashboard()
 {
+    WiFi.mode(WIFI_STA);
+    Serial.println("WIFI --connecting...");
+    WiFi.onEvent([](WiFiEvent_t event) {
+        if (event == SYSTEM_EVENT_STA_GOT_IP) {
+            Serial.println("WIFI --connected");
+            activeBlinkPin = Pins::MCP::WIFI_LED;
+            blinkCount = 3;
+            blinksRemaining = blinkCount * 2;
+        } else if (event == SYSTEM_EVENT_STA_DISCONNECTED) {
+            Serial.println("WIFI --disconnected");
+            activeBlinkPin = Pins::MCP::DBG_LED;
+            blinkCount = 3;
+            blinksRemaining = blinkCount * 2;
+        }
+    });
+
     WiFi.begin(ssid, pswd);
-
-    Serial.print("WIFI --connecting");
-
-    while (WiFi.status() != WL_CONNECTED)
-    {
-        delay(500);
-        Serial.print(".");
-        // Serial.print("["); 
-        // Serial.print(WiFi.status()); 
-        // Serial.print("]");
-    }
-
-    Serial.println();
-
-    Serial.print("IP: ");
-    Serial.println(WiFi.localIP());
 
     http.begin();
 

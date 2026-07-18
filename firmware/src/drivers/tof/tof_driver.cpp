@@ -37,6 +37,11 @@ bool TOFDriver::begin(uint8_t _addr) {
     return true;
 }
 
+bool TOFDriver::ping() {
+    Wire.beginTransmission(_addr);
+    return (Wire.endTransmission() == 0); // true on ACK
+}
+
 TOFData TOFDriver::read() {
 
     if (!_started){

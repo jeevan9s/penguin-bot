@@ -14,7 +14,7 @@ void Telemetry::serialize(const PenguinState &state, JsonDocument &doc) {
     doc["timestamp"] = millis(); 
 
     JsonObject imu = doc["imu"].to<JsonObject>();
-    JsonObject batt = doc["batt"].to<JsonObject>(); 
+    JsonObject battery = doc["battery"].to<JsonObject>(); 
     JsonObject sensL = doc["sensL"].to<JsonObject>(); 
     JsonObject sensM = doc["sensM"].to<JsonObject>(); 
     JsonObject sensR = doc["sensR"].to<JsonObject>(); 
@@ -32,9 +32,9 @@ void Telemetry::serialize(const PenguinState &state, JsonDocument &doc) {
 
     imu["temp"] = state.imu.temp;
 
-    batt["voltage"] = state.battery.voltage; 
-    batt["SOC"] = state.battery.SOC; 
-    batt["connected"] = state.battery.connected; 
+    battery["voltage"] = state.battery.voltage; 
+    battery["SOC"] = state.battery.SOC; 
+    battery["connected"] = state.battery.connected; 
 
     sensL["proximity"] = state.sensL.proximity; 
     sensL["obstacleDetected"] = state.sensL.obstacleDetected;

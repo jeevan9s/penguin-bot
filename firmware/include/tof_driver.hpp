@@ -23,6 +23,7 @@ public:
     bool begin(uint8_t addr);
     void on();
     void off();
+    bool ping();
     TOFData read();
 
 private:

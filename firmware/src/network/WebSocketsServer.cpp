@@ -10,31 +10,47 @@
 #include <Arduino.h>
 #include "WebSocketServer.hpp"
 
-WebSocketServer::WebSocketServer(AsyncWebServer& server) {
+WebSocketServer::WebSocketServer(AsyncWebServer &server)
+{
     server.addHandler(&ws);
 }
 
-void WebSocketServer::begin() {
-    ws.onEvent([this](AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len) {
-        if (type == WS_EVT_CONNECT)    this->clientConnected = true;
-        if (type == WS_EVT_DISCONNECT) this->clientConnected = false;
+void WebSocketServer::begin()
+{
+    ws.onEvent([this](AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len)
+               {
+        if (type == WS_EVT_CONNECT) {
+            this->clientConnected = true;
+            activeBlinkPin = Pins::MCP::WIFI_LED;
+            blinkCount = 3;
+            blinksRemaining = blinkCount * 2;
+        }
+
+        if (type == WS_EVT_DISCONNECT) {
+            this->clientConnected = false;
+            activeBlinkPin = Pins::MCP::DBG_LED;
+            blinkCount = 3;
+            blinksRemaining = blinkCount * 2;
+        }
     });
 }
 
-void WebSocketServer::update(const PenguinState &state) {
+void WebSocketServer::update(const PenguinState &state)
+{
     ws.cleanupClients();
-    
-    if (millis() - lastTelemetryTime < 100) return; 
-    lastTelemetryTime = millis(); 
 
-    JsonDocument doc; 
+    if (millis() - lastTelemetryTime < 100)
+        return;
+    lastTelemetryTime = millis();
 
-    Telemetry::serialize(state, doc); 
+    JsonDocument doc;
 
-    String payload; 
+    Telemetry::serialize(state, doc);
+
+    String payload;
     serializeJson(doc, payload);
 
     // Serial.println("websocket PAYLOAD: " + payload);
 
-    ws.textAll(payload); 
+    ws.textAll(payload);
 }

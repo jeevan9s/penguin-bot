@@ -27,7 +27,15 @@ void led_startup(void);
 void blinkLED(uint8_t ledPin, int count, int delayMs=200);
 void scanI2C();
 void recoverI2C();
+void blinkP(uint8_t pin, int count);
+
 
 // WIFI creds
 extern const char* ssid;
 extern const char* pswd;
+
+// LED state
+extern int blinksRemaining;
+extern unsigned long lastBlink;
+extern uint8_t activeBlinkPin;
+extern int blinkCount; 

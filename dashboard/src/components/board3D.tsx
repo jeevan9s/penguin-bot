@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import * as THREE from "three";
+import { useEffect, useRef, useState } from "react";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"import * as THREE from "three";
+
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
 
 interface Board3DProps {

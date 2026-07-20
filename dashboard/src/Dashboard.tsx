@@ -32,7 +32,7 @@ export default function Dashboard() {
   }, [espIp]);
 
   return (
-    <div className="w-screen h-screen overflow-hidden bg-[#0a0a0a] flex flex-col p-12 font-sans">
+    <div className="w-screen h-screen overflow-hidden bg-[#0a0a0a] flex flex-col p-12">
       <div className="flex flex-row justify-between items-center mb-4">
         <p className="text-[#f2f2f2] font-medium text-lg tracking-wider">
           penguin
@@ -48,7 +48,7 @@ export default function Dashboard() {
               }`}
             />
             battery:{" "}
-            {penguinData.battery.connected ? "connected" : "disconnected"}
+            {penguinData.battery.connected ? `connected | ${penguinData.battery.SOC}` : "disconnected"}
           </p>
 
           <p className="text-[#d8d8d8] text-sm font-mono flex items-center gap-1">

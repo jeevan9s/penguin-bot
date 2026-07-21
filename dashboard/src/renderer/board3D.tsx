@@ -139,6 +139,11 @@ export default function Board3D({
           onSelectProximity={onSelectProximity}
         />
       </div>
+
+               <div className="absolute top-3 left-3 flex gap-4 font-mono text-xs text-[#888]">
+        <p>SPATIAL</p>
+      </div>
+
       <div className="absolute bottom-3 left-3 flex gap-4 font-mono text-xs text-[#888]">
         <div>
           pitch: <span className="text-[#fff]">{pitch.toFixed(1)}°</span>

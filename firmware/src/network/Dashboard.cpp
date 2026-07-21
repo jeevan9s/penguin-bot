@@ -1,4 +1,3 @@
-
 /**
  * @file        Dashboard.cpp
  * @brief       Connects to Wi-Fi and starts the local async web server and WebSocket endpoints
@@ -17,13 +16,14 @@ void run_dashboard()
 {
     WiFi.mode(WIFI_STA);
     Serial.println("WIFI --connecting...");
-    WiFi.onEvent([](WiFiEvent_t event) {
-        if (event == SYSTEM_EVENT_STA_GOT_IP) {
+    
+    WiFi.onEvent([](WiFiEvent_t event, WiFiEventInfo_t info) {
+        if (event == ARDUINO_EVENT_WIFI_STA_GOT_IP) {
             Serial.println("WIFI --connected");
             activeBlinkPin = Pins::MCP::WIFI_LED;
             blinkCount = 3;
             blinksRemaining = blinkCount * 2;
-        } else if (event == SYSTEM_EVENT_STA_DISCONNECTED) {
+        } else if (event == ARDUINO_EVENT_WIFI_STA_DISCONNECTED) {
             Serial.println("WIFI --disconnected");
             activeBlinkPin = Pins::MCP::DBG_LED;
             blinkCount = 3;

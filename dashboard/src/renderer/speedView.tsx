@@ -145,6 +145,10 @@ export default function SpeedView({
         </div>
       </div>
 
+         <div className="absolute top-3 left-3 flex gap-4 font-mono text-xs text-[#888]">
+        <p>DRIVE</p>
+      </div>
+
     <div className="absolute bottom-3 left-3 flex gap-4 font-mono text-[#888] z-10">
                   <p className="text-[#d8d8d8] text-xs font-mono flex items-center gap-1">
             <span

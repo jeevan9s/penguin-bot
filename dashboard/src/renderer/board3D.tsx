@@ -1,17 +1,29 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"import * as THREE from "three";
-
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
+import * as THREE from "three";
+import ToggleMenu from "./toggleMenu";
 
 interface Board3DProps {
   pitch: number;
   roll: number;
   yaw: number;
+  activeView: "board" | "speed" | "proximity";
+  onSelectBoard?: () => void;
+  onSelectSpeed?: () => void;
+  onSelectProximity?: () => void;
 }
 
-export default function Board3D({ pitch, roll, yaw }: Board3DProps) {
+export default function Board3D({ 
+  pitch, 
+  roll, 
+  yaw, 
+  activeView,
+  onSelectBoard,
+  onSelectSpeed,
+  onSelectProximity,
+}: Board3DProps) {
   const mountRef = useRef<HTMLDivElement>(null);
   const boardRef = useRef<THREE.Group | null>(null);
   const angles = useRef({ pitch, roll, yaw });
@@ -41,17 +53,14 @@ export default function Board3D({ pitch, roll, yaw }: Board3DProps) {
     renderer.setPixelRatio(window.devicePixelRatio);
     mount.appendChild(renderer.domElement);
 
-    // Better lighting
     scene.add(new THREE.AmbientLight(0xffffff, 0.8));
     const dirLight = new THREE.DirectionalLight(0xffffff, 1.0);
     dirLight.position.set(5, 10, 7);
     scene.add(dirLight);
 
-    // This group handles the alignment fix
     const alignmentHelper = new THREE.Group();
     scene.add(alignmentHelper);
 
-    // This group handles the IMU rotations
     const boardIMU = new THREE.Group();
     alignmentHelper.add(boardIMU);
     boardRef.current = boardIMU;
@@ -73,10 +82,8 @@ export default function Board3D({ pitch, roll, yaw }: Board3DProps) {
         const center = new THREE.Vector3();
         box.getCenter(center);
 
-        // Center the geometry at helpers origin
         geometry.translate(-center.x, -center.y, -center.z);
 
-        // Scale to fit
         const size = new THREE.Vector3();
         box.getSize(size);
         const maxDim = Math.max(size.x, size.y, size.z);
@@ -85,22 +92,18 @@ export default function Board3D({ pitch, roll, yaw }: Board3DProps) {
         mesh.rotation.x = -Math.PI / 2;
 
         boardIMU.add(mesh);
-        console.log("STL loaded and aligned flat.");
       },
       undefined,
       (error) => console.error("Error loading STL model:", error),
     );
 
-    // const grid = new THREE.GridHelper(3, 6, 0x1a1a1a, 0x1c1c1c);
-    // scene.add(grid);
-
     let frameId: number;
     const animate = () => {
       const { pitch: p, roll: r, yaw: y } = angles.current;
       if (boardRef.current) {
-        boardRef.current.rotation.x = THREE.MathUtils.degToRad(p); 
+        boardRef.current.rotation.x = THREE.MathUtils.degToRad(p);
         boardRef.current.rotation.y = THREE.MathUtils.degToRad(y);
-        boardRef.current.rotation.z = THREE.MathUtils.degToRad(r); 
+        boardRef.current.rotation.z = THREE.MathUtils.degToRad(r);
       }
       renderer.render(scene, camera);
       frameId = requestAnimationFrame(animate);
@@ -128,10 +131,17 @@ export default function Board3D({ pitch, roll, yaw }: Board3DProps) {
   return (
     <div className="relative bg-[#141414] border border-[#2a2a2a] rounded flex items-center justify-center overflow-hidden">
       <div ref={mountRef} className="w-full h-full" />
+      <div className="absolute top-3 right-3 flex gap-4 font-mono text-xs text-[#888]">
+        <ToggleMenu 
+          activeView={activeView} 
+          onSelectBoard={onSelectBoard}
+          onSelectSpeed={onSelectSpeed}
+          onSelectProximity={onSelectProximity}
+        />
+      </div>
       <div className="absolute bottom-3 left-3 flex gap-4 font-mono text-xs text-[#888]">
         <div>
-          pitch:{" "}
-          <span className="text-[#fff]">{pitch.toFixed(1)}°</span>
+          pitch: <span className="text-[#fff]">{pitch.toFixed(1)}°</span>
         </div>
         <div>
           roll: <span className="text-[#fff]">{roll.toFixed(1)}°</span>

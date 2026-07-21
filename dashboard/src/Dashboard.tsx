@@ -23,7 +23,6 @@ export default function Dashboard() {
   const [penguinData, setPenguinData] =
     useState<PenguinData>(DEFAULT_PENGUIN_DATA);
 
-  // Track the active right-side panel view ("board" | "speed" | "proximity")
   const [activeView, setActiveView] = useState<"board" | "speed" | "proximity">("board");
 
   useEffect(() => {
@@ -70,7 +69,6 @@ export default function Dashboard() {
       <div className="grid grid-cols-[1.6fr_1fr] gap-4 flex-1 min-h-0">
         <CamFeed espIp={espIp} />
 
-        {/* Dynamically render the selected view on the right */}
         {activeView === "board" && (
           <Board3D
             pitch={penguinData.imu.angles.pitch}
@@ -85,6 +83,14 @@ export default function Dashboard() {
 
         {activeView === "speed" && (
           <SpeedView
+            RPM1={penguinData.motorL.RPM}
+            RPM2={penguinData.motorR.RPM}
+            position1={penguinData.motorL.position}
+            position2={penguinData.motorR.position}
+            running1={penguinData.motorL.running}
+            running2={penguinData.motorR.running}
+            energized={penguinData.battery.connected}
+
             activeView={activeView}
             onSelectBoard={() => setActiveView("board")}
             onSelectSpeed={() => setActiveView("speed")}
@@ -94,10 +100,10 @@ export default function Dashboard() {
 
         {activeView === "proximity"  && (
           <ProximityView
-            distL={0} // Replace with actual data props if needed
-            distM={0}
-            distR={0}
-            obstacleDetected={false}
+            distL={penguinData.sensL.proximity}
+            distM={penguinData.sensM.proximity}
+            distR={penguinData.sensR.proximity}
+            obstacleDetected={penguinData.obsDetected}
             activeView={activeView}
             onSelectBoard={() => setActiveView("board")}
             onSelectSpeed={() => setActiveView("speed")}

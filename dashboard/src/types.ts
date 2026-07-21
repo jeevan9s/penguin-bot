@@ -47,7 +47,10 @@ export interface PenguinData {
     sensL: TOFData; 
     sensM: TOFData; 
     sensR: TOFData;
+
+    obsDetected: boolean;
 }
+
 
 export const DEFAULT_ESP_IP = "10.0.0.169";
 
@@ -102,4 +105,5 @@ export const DEFAULT_PENGUIN_DATA: PenguinData = {
         proximity: 0,
         obstacleDetected: false,
     },
+    obsDetected: false,
 };

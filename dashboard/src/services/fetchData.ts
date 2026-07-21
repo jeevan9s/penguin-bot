@@ -29,9 +29,10 @@ function parseBattData(batt:any): BattData {
 }
 
 function parseTOFData(sens:any): TOFData {
+  sens = sens ?? {};
   return {
-    proximity: sens.proximity, 
-    obstacleDetected: sens.obstacleDetected,
+    proximity: sens.proximity ?? 0,
+    obstacleDetected: sens.obstacleDetected ?? false,
   }
 }
 
@@ -44,14 +45,23 @@ function parseMotorData(motor:any): MotorData {
 }
 
 export default function parsePenguinData(data: any): PenguinData {
-    return {
-        ...DEFAULT_PENGUIN_DATA,
-        imu: parseIMU(data.imu),
-        battery: parseBattData(data.battery ?? data.batt),
-        sensL: parseTOFData(data.sensL),
-        sensM: parseTOFData(data.sensM),
-        sensR: parseTOFData(data.sensR),
-        motorL: parseMotorData(data.motorL), 
-        motorR: parseMotorData(data.motorR),
-    };
+  const sensL = parseTOFData(data.sensL);
+  const sensM = parseTOFData(data.sensM);
+  const sensR = parseTOFData(data.sensR);
+
+  const obsDetected = !!(
+    sensL.obstacleDetected || sensM.obstacleDetected || sensR.obstacleDetected
+  );
+
+  return {
+    ...DEFAULT_PENGUIN_DATA,
+    imu: parseIMU(data.imu),
+    battery: parseBattData(data.battery ?? data.batt),
+    sensL,
+    sensM,
+    sensR,
+    motorL: parseMotorData(data.motorL), 
+    motorR: parseMotorData(data.motorR),
+    obsDetected,
+  };
 }

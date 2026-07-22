@@ -25,7 +25,7 @@ class MotorDriver {
 
         MotorData read(); 
 
-        void setPWM(float pwm); 
+        void setPWM(int pwm); 
         void stop(); 
 
     private:

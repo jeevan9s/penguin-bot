@@ -17,7 +17,6 @@ float PIDController::update(float setpoint, float measurement, float dt) {
 
     float err = setpoint - measurement; 
     // u(t) = KP * e(t) + KI * ∫₀ᵗ e(t) dt + KD * de(t)/dt
-    // ya i asked AI to make this comment above just thought it would be cool 
     
     float p_term = kp * err; 
 

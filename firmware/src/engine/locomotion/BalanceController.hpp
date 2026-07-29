@@ -1,6 +1,7 @@
 /**
  * @file        BalanceController.hpp
  * @brief       Class definition of IMU-based controller for pitch correction with PID
+ * only commands wheel motion, hips only driven by stances
  * @author      Jeevan Sanchez
  * @date        2026-07-27
  *
@@ -11,14 +12,14 @@
 
 #include <Arduino.h>
 #include "PID.hpp"
+#include "PenguinData.hpp"
 
 class BalanceController {
     public:
-        BalanceController(float kp, float ki, float kd, float maxPWM); 
-        void update(float measuredPitch, float targetPitch, float dt); 
+        BalanceController(float kp, float ki, float kd, float maxV); 
+        float update(const IMUData &imu, float targetPitch, float dt); 
         void reset(); 
 
     private:
         PIDController pid; 
-
 };

@@ -13,4 +13,9 @@
 #include "BalanceController.hpp"
 #include "VelocityController.hpp"
 
-class Locomotion {}; 
+// IMU -> balance controller(IMU pitch) -> velocity controller(computed vel) -> motor driver (pwm)
+
+class Locomotion {
+    public: 
+        
+}; 

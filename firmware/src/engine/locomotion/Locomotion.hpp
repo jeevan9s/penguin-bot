@@ -1,6 +1,6 @@
 /**
  * @file        locomotion.hpp
- * @brief       Core locomotion engine and controller orchestrator
+ * @brief       Class definition for core locomotion engine and controller orchestrator
  * @author      Jeevan Sanchez
  * @date        2026-07-27
  *
@@ -10,6 +10,7 @@
 #pragma once
 
 #include <Arduino.h>
+#include "penguin_state.hpp"
 #include "balance_controller.hpp"
 #include "velocity_controller.hpp"
 #include "motor_driver.hpp"
@@ -20,6 +21,6 @@
 
 class Locomotion {
     public: 
-        
-
+        Locomotion(BalanceController &balance, VelocityController &wheelL, VelocityController &wheelR, MotorDriver &motorL, MotorDriver &motorR); 
+        void update (const penguin_state &state, const penguin_commands &commands, float dt); 
 }; 

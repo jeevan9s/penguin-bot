@@ -14,6 +14,7 @@
 #include "balance_controller.hpp"
 #include "velocity_controller.hpp"
 #include "motor_driver.hpp"
+#include "servo_driver.hpp"
 #include "imu_driver.hpp"
 #include "penguin_commands.hpp"
 
@@ -21,7 +22,7 @@
 
 class Locomotion {
     public: 
-        Locomotion(BalanceController &balance,  VelocityController &leftVController, VelocityController &rightVController, MotorDriver &motorL, MotorDriver &motorR); 
+        Locomotion(BalanceController &balance,  VelocityController &leftVController, VelocityController &rightVController, MotorDriver &motorL, MotorDriver &motorR, ServoDriver &hipL, ServoDriver &hipR); 
         void update(const PenguinState &state, const PenguinCommands &commands, float dt); 
 
     private:
@@ -32,6 +33,8 @@ class Locomotion {
         VelocityController &_rightVController; 
         MotorDriver &_motorL; 
         MotorDriver &_motorR;
+        ServoDriver &_hipL; 
+        ServoDriver &_hipR; 
 
 
 }; 

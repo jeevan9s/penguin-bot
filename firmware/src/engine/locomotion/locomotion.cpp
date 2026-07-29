@@ -11,8 +11,8 @@
 #include <Arduino.h>
 #include "locomotion.hpp"
 
-Locomotion::Locomotion(BalanceController &balance, VelocityController &leftVController, VelocityController &rightVController, MotorDriver &motorL, MotorDriver &motorR) 
-: _balance(balance), _leftVController(leftVController), _rightVController(rightVController), _motorL(motorL), _motorR(motorR) {}
+Locomotion::Locomotion(BalanceController &balance, VelocityController &leftVController, VelocityController &rightVController, MotorDriver &motorL, MotorDriver &motorR, ServoDriver &hipL, ServoDriver &hipR) 
+: _balance(balance), _leftVController(leftVController), _rightVController(rightVController), _motorL(motorL), _motorR(motorR), _hipL(hipL), _hipR(hipR) {}
 
 void Locomotion::update(const PenguinState &state, const PenguinCommands &commands, float dt) {
     float balanceOutput = _balance.update(state.imu, commands.targetPitch, dt); 
@@ -24,6 +24,9 @@ void Locomotion::update(const PenguinState &state, const PenguinCommands &comman
 
     _motorL.run(leftPWM); 
     _motorR.run(leftPWM);     
+
+    _hipL.write(commands.leftHipAngle); 
+    _hipR.write(commands.rightHipAngle); 
 }
 
 // L/R_SPEED = FWD_INPUT - TURN_INPUT + CORRECTION_INPUT

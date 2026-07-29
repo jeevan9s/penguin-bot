@@ -15,19 +15,23 @@
 #include "velocity_controller.hpp"
 #include "motor_driver.hpp"
 #include "imu_driver.hpp"
-#include "commands.hpp"
+#include "penguin_commands.hpp"
 
 // IMU -> balance controller(IMU pitch) -> velocity controller(computed vel) -> motor driver (pwm)
 
 class Locomotion {
     public: 
-        Locomotion(BalanceController &balance, VelocityController &wheelL, VelocityController &wheelR, MotorDriver &motorL, MotorDriver &motorR); 
-        void update(const penguin_state &state, const penguin_commands &commands, float dt); 
+        Locomotion(BalanceController &balance,  VelocityController &leftVController, VelocityController &rightVController, MotorDriver &motorL, MotorDriver &motorR); 
+        void update(const PenguinState &state, const PenguinCommands &commands, float dt); 
 
     private:
+        WheelTargets calculateWheelTargets(const PenguinCommands &commands, float balanceOutput); 
+
         BalanceController &_balance; 
-        VelocityController &_wheelL; 
-        VelocityController &_wheelR; 
+        VelocityController &_leftVController; 
+        VelocityController &_rightVController; 
         MotorDriver &_motorL; 
-        MotorDriver &_mototR
+        MotorDriver &_motorR;
+
+
 }; 

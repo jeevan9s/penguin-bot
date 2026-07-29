@@ -54,7 +54,7 @@ MotorData MotorDriver::read()
     return data;
 }
 
-void MotorDriver::setPWM(int pwm)
+void MotorDriver::run(int pwm)
 {
     pwm = constrain(pwm, -255, 255); 
 

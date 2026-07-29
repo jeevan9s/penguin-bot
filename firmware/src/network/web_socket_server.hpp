@@ -11,7 +11,7 @@
 #include <Arduino.h>
 #include <ESPAsyncWebServer.h>
 #include <ArduinoJson.h>
-#include "state/penguin_state.hpp"
+#include "penguin_state.hpp"
 #include "telemetry.hpp"
 #include "config.hpp"
 

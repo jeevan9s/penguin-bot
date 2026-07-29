@@ -1,5 +1,5 @@
 /**
- * @file        commands.hpp
+ * @file        penguin_commands.hpp
  * @brief       Motion commands 
  * @author      Jeevan Sanchez
  * @date        2026-07-29
@@ -19,4 +19,11 @@ struct PenguinCommands {
 
     float leftHipAngle; 
     float rightHipAngle; 
-}
+};
+
+struct WheelTargets {
+    float leftRPM; 
+    float rightRPM; 
+};
+
+extern PenguinCommands penguin_commands; 

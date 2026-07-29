@@ -12,7 +12,7 @@
 #pragma once 
 
 #include <Arduino.h>
-#include "state/penguin_data.hpp"
+#include "penguin_data.hpp"
 #include <ESP32Encoder.h>
 #include <Adafruit_MCP23X17.h>
 
@@ -25,7 +25,7 @@ class MotorDriver {
 
         MotorData read(); 
 
-        void setPWM(int pwm); 
+        void run(int pwm); 
         void stop(); 
 
     private:

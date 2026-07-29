@@ -17,7 +17,6 @@ void ServoDriver::begin(int minAngle, int maxAngle) {
     _minLimit = minAngle; 
     _maxLimit = maxAngle; 
     _servo.attach(_pin);
-    write(90);
 }
 
 void ServoDriver::setAngle(int angle) {

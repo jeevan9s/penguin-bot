@@ -10,10 +10,8 @@
 #include <Arduino.h>
 #include "balance_controller.hpp"
 
-PIDController pid()
-
-BalanceController::BalanceController(float kp, float ki, float kd, float maxV) : pid(kp, ki, kd, maxV) {} 
-
+BalanceController::BalanceController(float kp, float ki, float kd, float maxV) : pid(kp, ki, kd, -maxV, maxV) {}
+    
 float BalanceController::update(const IMUData &imu, float targetPitch, float dt) {
     return pid.update(targetPitch, imu.angles.pitch, imu.gyY, dt); 
 }

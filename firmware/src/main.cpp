@@ -11,6 +11,7 @@
 #include "test_bench.hpp"
 #include "dashboard.hpp"
 #include "scheduler.hpp"
+#include "penguin_state.hpp"
 
 bool menuShown = false;
 CAMDriver cameraDriver;
@@ -18,7 +19,6 @@ HTTPServer http{cameraDriver};
 bool dashboardRunning = false;
 LSM6DSM imu;
 
-PenguinState currentState;
 IMUDriver imuDriver;
 BattDataDriver battDriver;
 TOFDriver sensor1(Pins::MCP::TOF_XSHUT_1, 0x31);
@@ -115,11 +115,11 @@ void loop()
     {
         blinkP(activeBlinkPin, blinkCount);
     }
-    scheduler.update(currentState);
+    scheduler.update(penguin_state);
 
     if (dashboardRunning)
     {
-        http.update(currentState);
+        http.update(penguin_state);
     }
 
     if (!menuShown && millis() > 5000)

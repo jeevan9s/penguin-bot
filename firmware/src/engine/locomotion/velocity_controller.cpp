@@ -10,12 +10,11 @@
 #include <Arduino.h>
 #include "velocity_controller.hpp"
 
-VelocityController::VelocityController(float kp, float ki, float kd, float maxPWM) : pid(kp, ki, kd, maxPWM) {}
-
-VelocityController::update(const MotorData &motor, float targetPWM, float dt) {
-    return pid.update(targetRPM, motor.RPM, dt); 
+VelocityController::VelocityController(float kp, float ki, float kd, float maxPWM) : pid(kp, ki, kd, -maxPWM, maxPWM) {}
+float VelocityController::update(const MotorData &motor, float targetPWM, float dt) {
+    return pid.update(targetPWM, motor.RPM, dt); 
 }
 
-VelocityController::reset() {
+void VelocityController::reset() {
     pid.reset(); 
 }

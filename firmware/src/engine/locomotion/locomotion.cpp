@@ -7,14 +7,31 @@
  * PENGUIN
  */
 
-#pragma once
 
 #include <Arduino.h>
 #include "locomotion.hpp"
 
-Locomotion::Locomotion(BalanceController &balance, VelocityController &wheelL, VelocityController &wheelR, MotorDriver &motorL, MotorDriver &motorR) 
-: _balance(balance), _wheelL(wheelL, _wheelR(wheelR, _motorL(motorL), _motorR(motorR)) {}
+Locomotion::Locomotion(BalanceController &balance, VelocityController &leftVController, VelocityController &rightVController, MotorDriver &motorL, MotorDriver &motorR) 
+: _balance(balance), _leftVController(leftVController), _rightVController(rightVController), _motorL(motorL), _motorR(motorR) {}
 
-void Locomotion::update(const penguin_state &state, const penguin_commands &commands, float dt) {
-    
+void Locomotion::update(const PenguinState &state, const PenguinCommands &commands, float dt) {
+    float balanceOutput = _balance.update(state.imu, commands.targetPitch, dt); 
+
+    WheelTargets targets = calculateWheelTargets(commands, balanceOutput);
+
+    float leftPWM = _leftVController.update(state.motorL, targets.leftRPM, dt); 
+    float rightPWM = _rightVController.update(state.motorR, targets.rightRPM, dt); 
+
+    _motorL.run(leftPWM); 
+    _motorR.run(leftPWM);     
 }
+
+// L/R_SPEED = FWD_INPUT - TURN_INPUT + CORRECTION_INPUT
+WheelTargets Locomotion::calculateWheelTargets(const PenguinCommands &commands, float balanceOutput) {
+    WheelTargets targets; 
+
+    targets.leftRPM = commands.forwardRPM - commands.turnRPM + balanceOutput; 
+    targets.rightRPM = commands.forwardRPM - commands.turnRPM + balanceOutput; 
+
+    return targets; 
+} 

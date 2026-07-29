@@ -10,7 +10,8 @@
 #include <Arduino.h>
 #include "PID.hpp"
 
-PIDController::PIDController(float kp, float ki, float kd, float outMin, float outMax): pid(kp, ki, kd, maxV) {} 
+PIDController::PIDController(float kp, float ki, float kd, float outMin, float outMax)
+    : _kp(kp), _ki(ki), _kd(kd), _outMin(outMin), _outMax(outMax), integral(0.0f), prevErr(0.0f) {}
 
 float PIDController::update(float setpoint, float measurement, float dt) {
     if (dt <= 0.0f) return 0.0f; 
@@ -18,19 +19,19 @@ float PIDController::update(float setpoint, float measurement, float dt) {
     float err = setpoint - measurement; 
     // u(t) = KP * e(t) + KI * ∫₀ᵗ e(t) dt + KD * de(t)/dt
     
-    float p_term = kp * err; 
+    float p_term = _kp * err; 
 
     // anti-windup clamping
-    integral += error * dt; 
-    float intMax = (outMax != 0) ? (outMax / (ki ! = 0 ? ki : 1.0f)) : 0.0f; 
+    integral += err * dt; 
+    float intMax = (_outMax != 0) ? (_outMax / (_ki != 0 ? _ki : 1.0f)) : 0.0f; 
 
-    if (integral > outMax) integral = outMax; 
-    else if (integral < outMax) integral = outMin; 
-    float i_term = integral * ki; 
+    if (integral > _outMax) integral = _outMax; 
+    else if (integral < _outMax) integral = _outMin; 
+    float i_term = integral * _ki; 
 
     // on error, or on measurement to avoid derivative spikes
     float derivative = (ran) ? (err - prevErr) / dt : 0.0f; 
-    float d_term = derivative * kd; 
+    float d_term = derivative * _kd; 
 
     prevErr = err; 
     ran = true; 
@@ -38,30 +39,30 @@ float PIDController::update(float setpoint, float measurement, float dt) {
     float output = p_term + i_term + d_term; 
 
     // saturation
-    if (output > outMax) output = outMax; 
-    else if (output < outMin ) - outMin; 
+    if (output > _outMax) output = _outMax; 
+    else if (output < _outMin ) - _outMin; 
 
     return output; 
 }
 
-float PIDController::update(float setpoint, float measurement, float derivative float dt) {
+float PIDController::update(float setpoint, float measurement, float derivative, float dt) {
     if (dt <= 0.0f) return 0.0f; 
 
     float err = setpoint - measurement; 
     // u(t) = KP * e(t) + KI * ∫₀ᵗ e(t) dt + KD * de(t)/dt
     
-    float p_term = kp * err; 
+    float p_term = _kp * err; 
 
     // anti-windup clamping
-    integral += error * dt; 
-    float intMax = (outMax != 0) ? (outMax / (ki ! = 0 ? ki : 1.0f)) : 0.0f; 
+    integral += err * dt; 
+    float intMax = (_outMax != 0) ? (_outMax / (_ki != 0 ? _ki : 1.0f)) : 0.0f; 
 
-    if (integral > outMax) integral = outMax; 
-    else if (integral < outMax) integral = outMin; 
-    float i_term = integral * ki; 
+    if (integral > _outMax) integral = _outMax; 
+    else if (integral < _outMax) integral = _outMin; 
+    float i_term = integral * _ki; 
 
     // on error, or on measurement to avoid derivative spikes
-    float d_term = derivative * kd; 
+    float d_term = derivative * _kd; 
 
     prevErr = err; 
     ran = true; 
@@ -69,8 +70,8 @@ float PIDController::update(float setpoint, float measurement, float derivative 
     float output = p_term + i_term + d_term; 
 
     // saturation
-    if (output > outMax) output = outMax; 
-    else if (output < outMin ) - outMin; 
+    if (output > _outMax) output = _outMax; 
+    else if (output < _outMin ) - _outMin; 
 
     return output; 
 }

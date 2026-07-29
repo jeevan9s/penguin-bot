@@ -13,7 +13,7 @@
 
 #include <Arduino.h>
 #include <VL53L0X.h>
-#include "state/penguin_data.hpp"
+#include "penguin_data.hpp"
 
 class TOFDriver
 {

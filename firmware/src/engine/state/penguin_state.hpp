@@ -28,4 +28,4 @@ struct PenguinState {
     // HealthData system; 
 };
 
-extern PenguinState penguinState; 
+extern PenguinState penguin_state; 

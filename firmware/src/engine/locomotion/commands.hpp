@@ -7,3 +7,16 @@
  * PENGUIN
  */
 
+
+#pragma once
+#include <Arduino.h>
+
+struct PenguinCommands {
+    float forwardRPM; 
+    float turnRPM; 
+
+    float targetPitch; 
+
+    float leftHipAngle; 
+    float rightHipAngle; 
+}

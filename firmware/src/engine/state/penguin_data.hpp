@@ -1,5 +1,5 @@
 /**
- * @file        PenguinData.hpp
+ * @file        penguin_data.hpp
  * @brief       Global data definitions.
  * @author      Jeevan Sanchez
  * @date        2026-07-14

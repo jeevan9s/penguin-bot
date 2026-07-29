@@ -1,5 +1,5 @@
 /**
- * @file        PenguinState.hpp
+ * @file        penguin_state.hpp
  * @brief       State definition. 
  * @author      Jeevan Sanchez
  * @date        2026-07-14
@@ -8,7 +8,7 @@
  */
 
 #pragma once
- #include "state/PenguinData.hpp"
+#include "penguin_data.hpp"
 
 struct PenguinState {
     IMUData imu; 

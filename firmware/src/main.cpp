@@ -9,8 +9,8 @@
 
 #include "config.hpp"
 #include "test_bench.hpp"
-#include "Dashboard.hpp"
-#include "Scheduler.hpp"
+#include "dashboard.hpp"
+#include "scheduler.hpp"
 
 bool menuShown = false;
 CAMDriver cameraDriver;

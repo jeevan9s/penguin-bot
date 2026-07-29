@@ -1,5 +1,5 @@
 /**
- * @file        Scheduler.cpp
+ * @file        scheduler.cpp
  * @brief       Telemetry event orchestration
  * @author      Jeevan Sanchez
  * @date        2026-07-18
@@ -9,7 +9,7 @@
  */
 
 #include <Arduino.h>
-#include "Scheduler.hpp"
+#include "scheduler.hpp"
 
 Scheduler::Scheduler(IMUDriver &imu, BattDataDriver &batt,
                      TOFDriver &t1, TOFDriver &t2, TOFDriver &t3,

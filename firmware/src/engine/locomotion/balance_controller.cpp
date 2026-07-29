@@ -1,5 +1,5 @@
 /**
- * @file        BalanceController.hpp
+ * @file        balance_controller.hpp
  * @brief       Implementation of IMU-based controller for pitch correction with PID
  * @author      Jeevan Sanchez
  * @date        2026-07-29
@@ -8,7 +8,7 @@
  */
 
 #include <Arduino.h>
-#include "BalanceController.hpp"
+#include "balance_controller.hpp"
 
 PIDController pid()
 

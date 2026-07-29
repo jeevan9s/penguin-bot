@@ -1,5 +1,5 @@
 /**
- * @file        Scheduler.hpp
+ * @file        scheduler.hpp
  * @brief       Class definitions for event orchestration
  * @author      Jeevan Sanchez
  * @date        2026-07-18
@@ -11,7 +11,7 @@
 #pragma once
 
 #include <Arduino.h>
-#include "state/PenguinState.hpp"
+#include "penguin_state.hpp"
 #include "imu_driver.hpp"
 #include "cam_driver.hpp"
 #include "batt_data_driver.hpp"

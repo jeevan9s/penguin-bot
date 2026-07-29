@@ -1,5 +1,5 @@
 /**
- * @file        VelocityController.hpp
+ * @file        velocity_controller.hpp
  * @brief       Class definition for wheel velocity (N20-DRV8833) control with PID
  * outputs a float motor effort (PWM)
  * @author      Jeevan Sanchez
@@ -12,7 +12,7 @@
 
 #include <Arduino.h>
 #include "PID.hpp"
-#include "PenguinData.hpp"
+#include "penguin_data.hpp"
 
 class VelocityController {
     public:

@@ -1,5 +1,5 @@
 /**
- * @file        CamStream.cpp
+ * @file        cam_stream.cpp
  * @brief       Capture and stream camera frames over HTTP.
  * @author      Jeevan Sanchez
  * @date        2026-07-15
@@ -8,7 +8,7 @@
  */
 
 #include <Arduino.h>
-#include "CamStream.hpp"
+#include "cam_stream.hpp"
 #undef HTTP_GET
 
 CameraStream::CameraStream(AsyncWebServer& server, CAMDriver& camera) : camera_(camera)

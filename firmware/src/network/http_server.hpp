@@ -1,5 +1,5 @@
 /**
- * @file        HTTPServer.hpp
+ * @file        http_server.hpp
  * @brief       Header for HTTP router.
  * @author      Jeevan Sanchez
  * @date        2026-07-15
@@ -10,10 +10,10 @@
 #pragma once
 
 #include <ESPAsyncWebServer.h>
-#include "WebSocketServer.hpp"
- #include "state/PenguinState.hpp"
+#include "web_socket_server.hpp"
+#include "state/penguin_state.hpp"
 
-#include "CamStream.hpp" 
+#include "cam_stream.hpp" 
 
 class HTTPServer {
 public:

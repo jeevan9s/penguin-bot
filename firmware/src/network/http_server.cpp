@@ -1,5 +1,5 @@
 /**
- * @file        HTTPServer.cpp
+ * @file        http_server.cpp
  * @brief       HTTP router.
  * @author      Jeevan Sanchez
  * @date        2026-07-15
@@ -8,7 +8,7 @@
  */
 
 #include <Arduino.h>
-#include "HTTPServer.hpp"
+#include "http_server.hpp"
 
 HTTPServer::HTTPServer(CAMDriver& cam) 
     : server(80), 

@@ -10,7 +10,7 @@
 #pragma once
 
 #include <Arduino.h>
- #include "state/PenguinData.hpp"
+#include "state/penguin_data.hpp"
 #include "config.hpp"
 
 class BattDataDriver

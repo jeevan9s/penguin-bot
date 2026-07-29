@@ -1,5 +1,5 @@
 /**
- * @file        Dashboard.cpp
+ * @file        dashboard.cpp
  * @brief       Connects to Wi-Fi and starts the local async web server and WebSocket endpoints
  * @author      Jeevan Sanchez
  * @date        2026-07-15
@@ -7,7 +7,7 @@
  * PENGUIN
  */
 
-#include "Dashboard.hpp"
+#include "dashboard.hpp"
 
 extern HTTPServer http;
 extern bool dashboardRunning;

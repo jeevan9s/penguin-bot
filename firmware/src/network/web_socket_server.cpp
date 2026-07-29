@@ -1,5 +1,5 @@
 /**
- * @file        WebSocketServer.cpp
+ * @file        web_socket_server.cpp
  * @brief       Handles client connect, disconnect, telemetry
  * @author      Jeevan Sanchez
  * @date        2026-07-15
@@ -8,7 +8,7 @@
  */
 
 #include <Arduino.h>
-#include "WebSocketServer.hpp"
+#include "web_socket_server.hpp"
 
 WebSocketServer::WebSocketServer(AsyncWebServer &server)
 {

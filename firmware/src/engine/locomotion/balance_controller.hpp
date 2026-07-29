@@ -1,5 +1,5 @@
 /**
- * @file        BalanceController.hpp
+ * @file        balance_controller.hpp
  * @brief       Class definition of IMU-based controller for pitch correction with PID
  * only commands wheel motion, hips only driven by stances
  * @author      Jeevan Sanchez
@@ -12,7 +12,7 @@
 
 #include <Arduino.h>
 #include "PID.hpp"
-#include "PenguinData.hpp"
+#include "penguin_data.hpp"
 
 class BalanceController {
     public:

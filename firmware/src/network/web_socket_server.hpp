@@ -1,5 +1,5 @@
 /**
- * @file        WebSocketServer.hpp
+ * @file        web_socket_server.hpp
  * @brief       Header for WebSocketServer handling client connect, disconnect, telemetry
  * @author      Jeevan Sanchez
  * @date        2026-07-15
@@ -11,7 +11,7 @@
 #include <Arduino.h>
 #include <ESPAsyncWebServer.h>
 #include <ArduinoJson.h>
- #include "state/PenguinState.hpp"
+#include "state/penguin_state.hpp"
 #include "telemetry.hpp"
 #include "config.hpp"
 

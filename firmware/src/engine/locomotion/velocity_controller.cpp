@@ -1,5 +1,5 @@
 /**
- * @file        VelocityController.hpp
+ * @file        velocity_controller.hpp
  * @brief       Implementation for wheel velocity (N20-DRV8833) control with PID
  * @author      Jeevan Sanchez
  * @date        2026-07-27
@@ -8,7 +8,7 @@
  */
 
 #include <Arduino.h>
-#include "VelocityController.hpp"
+#include "velocity_controller.hpp"
 
 VelocityController::VelocityController(float kp, float ki, float kd, float maxPWM) : pid(kp, ki, kd, maxPWM) {}
 

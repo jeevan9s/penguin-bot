@@ -11,7 +11,7 @@ class ServoDriver {
 public:
     ServoDriver(uint8_t pin);
     void begin(int minAngle = 0, int maxAngle = 180);
-    void write(int angle);
+    void setAngle(int angle);
 
 private:
     uint8_t _pin;

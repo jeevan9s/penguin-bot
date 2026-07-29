@@ -20,7 +20,7 @@ void ServoDriver::begin(int minAngle, int maxAngle) {
     write(90);
 }
 
-void ServoDriver::write(int angle) {
+void ServoDriver::setAngle(int angle) {
     _targetAngle = constrain(angle, _minLimit, _maxLimit); 
     _servo.write(_targetAngle); 
 }

@@ -22,5 +22,12 @@
 class Locomotion {
     public: 
         Locomotion(BalanceController &balance, VelocityController &wheelL, VelocityController &wheelR, MotorDriver &motorL, MotorDriver &motorR); 
-        void update (const penguin_state &state, const penguin_commands &commands, float dt); 
+        void update(const penguin_state &state, const penguin_commands &commands, float dt); 
+
+    private:
+        BalanceController &_balance; 
+        VelocityController &_wheelL; 
+        VelocityController &_wheelR; 
+        MotorDriver &_motorL; 
+        MotorDriver &_mototR
 }; 

@@ -107,6 +107,9 @@ void setup()
 
     led_startup();
     displayMenu();
+
+    motorL.begin(); 
+    motorR.begin();
 }
 
 void loop()

@@ -12,6 +12,7 @@
 #include <Arduino.h>
 #include "penguin_commands.hpp"
 #include "penguin_state.hpp"
+#include "motion_config.hpp"
 
 
 class MotionPrimitives
@@ -30,6 +31,8 @@ public:
 
     void leanRight(PenguinCommands& commands);
 
+    void stop(PenguinCommands& commands); 
+    
     void driveFWD(PenguinCommands& commands, float rpm);
 
     void driveREV(PenguinCommands& commands, float rpm);
@@ -38,12 +41,8 @@ public:
 
     void turnRight(PenguinCommands& commands, float rpm);
 
-    void spinClockwise(PenguinCommands& commands, float rpm);
-
-    void spinCounterClockwise(PenguinCommands& commands, float rpm);
-    
-
 private:
 
     // float _jumpTimer = 0.0f;
 };
+

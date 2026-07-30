@@ -98,14 +98,14 @@ void test_motors() {
 
    motorSetup();
 
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 2; i++) {
         switch(i) {
-            // case 0:
-            //     Serial.println("testing SERVOS---");
-            //     sweepServo(); 
-            //     break;
+            case 0:
+                Serial.println("testing SERVOS---");
+                sweepServo(); 
+                break;
             
-            case 0: 
+            case 1: 
                 Serial.println("testing N20 motors---");
                 runDCMotors();
                 break;

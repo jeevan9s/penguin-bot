@@ -11,7 +11,8 @@
 #include <Arduino.h>
 #include "test_mtr.hpp"
 
-Servo servo;
+Servo servoL;
+Servo servoR;
 volatile long encoderVal = 0;
 
 extern Adafruit_MCP23X17 mcp;
@@ -34,9 +35,10 @@ void printTicks(unsigned long durationMs) {
 }
 
 void motorSetup() {
-    servo.attach(Pins::MCU::L_SERVO); 
-    servo.write(90); 
+    servoL.attach(Pins::MCU::L_SERVO); 
+    servoR.attach(Pins::MCU::R_SERVO); 
     
+    mcp.pinMode(Pins::MCP::VMOT_EN, OUTPUT); 
     mcp.digitalWrite(Pins::MCP::VMOT_EN, HIGH); 
     delay(500);
 
@@ -55,14 +57,30 @@ void sweepServo()
 {
     for (int i = 0; i <= 180; i++)
     {
-        servo.write(i);
+        servoL.write(i);
         Serial.println("sweeping Servo to 180°"); 
         delay(15);
     }
 
     for (int i = 180; i >= 0; i--)
     {
-        servo.write(i);
+        servoL.write(i);
+        Serial.println("sweeping Servo back to 0"); 
+        delay(15);
+    }
+
+    delay (500); 
+
+        for (int i = 0; i <= 180; i++)
+    {
+        servoR.write(i);
+        Serial.println("sweeping Servo to 180°"); 
+        delay(15);
+    }
+
+    for (int i = 180; i >= 0; i--)
+    {
+        servoR.write(i);
         Serial.println("sweeping Servo back to 0"); 
         delay(15);
     }

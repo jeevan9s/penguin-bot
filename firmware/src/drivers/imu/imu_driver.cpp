@@ -56,9 +56,9 @@ Rotation IMUDriver::calculateAngles(float gx, float gy, float gz, float ax, floa
     float accel_pitch = atan2(ay, sqrt(ax * ax + az * az)) * 180.0f / PI;
     float accel_roll  = atan2(-ax, az) * 180.0f / PI;
 
-    // gyro integration 
-    float gyro_pitch = c_angles.pitch + gx * dt;
-    float gyro_roll  = c_angles.roll + gy * dt;
+    // gyro integration
+    float gyro_pitch = c_angles.pitch + gy * dt;
+    float gyro_roll  = c_angles.roll + gx * dt;
 
     // filter: mostly trust gyro short-term, slowly correct with accel
     const float alpha = 0.98f;

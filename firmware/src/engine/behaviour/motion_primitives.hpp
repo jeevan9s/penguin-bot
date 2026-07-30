@@ -13,13 +13,37 @@
 #include "penguin_commands.hpp"
 #include "penguin_state.hpp"
 
-class MotionPrimitive
+
+class MotionPrimitives
 {
 public:
-    virtual ~MotionPrimitive() = default;
 
-    virtual void update(
-        PenguinCommands &commands,
-        const PenguinState &state,
-        float dt) = 0;
+    void stand(PenguinCommands& commands);
+
+    void squat(PenguinCommands& commands);
+
+    void leanFWD(PenguinCommands& commands);
+
+    void leanREV(PenguinCommands& commands);
+
+    void leanLeft(PenguinCommands& commands);
+
+    void leanRight(PenguinCommands& commands);
+
+    void driveFWD(PenguinCommands& commands, float rpm);
+
+    void driveREV(PenguinCommands& commands, float rpm);
+
+    void turnLeft(PenguinCommands& commands, float rpm);
+
+    void turnRight(PenguinCommands& commands, float rpm);
+
+    void spinClockwise(PenguinCommands& commands, float rpm);
+
+    void spinCounterClockwise(PenguinCommands& commands, float rpm);
+    
+
+private:
+
+    // float _jumpTimer = 0.0f;
 };

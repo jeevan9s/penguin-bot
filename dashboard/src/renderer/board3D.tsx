@@ -46,6 +46,7 @@ export default function Board3D({
       100,
     );
     camera.position.set(2, 2.5, 2);
+    // camera.position.set(0, 4, 0.1); - top down
     camera.lookAt(0, 0, 0);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -82,32 +83,34 @@ export default function Board3D({
         const center = new THREE.Vector3();
         box.getCenter(center);
 
-        geometry.translate(-center.x, -center.y, -center.z);
+geometry.translate(-center.x, -center.y, -center.z);
+geometry.rotateX(-Math.PI / 2); // bake into geometry, not mesh.rotation
 
-        const size = new THREE.Vector3();
-        box.getSize(size);
-        const maxDim = Math.max(size.x, size.y, size.z);
-        const scaleFactor = 1.5 / maxDim;
-        mesh.scale.setScalar(scaleFactor);
-        mesh.rotation.x = -Math.PI / 2;
+const size = new THREE.Vector3();
+box.getSize(size);
+const maxDim = Math.max(size.x, size.y, size.z);
+const scaleFactor = 1.5 / maxDim;
+mesh.scale.setScalar(scaleFactor);
+// no mesh.rotation.x here anymore
 
-        boardIMU.add(mesh);
+boardIMU.add(mesh);
       },
       undefined,
       (error) => console.error("Error loading STL model:", error),
     );
 
     let frameId: number;
-    const animate = () => {
-      const { pitch: p, roll: r, yaw: y } = angles.current;
-      if (boardRef.current) {
-        boardRef.current.rotation.x = THREE.MathUtils.degToRad(p);
-        boardRef.current.rotation.y = THREE.MathUtils.degToRad(y);
-        boardRef.current.rotation.z = THREE.MathUtils.degToRad(r);
-      }
-      renderer.render(scene, camera);
-      frameId = requestAnimationFrame(animate);
-    };
+const animate = () => {
+  const { pitch: p, roll: r, yaw: y } = angles.current;
+  if (boardRef.current) {
+        boardRef.current.rotation.x = THREE.MathUtils.degToRad(r);  
+    boardRef.current.rotation.y = THREE.MathUtils.degToRad(y);  
+    boardRef.current.rotation.z = THREE.MathUtils.degToRad(p);  
+  }
+  
+  renderer.render(scene, camera);
+  frameId = requestAnimationFrame(animate);
+};
     animate();
 
     const handleResize = () => {

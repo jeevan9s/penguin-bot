@@ -1,5 +1,5 @@
 /**
- * @file        motion_primitives.hpp
+ * @file        routines.hpp
  * @brief       Sequenced primitive invocation
  * @author      Jeevan Sanchez
  * @date        2026-07-30
@@ -21,7 +21,7 @@ enum class RoutineType
     Default,
     Startup,
     Drive,
-    Recovery,
+    // Recovery,
     Patrol,
     ObstacleAvoidance
 };
@@ -61,12 +61,6 @@ private:
         float dt
     );
 
-    void recoveryRoutine(
-        PenguinCommands& commands,
-        const PenguinState& state,
-        float dt
-    );
-
     void patrolRoutine(
         PenguinCommands& commands,
         const PenguinState& state,
@@ -85,6 +79,8 @@ private:
     RoutineType _currentRoutine;
 
     MotionPrimitives _primitives;
+
+    bool scan(PenguinCommands &commands, float pivotRPM, float duration=1.5f);
 
     uint8_t _step;
     float _timer;

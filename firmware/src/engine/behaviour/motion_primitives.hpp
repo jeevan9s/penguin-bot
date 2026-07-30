@@ -21,7 +21,7 @@ public:
 
     void stand(PenguinCommands& commands);
 
-    void squat(PenguinCommands& commands);
+    void squat(PenguinCommands& commands, int squatAngle = MotionConfig::SQUAT_HIP_ANGLE);
 
     void leanFWD(PenguinCommands& commands);
 
@@ -32,6 +32,8 @@ public:
     void leanRight(PenguinCommands& commands);
 
     void stop(PenguinCommands& commands); 
+
+    void pivot(PenguinCommands& commands, float rpm); 
     
     void driveFWD(PenguinCommands& commands, float rpm);
 

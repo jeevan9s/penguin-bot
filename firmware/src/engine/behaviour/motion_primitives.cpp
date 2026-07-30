@@ -16,10 +16,10 @@ void MotionPrimitives::stand(PenguinCommands &commands) {
     commands.rightHipAngle = MotionConfig::STAND_HIP_ANGLE;
 }
 
-void MotionPrimitives::squat(PenguinCommands &commands) {
+void MotionPrimitives::squat(PenguinCommands &commands, int squatAngle) {
     commands.targetPitch = 0.0f;
-    commands.leftHipAngle = MotionConfig::SQUAT_HIP_ANGLE; 
-    commands.rightHipAngle = MotionConfig::SQUAT_HIP_ANGLE; 
+    commands.leftHipAngle = squatAngle; 
+    commands.rightHipAngle = squatAngle; 
 }
 
 void MotionPrimitives::leanFWD(PenguinCommands &commands) {
@@ -45,6 +45,11 @@ void MotionPrimitives::leanRight(PenguinCommands &commands) {
 void MotionPrimitives::stop(PenguinCommands &commands) {
     commands.forwardRPM = 0.0f; 
     commands.turnRPM = 0.0f;
+}
+
+void MotionPrimitives::pivot(PenguinCommands &commands, float rpm) {
+    commands.forwardRPM = 0.0f; 
+    commands.turnRPM = rpm; 
 }
 
 void MotionPrimitives::driveFWD(PenguinCommands &commands, float rpm) {

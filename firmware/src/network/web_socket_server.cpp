@@ -45,12 +45,13 @@ void WebSocketServer::update(const PenguinState &state)
 
     JsonDocument doc;
 
+    // populate the JsonDocument with telemetry, stringify it, serialize it to Json, and send it over Websocket
     Telemetry::serialize(state, doc);
 
     String payload;
     serializeJson(doc, payload);
 
-    // Serial.println("websocket PAYLOAD: " + payload);
+    // Serial.println("websocket PAYLOAD: " + payload); --debug
 
     ws.textAll(payload);
 }

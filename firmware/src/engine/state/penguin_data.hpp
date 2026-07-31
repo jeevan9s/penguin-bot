@@ -9,6 +9,9 @@
 
 #pragma once
 
+
+/// @brief key rotational angles for PID balance controller & board visualization in dashboard
+/// all angles are in degrees
 struct Rotation 
 {
     float pitch; 
@@ -16,6 +19,7 @@ struct Rotation
     float yaw;
 };
 
+// currently unused
 enum struct health
 {
     OFFLINE,
@@ -24,23 +28,26 @@ enum struct health
     STANDBY
 };
 
-
+/// @brief IMU data structure containing three-axis acceleration readings, gyroscope rates, and temperature. 
+/// magnetometer will be added as library is updated for Z-correction
 struct IMUData
 {
-    float accX;
+    float accX; // g 
     float accY;
     float accZ;
 
-    float gyX;
+    float gyX; // dps
     float gyY;
     float gyZ;
 
-    float temp; 
+    float temp; // C
 
     Rotation angles; 
 
 };
 
+/// @brief battery data structure for monitoring the 7.4V LiPo battery
+// SOC needs an adjustment for clarity (SOC = State of Charge (%))
 struct BattData
 {
     float voltage;
@@ -48,17 +55,18 @@ struct BattData
     bool connected;
 };
 
+/// @brief motor data structure for storing encoder data and ON/OFF tracking
 struct MotorData
 {
-    long position;
-    float RPM;
-    bool running;
+    long position; // encoder ticks 
+    float RPM; 
+    bool running; // true if motor is on
 };
 
 struct TOFData
 {
-    float proximity;
-    bool obstacleDetected;
+    float proximity; // distance reading in mm
+    bool obstacleDetected; // true based on threshold set in MotionConfig
 };
 
 // struct HealthData

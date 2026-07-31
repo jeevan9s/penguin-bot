@@ -18,10 +18,13 @@ void Behaviour::begin() {
 }
 
 void Behaviour::update(PenguinCommands &commands, const PenguinState &state, float dt) {
+    _timer += dt;
     
     // obstacle avoidance @ highest priority 
     if (state.sensL.obstacleDetected || state.sensM.obstacleDetected || state.sensR.proximity) {
-        changeRoutine(RoutineType::ObstacleAvoidance); 
+        if (_current != RoutineType::ObstacleAvoidance) {
+            changeRoutine(RoutineType::ObstacleAvoidance); 
+        }
     }
 
     // default -> drive
@@ -54,5 +57,6 @@ void Behaviour::update(PenguinCommands &commands, const PenguinState &state, flo
 void Behaviour::changeRoutine(RoutineType next) {
     if (next == _current) return; 
     _current = next; 
+    _timer = 0.0f;
     _routine.setRoutine(next); 
 }

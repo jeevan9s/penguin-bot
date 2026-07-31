@@ -1,6 +1,6 @@
 /**
  * @file        PID.hpp
- * @brief       Definitions for utility PID class
+ * @brief       Definitions for modular PID class
  * @author      Jeevan Sanchez
  * @date        2026-07-23
  *
@@ -11,6 +11,10 @@
 
 #include <Arduino.h>
 
+/// @brief modular PID control class for use across velocity and balance controllers 
+/// update() method overloading to include parameterized derivative term for balance controller 
+/// uses a standard PID implementation with anti-(integral-windup) clamping
+/// clamps output at parameterized bounds 
 class PIDController {
     public:
         PIDController(float kp, float ki, float kd, float outMin, float outMax);

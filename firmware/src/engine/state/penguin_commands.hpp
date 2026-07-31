@@ -11,16 +11,19 @@
 #pragma once
 #include <Arduino.h>
 
+/// @brief structure for motor commands 
+/// updated by primitives and observed by controllers
 struct PenguinCommands {
-    float forwardRPM; 
+    float forwardRPM; // along with turnRPM, converted into differential-drive inputs in locomotion engine
     float turnRPM; 
 
-    float targetPitch; 
+    float targetPitch; // deg
 
-    float leftHipAngle; 
+    float leftHipAngle; // deg
     float rightHipAngle; 
 };
 
+// light structure for updating left/right wheel target speeds
 struct WheelTargets {
     float leftRPM; 
     float rightRPM; 

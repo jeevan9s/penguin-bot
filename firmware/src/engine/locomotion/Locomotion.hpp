@@ -20,6 +20,9 @@
 
 // IMU -> balance controller(IMU pitch) -> velocity controller(computed vel) -> motor driver (pwm)
 
+/// @brief core motion engine, managing balance and velocity/motor controllers 
+/// observes global commands and controllers respond accordingly (commands updated by primitives)
+/// interfaces with servo motors via driver instance (no ServoController needed)
 class Locomotion {
     public: 
         Locomotion(BalanceController &balance,  VelocityController &leftVController, VelocityController &rightVController, MotorDriver &motorL, MotorDriver &motorR, ServoDriver &hipL, ServoDriver &hipR); 
@@ -35,6 +38,4 @@ class Locomotion {
         MotorDriver &_motorR;
         ServoDriver &_hipL; 
         ServoDriver &_hipR; 
-
-
 }; 

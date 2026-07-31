@@ -10,6 +10,9 @@
 #pragma once
 #include "penguin_data.hpp"
 
+
+/// @brief global system object 
+/// each component is mapped to a data object defined in penguin_data
 struct PenguinState {
     IMUData imu; 
     

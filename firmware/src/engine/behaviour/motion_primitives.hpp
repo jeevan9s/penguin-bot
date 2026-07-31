@@ -15,6 +15,9 @@
 #include "motion_config.hpp"
 
 
+/// @brief interface containing all motion primitives
+/// @brief Motion Primitives are the base of robot actions (i.e. stand, pivot, lean drive forward, turn, etc.)
+/// @brief Primitives interface with the locomotion engine by updating the shared instance of PenguinCommands, and are sequenced in Routines
 class MotionPrimitives
 {
 public:
@@ -32,6 +35,8 @@ public:
    static void leanRight(PenguinCommands& commands);
 
   static void stop(PenguinCommands& commands); 
+
+   /// non-stance primitives accept RPM values, which are defined in MotionConfig
 
    static void pivot(PenguinCommands& commands, float rpm); 
     

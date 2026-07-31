@@ -15,4 +15,6 @@
 #include "web_socket_server.hpp"
 #include "http_server.hpp"
 
+/// @brief connects to WiFi, starts HTTP server, and updates dashboard status tracker
+/// on-board indication with non-blocking LED code
 void run_dashboard();

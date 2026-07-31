@@ -11,6 +11,11 @@
 
 #include <Arduino.h>
 
+/// @brief constants for system configuration
+// stance-based hip-servo angles 
+// motor speeds based on levels and actions
+// offsets for scan-pivots
+// pitch depth (angles) for stance 
 namespace MotionConfig {
     // tune
     constexpr float DEFAULT_HIP_ANGLE = 270.0f; 
@@ -32,12 +37,17 @@ namespace MotionConfig {
 
 }; 
 
+/// @brief cascade speed structure 
 enum class SpeedLevel {
     CRAWL,
     CRUISE, 
     TURBO
 };
 
+/// @brief getter for speed values (RPM) based on typed speed levels
+/// used to update commands
+/// @param level one of the three speed levels
+/// @return the corresponding float RPM value
 inline float getRPM(SpeedLevel level) {
     switch(level) {
         case SpeedLevel::CRAWL: return MotionConfig::CRAWL_SPEED; 

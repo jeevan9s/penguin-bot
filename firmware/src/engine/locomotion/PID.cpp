@@ -10,6 +10,8 @@
 #include <Arduino.h>
 #include "PID.hpp"
 
+
+ // PID == proportional intergral derivative controller
 PIDController::PIDController(float kp, float ki, float kd, float outMin, float outMax)
     : _kp(kp), _ki(ki), _kd(kd), _outMin(outMin), _outMax(outMax), integral(0.0f), prevErr(0.0f) {}
 

@@ -28,6 +28,7 @@ float BattDataDriver::battSOC()
         return 100.0f;
 
     // linear mapping between 6.4V and 8.4V
+    // changed to 7.4V FOR NOW
     return ((voltage - V_MIN) / (V_MAX - V_MIN)) * 100.0f;
 }
 

@@ -27,7 +27,7 @@ void TOFDriver::off() {
     delay(20); 
 }
 
-bool TOFDriver::begin(uint8_t _addr) {
+bool TOFDriver::begin() {
     on(); 
 
     if (!_sensor.init()) return false; 
@@ -41,6 +41,7 @@ bool TOFDriver::ping() {
     Wire.beginTransmission(_addr);
     return (Wire.endTransmission() == 0); // true on ACK
 }
+
 
 TOFData TOFDriver::read() {
 

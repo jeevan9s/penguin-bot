@@ -18,6 +18,8 @@
 #include "tof_driver.hpp"
 #include "motor_driver.hpp"
 
+
+/// @brief non-blocking timer class for event scheduling
 class Timer
 {
 public:
@@ -38,6 +40,15 @@ private:
     uint32_t _last;
 };
 
+
+/// @brief telemetry and data-state updates orchestrator class 
+/*
+/// timing map
+* IMU updates at 100Hz
+* Motors update at 50Hz
+* TOF sensors update at 25Hz
+* Battery data updates at 2Hz
+*/
 class Scheduler
 {
 public:
@@ -61,5 +72,9 @@ private:
     Timer _motorTimer;
 
     int _tofStep = 0;
-    void runTofSM(PenguinState &state);
+
+    /// @brief independent state machine for ToF sensors
+    /// toggles shutdown pins for each sensor to avoid I2C contention issues during data collection
+    /// @param state the global Penguin state for system-wide updates
+    void runTofSM(PenguinState &state); 
 };

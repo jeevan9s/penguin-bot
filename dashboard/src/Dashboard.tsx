@@ -100,9 +100,9 @@ export default function Dashboard() {
 
         {activeView === "proximity"  && (
           <ProximityView
-            distL={12}
-            distM={2}
-            distR={50}
+            distL={penguinData.sensL.proximity}
+            distM={penguinData.sensM.proximity}
+            distR={penguinData.sensR.proximity}
             obstacleDetected={penguinData.obsDetected}
             activeView={activeView}
             onSelectBoard={() => setActiveView("board")}

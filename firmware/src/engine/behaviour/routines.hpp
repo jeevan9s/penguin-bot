@@ -41,6 +41,9 @@ public:
         float dt
     );
 
+    bool _finished;
+
+
 private:
 
     void defaultRoutine(
@@ -72,9 +75,6 @@ private:
         const PenguinState& state,
         float dt
     );
-
-
-private:
 
     RoutineType _currentRoutine;
 

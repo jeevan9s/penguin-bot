@@ -10,7 +10,7 @@
 #include <Arduino.h>
 #include "routines.hpp"
 
-Routine::Routine() : _currentRoutine(RoutineType::Default), _timer(0.0f), _step(0) {}
+Routine::Routine() : _currentRoutine(RoutineType::Default), _timer(0.0f), _step(0), _finished(false) {}
 
 void Routine::setRoutine(RoutineType routine)
 {
@@ -19,6 +19,7 @@ void Routine::setRoutine(RoutineType routine)
         _currentRoutine = routine;
         _step = 0;
         _timer = 0;
+        _finished = false; 
     }
 }
 
@@ -55,6 +56,7 @@ void Routine::update(PenguinCommands &commands, const PenguinState &state, float
     }
 }
 
+
 // cycle between squat and standing for heartbeat behaviour
 void Routine::defaultRoutine(PenguinCommands &commands, const PenguinState &state, float dt)
 {
@@ -77,6 +79,7 @@ void Routine::defaultRoutine(PenguinCommands &commands, const PenguinState &stat
         {
             _step = 0;
             _timer = 0.0f;
+            _finished = true; 
         }
     }
 }
@@ -113,6 +116,7 @@ void Routine::startupRoutine(PenguinCommands &commands, const PenguinState &stat
         {
             _step = 0;
             _timer = 0.0f;
+            _finished = true;
         }
         break;
     }
@@ -162,6 +166,7 @@ void Routine::driveRoutine(PenguinCommands &commands, const PenguinState &state,
         {
             _step = 0;
             _timer = 0.0f;
+            _finished = true; 
         }
     }
 }
@@ -203,6 +208,7 @@ void Routine::patrolRoutine(PenguinCommands &commands, const PenguinState &state
         {
             _step = 0;
             _timer = 0.0f;
+            _finished = true; 
         }
         break;
     }
@@ -246,6 +252,7 @@ void Routine::obstacleAvoidanceRoutine(PenguinCommands &commands, const PenguinS
         {
             _step = 0;
             _timer = 0.0f;
+            _finished = true; 
         }
         break;
     }

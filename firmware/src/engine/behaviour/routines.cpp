@@ -12,7 +12,7 @@
 
 Routine::Routine() : _currentRoutine(RoutineType::Default), _timer(0.0f), _step(0) {}
 
-Routine::setRoutine(RoutineType routine)
+void Routine::setRoutine(RoutineType routine)
 {
     if (_currentRoutine != routine)
     {
@@ -34,19 +34,19 @@ void Routine::update(PenguinCommands &commands, const PenguinState &state, float
         break;
 
     case RoutineType::Startup:
-        defaultRoutine(commands, state, dt);
+        startupRoutine(commands, state, dt);
         break;
 
     case RoutineType::Drive:
-        defaultRoutine(commands, state, dt);
+        driveRoutine(commands, state, dt);
         break;
 
     case RoutineType::ObstacleAvoidance:
-        defaultRoutine(commands, state, dt);
+        obstacleAvoidanceRoutine(commands, state, dt);
         break;
 
     case RoutineType::Patrol:
-        defaultRoutine(commands, state, dt);
+        patrolRoutine(commands, state, dt);
         break;
 
     default:
@@ -99,7 +99,7 @@ void Routine::startupRoutine(PenguinCommands &commands, const PenguinState &stat
 
     case 1:
         MotionPrimitives::stop(commands);
-        if (timer >= 0.5f)
+        if (_timer >= 0.5f)
         {
             _step++;
             _timer = 0.0f;
@@ -109,7 +109,7 @@ void Routine::startupRoutine(PenguinCommands &commands, const PenguinState &stat
     case 2:
         MotionPrimitives::stand(commands);
         MotionPrimitives::turnLeft(commands, MotionConfig::SPIN_STARTUP_SPEED);
-        if (timer >= 3.0f)
+        if (_timer >= 3.0f)
         {
             _step = 0;
             _timer = 0.0f;
@@ -169,7 +169,7 @@ void Routine::driveRoutine(PenguinCommands &commands, const PenguinState &state,
 // PHASE 1: CRUISE FORWARD
 // PHASE 2: SCAN L/R
 // PHASE 3: RETURN TO FORWARD CRUISE
-void Routine::patrolRoutine(commands)
+void Routine::patrolRoutine(PenguinCommands &commands, const PenguinState &state, float dt)
 {
     switch (_step)
     {

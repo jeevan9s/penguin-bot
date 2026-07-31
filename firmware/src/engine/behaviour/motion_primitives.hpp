@@ -19,29 +19,29 @@ class MotionPrimitives
 {
 public:
 
-    void stand(PenguinCommands& commands);
+    static void stand(PenguinCommands& commands);
 
-    void squat(PenguinCommands& commands, int squatAngle = MotionConfig::SQUAT_HIP_ANGLE);
+   static void squat(PenguinCommands& commands, int squatAngle = MotionConfig::SQUAT_HIP_ANGLE);
 
-    void leanFWD(PenguinCommands& commands);
+   static void leanFWD(PenguinCommands& commands);
 
-    void leanREV(PenguinCommands& commands);
+   static void leanREV(PenguinCommands& commands);
 
-    void leanLeft(PenguinCommands& commands);
+   static void leanLeft(PenguinCommands& commands);
 
-    void leanRight(PenguinCommands& commands);
+   static void leanRight(PenguinCommands& commands);
 
-    void stop(PenguinCommands& commands); 
+  static void stop(PenguinCommands& commands); 
 
-    void pivot(PenguinCommands& commands, float rpm); 
+   static void pivot(PenguinCommands& commands, float rpm); 
     
-    void driveFWD(PenguinCommands& commands, float rpm);
+   static void driveFWD(PenguinCommands& commands, float rpm);
 
-    void driveREV(PenguinCommands& commands, float rpm);
+    static void driveREV(PenguinCommands& commands, float rpm);
 
-    void turnLeft(PenguinCommands& commands, float rpm);
+   static void turnLeft(PenguinCommands& commands, float rpm);
 
-    void turnRight(PenguinCommands& commands, float rpm);
+   static void turnRight(PenguinCommands& commands, float rpm);
 
 private:
 

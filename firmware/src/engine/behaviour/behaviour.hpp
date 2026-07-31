@@ -22,6 +22,8 @@ class Behaviour {
         void update(PenguinCommands &commands, const PenguinState &state, float dt); 
 
     private:
+        void changeRoutine(RoutineType next); 
         Routine _routine;
-
+        RoutineType _current; 
+        float _timer; 
 };

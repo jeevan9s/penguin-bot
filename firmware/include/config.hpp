@@ -22,11 +22,28 @@ extern LSM6DSM imu;
 
 extern Adafruit_MCP23X17 mcp;
 
-bool init_mcp(void);
-void led_startup(void);
+/// @brief initializes the onboard MCP23017 IO expander
+/// @return true on successful init
+bool init_mcp();
+
+/// @brief led flashing routine on system start
+void led_startup();
+
+/// @brief simple LED blink (blocking)
+/// @param ledPin LED IO pin
+/// @param count how many blinks
+/// @param delayMs interval between blinks
 void blinkLED(uint8_t ledPin, int count, int delayMs=200);
+
+/// @brief scan the I2C bus for devices 
 void scanI2C();
+
+/// @brief resets and clears a stuck I2C bus
 void recoverI2C();
+
+/// @brief non-blocking LED blink
+/// @param pin the LED pin
+/// @param count the amount of blinks 
 void blinkP(uint8_t pin, int count);
 
 

@@ -74,23 +74,35 @@ void scanI2C() {
 }
 
 void recoverI2C() {
-    pinMode(Pins::MCU::SCL, INPUT_PULLUP);
-    pinMode(Pins::MCU::SDA, INPUT_PULLUP);
+    Wire.end(); 
     delay(10);
 
-    pinMode(Pins::MCU::SCL, OUTPUT);
-    for (int i = 0; i < 16; i++) {
-        digitalWrite(Pins::MCU::SCL, HIGH);
-        delayMicroseconds(20);
-        digitalWrite(Pins::MCU::SCL, LOW);
-        delayMicroseconds(20);
-        
-        if (digitalRead(Pins::MCU::SDA) == HIGH) break;
+    pinMode(Pins::MCU::SDA, INPUT_PULLUP);
+    pinMode(Pins::MCU::SCL, INPUT_PULLUP);
+    delay(10);
+
+    if (digitalRead(Pins::MCU::SDA) == LOW) {
+        pinMode(Pins::MCU::SCL, OUTPUT);
+
+        for (int i = 0; i < 16; i++) {
+            digitalWrite(Pins::MCU::SCL, LOW);
+            delayMicroseconds(10);
+            digitalWrite(Pins::MCU::SCL, HIGH);
+            delayMicroseconds(10);
+        }
     }
-    
-    Wire.end();
-    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL);
+
+    pinMode(Pins::MCU::SDA, OUTPUT);
+    digitalWrite(Pins::MCU::SDA, LOW);
+    delayMicroseconds(10);
+    digitalWrite(Pins::MCU::SCL, HIGH); 
+    delayMicroseconds(10);
+    digitalWrite(Pins::MCU::SDA, HIGH);
+    delayMicroseconds(10);
+
+    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL); 
 }
+
 
 // non-blocking led stuff
 void blinkP(uint8_t pin, int count) {

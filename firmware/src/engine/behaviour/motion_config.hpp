@@ -35,6 +35,17 @@ namespace MotionConfig {
     constexpr float PIVOT_OFFST = 30.0f;
     constexpr float FWD_LEAN_PITCH = 5.0f; 
 
+    // PID constants
+    constexpr float BAL_KP = 40.0f; 
+    constexpr float BAL_KI = 0.0f; 
+    constexpr float BAL_KD = 0.5f; 
+
+    constexpr float VEL_KP = 0.25f; 
+    constexpr float VEL_KI = 0.0f; 
+    constexpr float VEL_KD = 0.005f; 
+
+    constexpr float MAX_HIP_ANGLE = 90;
+
 }; 
 
 /// @brief cascade speed structure 

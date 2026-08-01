@@ -12,6 +12,13 @@
 #include "dashboard.hpp"
 #include "scheduler.hpp"
 #include "penguin_state.hpp"
+#include "behaviour.hpp"
+#include "locomotion.hpp"
+#include "servo_driver.hpp"
+#include "balance_controller.hpp"
+#include "velocity_controller.hpp"
+#include "motion_config.hpp"
+
 
 bool menuShown = false;
 CAMDriver cameraDriver;
@@ -19,6 +26,12 @@ HTTPServer http{cameraDriver};
 bool dashboardRunning = false;
 LSM6DSM imu;
 
+
+BalanceController balanceController(MotionConfig::BAL_KP, MotionConfig::BAL_KI, MotionConfig::BAL_KD, MotionConfig::TURBO_SPEED);  
+VelocityController leftVController(MotionConfig::VEL_KP, MotionConfig::VEL_KI, MotionConfig::VEL_KD, 255); 
+VelocityController rightVController(MotionConfig::VEL_KP, MotionConfig::VEL_KI, MotionConfig::VEL_KD, 255); 
+ServoDriver hipL(Pins::MCU::L_SERVO);
+ServoDriver hipR(Pins::MCU::R_SERVO);
 IMUDriver imuDriver;
 BattDataDriver battDriver;
 TOFDriver sensor1(Pins::MCP::TOF_XSHUT_1, 0x31);
@@ -27,18 +40,20 @@ TOFDriver sensor3(Pins::MCP::TOF_XSHUT_3, 0x33);
 MotorDriver motorL(Pins::MCU::MOTA_IN1, Pins::MCU::MOTA_IN2, Pins::MCU::ENC_A_PH1, Pins::MCU::ENC_A_PH2);
 MotorDriver motorR(Pins::MCU::MOTB_IN1, Pins::MCU::MOTB_IN2, Pins::MCU::ENC_B_PH1, Pins::MCU::ENC_B_PH2);
 
+Locomotion locomotion(balanceController, leftVController, rightVController, motorL, motorR, hipL, hipR);
+Behaviour behaviour; 
+
 Scheduler scheduler(imuDriver, battDriver, sensor1, sensor2, sensor3, motorL, motorR);
 
 void displayMenu()
 {
     Serial.println("\n--- PENGUIN ---");
-    Serial.println("[SPACE] launch dashboard");
     Serial.println(" [t] : launch test bench");
     Serial.println(" [s] : scan I2C bus");
     Serial.println("------------------------");
 }
 
-void runTaskSpace()
+void runDash()
 {
     Serial.println("\n>> ---launching dashboard");
     run_dashboard();
@@ -110,6 +125,10 @@ void setup()
 
     motorL.begin(); 
     motorR.begin();
+    hipL.begin(MotionConfig::DEFAULT_HIP_ANGLE, MotionConfig::MAX_HIP_ANGLE); 
+    hipR.begin(MotionConfig::DEFAULT_HIP_ANGLE, MotionConfig::MAX_HIP_ANGLE); 
+
+    behaviour.begin(); 
 }
 
 void loop()
@@ -118,7 +137,19 @@ void loop()
     {
         blinkP(activeBlinkPin, blinkCount);
     }
+
+    runDash(); 
+
     scheduler.update(penguin_state);
+
+    static uint32_t last = millis(); 
+    uint32_t now = millis(); 
+
+    float dt = (now - last) / 1000.0f; 
+    last = now; 
+
+    behaviour.update(penguin_commands, penguin_state, dt); 
+    locomotion.update(penguin_state, penguin_commands, dt); 
 
     if (dashboardRunning)
     {
@@ -153,10 +184,6 @@ void loop()
         case 'm':
         case 'M':
             displayMenu();
-            break;
-
-        case ' ':
-            runTaskSpace();
             break;
 
         case '\n':

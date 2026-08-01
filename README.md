@@ -33,6 +33,7 @@ Hybrid differential legged-wheeled biped rover for embodied AI, computer vision,
   - [Firmware](#firmware)
   - [Repository Structure](#repository-structure)
   - [Gallery](#gallery)
+    - [first selfie | 2026/07/04](#first-selfie--20260704)
 
 </details>
 
@@ -367,22 +368,10 @@ It contains Servo pads for the hip motors to rest on, a port for an ON/OFF switc
 
 It acts as the "floor" of the Servo bay and the bottom of the chassis. 
 
-It connects to the rest of the chassis through pegs to insert into the inside face of each wall. 
+It connects to the rest of the chassis through pegs to insert into the inside face of each wall, as well as the nose. 
 
 <p align="center">
   <img src="/media/images/cad/chassis/base.png" width="400">
-</p>
-
-**Mid Plate**
-
-The mid-plate is the rough center of the internal stack-up. 
-
-It is the mounting point for the controller board and connects to internal shelves on each side wall.
-
-This inner section above the mid-plate and under the lid forms the controller bay. 
-
-<p align="center">
-  <img src="/media/images/cad/chassis/mid.png" width="400">
 </p>
 
 **Side Walls**
@@ -390,8 +379,9 @@ This inner section above the mid-plate and under the lid forms the controller ba
 
 The side-walls enclose the internal stack-up, and provide mounting points for several chassis components. 
 
-They have cutouts for the Servo shafts, arm joints, and house components like the external antenna and RGB indicators. 
+Mounting tabs are on the inside of each wall for board mounting. 
 
+They have cutouts for the Servo shafts, arm joints, and house components like the external antenna. 
 The top face has short holes for magnets that align with holes on the lid. 
 
 **Nose**
@@ -399,27 +389,32 @@ The top face has short holes for magnets that align with holes on the lid.
   <img src="/media/images/cad/chassis/nose_s.png" width="400">
 </p>
 
-The nose contains ports for the ToF sensors, OLED screen, and an RGB indicator. 
+The nose contains ports for the ToF sensors, and an OLED screen. 
 
-There is also a cable port connecting to the controller bay for routing. 
+There is also an open face cable port connecting to the controller bay for routing. 
 
-It mounts to each walls with pegs, and has short holes for magnets that align with holes on the lid.
+It mounts to each walls with pegs and magnets, as well as to the base plate. 
 
 **Stern**
 <p align="center">
   <img src="/media/images/cad/chassis/stern.png" width="400">
 </p>
 
-The stern features a USB-port and fits inside the walls.
-
-It uses M3 screws to secure it in place. 
+The stern features a USB-port and snaps to the walls via pegs. 
 
 **Lid**
 <p align="center">
   <img src="/media/images/cad/chassis/lid.png" width="400">
 </p>
 
-The lid contains a porthole for the camera, and is magnetically mounted on the top surface of the walls and nose. 
+The lid contains a magnet cutouts for mounting the camera mount, and is magnetically mounted on the top surface of the walls and nose. 
+
+**Camera Mount**
+<p align="center">
+  <img src="/media/images/cad/chassis/cam_mount.png" width="400">
+</p>
+
+The mount features a porthole for the OV2640 camera lens, and corresponding magnet cutouts for mating with the roof. 
 
 ### Leg Assembly
 <p align="center">

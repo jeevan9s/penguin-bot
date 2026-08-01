@@ -10,10 +10,15 @@
 
 #include "config.hpp"
 
-const char* ssid = "JPhone";
-const char* pswd = "jeevan1--";
+const char* ssid = "Health2024";
+const char* pswd = "Rexdale2024";
 
 Adafruit_MCP23X17 mcp;
+
+int blinksRemaining = 0;
+unsigned long lastBlink = 0;
+uint8_t activeBlinkPin = 0;
+int blinkCount = 0;
 
 bool init_mcp(void) {
     Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL, 100000);
@@ -69,20 +74,51 @@ void scanI2C() {
 }
 
 void recoverI2C() {
-    pinMode(Pins::MCU::SCL, INPUT_PULLUP);
-    pinMode(Pins::MCU::SDA, INPUT_PULLUP);
+    Wire.end(); 
     delay(10);
 
-    pinMode(Pins::MCU::SCL, OUTPUT);
-    for (int i = 0; i < 16; i++) {
-        digitalWrite(Pins::MCU::SCL, HIGH);
-        delayMicroseconds(20);
-        digitalWrite(Pins::MCU::SCL, LOW);
-        delayMicroseconds(20);
-        
-        if (digitalRead(Pins::MCU::SDA) == HIGH) break;
+    pinMode(Pins::MCU::SDA, INPUT_PULLUP);
+    pinMode(Pins::MCU::SCL, INPUT_PULLUP);
+    delay(10);
+
+    if (digitalRead(Pins::MCU::SDA) == LOW) {
+        pinMode(Pins::MCU::SCL, OUTPUT);
+
+        for (int i = 0; i < 16; i++) {
+            digitalWrite(Pins::MCU::SCL, LOW);
+            delayMicroseconds(10);
+            digitalWrite(Pins::MCU::SCL, HIGH);
+            delayMicroseconds(10);
+        }
     }
-    
-    Wire.end();
-    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL);
+
+    pinMode(Pins::MCU::SDA, OUTPUT);
+    digitalWrite(Pins::MCU::SDA, LOW);
+    delayMicroseconds(10);
+    digitalWrite(Pins::MCU::SCL, HIGH); 
+    delayMicroseconds(10);
+    digitalWrite(Pins::MCU::SDA, HIGH);
+    delayMicroseconds(10);
+
+    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL); 
+}
+
+
+// non-blocking led stuff
+void blinkP(uint8_t pin, int count) {
+    if (blinksRemaining == 0) blinksRemaining = count * 2;
+
+    if (millis() - lastBlink > 200) {
+        lastBlink = millis();
+        bool current = mcp.digitalRead(pin);
+        mcp.digitalWrite(pin, !current);
+        blinksRemaining--;
+
+        if (blinksRemaining == 0) mcp.digitalWrite(pin, LOW);
+    }
+}
+
+float lerp(float current, float target, float rate, float dt) {
+    // move current to target smoothly based on rate
+    return current + (target - current) * (1.0f - expf(-rate * dt));
 }

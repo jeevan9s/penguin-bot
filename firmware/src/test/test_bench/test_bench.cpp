@@ -10,7 +10,6 @@
 #include <Arduino.h>
 #include "config.hpp"
 #include "test_bench.hpp"
-#include "config.hpp"
 
 void run_test_bench()
 {

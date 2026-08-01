@@ -180,7 +180,7 @@ void init_wifi_server() {
 }
 
 void setup_wifi() {
-    WiFi.begin("Health2024", "Rexdale2024");
+    WiFi.begin("", "");
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
         Serial.print(".");

@@ -46,6 +46,13 @@ void recoverI2C();
 /// @param count the amount of blinks 
 void blinkP(uint8_t pin, int count);
 
+/// @brief linearly interpolates between two values in a frame-rate independent manner
+/// @param current the starting value
+/// @param target the destination value
+/// @param rate the tracking speed (higher values mean faster interpolation)
+/// @param dt the delta time since the last frame in seconds
+/// @return the smoothly interpolated float value
+float lerp(float current, float target, float rate, float dt); 
 
 // WIFI creds
 extern const char* ssid;
@@ -56,3 +63,4 @@ extern int blinksRemaining;
 extern unsigned long lastBlink;
 extern uint8_t activeBlinkPin;
 extern int blinkCount; 
+

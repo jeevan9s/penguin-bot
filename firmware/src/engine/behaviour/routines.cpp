@@ -1,6 +1,6 @@
 /**
  * @file        routines.cpp
- * @brief       Sequenced primitive invocation
+ * @brief       Sequenced primitive invocation with configurable constants
  * @author      Jeevan Sanchez
  * @date        2026-07-30
  *
@@ -10,7 +10,7 @@
 #include <Arduino.h>
 #include "routines.hpp"
 
-Routine::Routine() : _currentRoutine(RoutineType::Default), _timer(0.0f), _step(0), _finished(false) {}
+Routine::Routine() : _currentRoutine(RoutineType::Default), _timer(0.0f), _step(0), _finished(false), _currentRPM(0.0f) {}
 
 void Routine::setRoutine(RoutineType routine)
 {
@@ -29,33 +29,26 @@ void Routine::update(PenguinCommands &commands, const PenguinState &state, float
 
     switch (_currentRoutine)
     {
-
     case RoutineType::Default:
         defaultRoutine(commands, state, dt);
         break;
-
     case RoutineType::Startup:
         startupRoutine(commands, state, dt);
         break;
-
     case RoutineType::Drive:
         driveRoutine(commands, state, dt);
         break;
-
     case RoutineType::ObstacleAvoidance:
         obstacleAvoidanceRoutine(commands, state, dt);
         break;
-
     case RoutineType::Patrol:
         patrolRoutine(commands, state, dt);
         break;
-
     default:
         defaultRoutine(commands, state, dt);
         break;
     }
 }
-
 
 // cycle between squat and standing for heartbeat behaviour
 void Routine::defaultRoutine(PenguinCommands &commands, const PenguinState &state, float dt)
@@ -63,19 +56,20 @@ void Routine::defaultRoutine(PenguinCommands &commands, const PenguinState &stat
     if (_step == 0)
     {
         MotionPrimitives::squat(commands);
+        _currentRPM = lerp(_currentRPM, 0.0f, RoutineConfig::SPEED_LERP_RATE, dt);
         MotionPrimitives::stop(commands);
-        if (_timer >= 3.0f)
+        if (_timer >= RoutineConfig::DEFAULT_STEP_DURATION)
         {
             _step = 1;
             _timer = 0.0f;
         }
     }
-
-    if (_step == 1)
+    else if (_step == 1)
     {
         MotionPrimitives::stand(commands);
+        _currentRPM = lerp(_currentRPM, 0.0f, RoutineConfig::SPEED_LERP_RATE, dt);
         MotionPrimitives::stop(commands);
-        if (_timer >= 3.0f)
+        if (_timer >= RoutineConfig::DEFAULT_STEP_DURATION)
         {
             _step = 0;
             _timer = 0.0f;
@@ -89,11 +83,14 @@ void Routine::defaultRoutine(PenguinCommands &commands, const PenguinState &stat
 // PHASE 3: standup while spinning
 void Routine::startupRoutine(PenguinCommands &commands, const PenguinState &state, float dt)
 {
+    float targetRPM = 0.0f;
+
     switch (_step)
     {
     case 0:
         MotionPrimitives::squat(commands);
-        if (_timer >= 0.5f)
+        targetRPM = 0.0f;
+        if (_timer >= RoutineConfig::STARTUP_SQUAT_DURATION)
         {
             _step++;
             _timer = 0.0f;
@@ -102,7 +99,8 @@ void Routine::startupRoutine(PenguinCommands &commands, const PenguinState &stat
 
     case 1:
         MotionPrimitives::stop(commands);
-        if (_timer >= 0.5f)
+        targetRPM = 0.0f;
+        if (_timer >= RoutineConfig::STARTUP_PAUSE_DURATION)
         {
             _step++;
             _timer = 0.0f;
@@ -111,14 +109,19 @@ void Routine::startupRoutine(PenguinCommands &commands, const PenguinState &stat
 
     case 2:
         MotionPrimitives::stand(commands);
-        MotionPrimitives::turnLeft(commands, MotionConfig::SPIN_STARTUP_SPEED);
-        if (_timer >= 3.0f)
+        targetRPM = MotionConfig::SPIN_STARTUP_SPEED;
+        if (_timer >= RoutineConfig::STARTUP_SPIN_DURATION)
         {
             _step = 0;
             _timer = 0.0f;
             _finished = true;
         }
         break;
+    }
+
+    _currentRPM = lerp(_currentRPM, targetRPM, RoutineConfig::PIVOT_LERP_RATE, dt);
+    if (_step == 2) {
+        MotionPrimitives::turnLeft(commands, _currentRPM);
     }
 }
 
@@ -128,22 +131,23 @@ void Routine::startupRoutine(PenguinCommands &commands, const PenguinState &stat
 // PHASE 4: CRAWL FORWARD
 void Routine::driveRoutine(PenguinCommands &commands, const PenguinState &state, float dt)
 {
+    float targetRPM = 0.0f;
 
     switch (_step)
     {
     case 0:
-        MotionPrimitives::driveFWD(commands, getRPM(SpeedLevel::CRUISE));
-        if (_timer >= 5.0f)
+        targetRPM = getRPM(SpeedLevel::CRUISE);
+        if (_timer >= RoutineConfig::DRIVE_CRUISE_DURATION)
         {
             _step++;
-            _timer = 0.0;
+            _timer = 0.0f;
         }
         break;
 
     case 1:
         MotionPrimitives::squat(commands);
-        MotionPrimitives::driveFWD(commands, getRPM(SpeedLevel::CRAWL));
-        if (_timer >= 2.5f)
+        targetRPM = getRPM(SpeedLevel::CRAWL);
+        if (_timer >= RoutineConfig::DRIVE_SQUAT_DURATION)
         {
             _step++;
             _timer = 0.0f;
@@ -151,8 +155,8 @@ void Routine::driveRoutine(PenguinCommands &commands, const PenguinState &state,
         break;
 
     case 2:
-        MotionPrimitives::driveFWD(commands, getRPM(SpeedLevel::TURBO));
-        if (_timer >= 2.0f)
+        targetRPM = getRPM(SpeedLevel::TURBO);
+        if (_timer >= RoutineConfig::DRIVE_TURBO_DURATION)
         {
             _step++;
             _timer = 0.0f;
@@ -161,14 +165,18 @@ void Routine::driveRoutine(PenguinCommands &commands, const PenguinState &state,
 
     case 3:
         MotionPrimitives::stand(commands);
-        MotionPrimitives::driveFWD(commands, getRPM(SpeedLevel::CRAWL));
-        if (_timer >= 5.0f)
+        targetRPM = getRPM(SpeedLevel::CRAWL);
+        if (_timer >= RoutineConfig::DRIVE_CRAWL_DURATION)
         {
             _step = 0;
             _timer = 0.0f;
             _finished = true; 
         }
+        break;
     }
+
+    _currentRPM = lerp(_currentRPM, targetRPM, RoutineConfig::SPEED_LERP_RATE, dt);
+    MotionPrimitives::driveFWD(commands, _currentRPM);
 }
 
 // PHASE 1: CRUISE FORWARD
@@ -176,12 +184,14 @@ void Routine::driveRoutine(PenguinCommands &commands, const PenguinState &state,
 // PHASE 3: RETURN TO FORWARD CRUISE
 void Routine::patrolRoutine(PenguinCommands &commands, const PenguinState &state, float dt)
 {
+    float targetRPM = 0.0f;
+
     switch (_step)
     {
     case 0:
         MotionPrimitives::stand(commands);
-        MotionPrimitives::driveFWD(commands, getRPM(SpeedLevel::CRUISE));
-        if (_timer >= 4.0f)
+        targetRPM = getRPM(SpeedLevel::CRUISE);
+        if (_timer >= RoutineConfig::PATROL_CRUISE_DURATION)
         {
             _step++;
             _timer = 0.0f;
@@ -189,28 +199,34 @@ void Routine::patrolRoutine(PenguinCommands &commands, const PenguinState &state
         break;
 
     case 1:
-        if (scan(commands, MotionConfig::PIVOT_OFFST))
+        if (scan(commands, MotionConfig::PIVOT_OFFST, dt))
         {
             _step++;
         }
         break;
 
     case 2:
-        if (scan(commands, -MotionConfig::PIVOT_OFFST))
+        if (scan(commands, -MotionConfig::PIVOT_OFFST, dt))
         {
             _step++;
         }
         break;
 
     case 3:
-        MotionPrimitives::driveFWD(commands, getRPM(SpeedLevel::CRUISE));
-        if (_timer >= 4.0f)
+        targetRPM = getRPM(SpeedLevel::CRUISE);
+        if (_timer >= RoutineConfig::PATROL_CRUISE_DURATION)
         {
             _step = 0;
             _timer = 0.0f;
             _finished = true; 
         }
         break;
+    }
+
+    if (_step != 1 && _step != 2)
+    {
+        _currentRPM = lerp(_currentRPM, targetRPM, RoutineConfig::SPEED_LERP_RATE, dt);
+        MotionPrimitives::driveFWD(commands, _currentRPM);
     }
 }
 
@@ -219,12 +235,14 @@ void Routine::patrolRoutine(PenguinCommands &commands, const PenguinState &state
 // PHASE 3: RESUME FORWARD CRUISE
 void Routine::obstacleAvoidanceRoutine(PenguinCommands &commands, const PenguinState &state, float dt)
 {
+    float targetRPM = 0.0f;
+
     switch (_step)
     {
     case 0:
         MotionPrimitives::squat(commands);
-        MotionPrimitives::driveREV(commands, getRPM(SpeedLevel::CRAWL));
-        if (_timer >= 2.0f)
+        targetRPM = getRPM(SpeedLevel::CRAWL);
+        if (_timer >= RoutineConfig::EVASIVE_REVERSE_DURATION)
         {
             _step++;
             _timer = 0.0f;
@@ -232,14 +250,14 @@ void Routine::obstacleAvoidanceRoutine(PenguinCommands &commands, const PenguinS
         break;
 
     case 1:
-        if (scan(commands, MotionConfig::PIVOT_OFFST))
+        if (scan(commands, MotionConfig::PIVOT_OFFST, dt))
         {
             _step++;
         }
         break;
 
     case 2:
-        if (scan(commands, -MotionConfig::PIVOT_OFFST))
+        if (scan(commands, -MotionConfig::PIVOT_OFFST, dt))
         {
             _step++;
         }
@@ -247,8 +265,8 @@ void Routine::obstacleAvoidanceRoutine(PenguinCommands &commands, const PenguinS
 
     case 3:
         MotionPrimitives::stand(commands);
-        MotionPrimitives::driveFWD(commands, getRPM(SpeedLevel::CRUISE));
-        if (_timer >= 2.0f)
+        targetRPM = getRPM(SpeedLevel::CRUISE);
+        if (_timer >= RoutineConfig::EVASIVE_RECOVER_DURATION)
         {
             _step = 0;
             _timer = 0.0f;
@@ -256,11 +274,24 @@ void Routine::obstacleAvoidanceRoutine(PenguinCommands &commands, const PenguinS
         }
         break;
     }
+
+    if (_step == 0)
+    {
+        _currentRPM = lerp(_currentRPM, targetRPM, RoutineConfig::SPEED_LERP_RATE, dt);
+        MotionPrimitives::driveREV(commands, _currentRPM);
+    }
+    else if (_step == 3)
+    {
+        _currentRPM = lerp(_currentRPM, targetRPM, RoutineConfig::SPEED_LERP_RATE, dt);
+        MotionPrimitives::driveFWD(commands, _currentRPM);
+    }
 }
 
 bool Routine::scan(PenguinCommands &commands, float pivotRPM, float duration)
 {
-    MotionPrimitives::pivot(commands, pivotRPM);
+    _currentRPM = lerp(_currentRPM, pivotRPM, RoutineConfig::PIVOT_LERP_RATE, 0.02f);
+    MotionPrimitives::pivot(commands, _currentRPM);
+    
     if (_timer >= duration)
     {
         _timer = 0.0f;

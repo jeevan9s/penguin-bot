@@ -45,8 +45,30 @@ namespace MotionConfig {
     constexpr float VEL_KD = 0.005f; 
 
     constexpr float MAX_HIP_ANGLE = 90;
-
 }; 
+
+/// @brief timing config for routines
+namespace RoutineConfig {
+    constexpr float SPEED_LERP_RATE = 5.0f;
+    constexpr float PIVOT_LERP_RATE = 6.0f;
+
+    constexpr float DEFAULT_STEP_DURATION = 3.0f;
+
+    constexpr float STARTUP_SQUAT_DURATION = 0.5f;
+    constexpr float STARTUP_PAUSE_DURATION = 0.5f;
+    constexpr float STARTUP_SPIN_DURATION = 3.0f;
+
+    constexpr float DRIVE_CRUISE_DURATION = 5.0f;
+    constexpr float DRIVE_SQUAT_DURATION  = 2.5f;
+    constexpr float DRIVE_TURBO_DURATION  = 2.0f;
+    constexpr float DRIVE_CRAWL_DURATION  = 5.0f;
+
+    constexpr float PATROL_CRUISE_DURATION = 4.0f;
+    constexpr float PATROL_SCAN_DURATION   = 2.0f; 
+
+    constexpr float EVASIVE_REVERSE_DURATION = 2.0f;
+    constexpr float EVASIVE_RECOVER_DURATION = 2.0f;
+}
 
 /// @brief cascade speed structure 
 enum class SpeedLevel {

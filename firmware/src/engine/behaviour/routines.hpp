@@ -13,6 +13,7 @@
 #include "motion_primitives.hpp"
 #include "penguin_commands.hpp"
 #include "penguin_state.hpp"
+#include "config.hpp"
 
 #pragma once
 
@@ -108,4 +109,5 @@ private:
 
     uint8_t _step;
     float _timer;
+    float _currentRPM;
 };

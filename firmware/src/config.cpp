@@ -117,3 +117,8 @@ void blinkP(uint8_t pin, int count) {
         if (blinksRemaining == 0) mcp.digitalWrite(pin, LOW);
     }
 }
+
+float lerp(float current, float target, float rate, float dt) {
+    // move current to target smoothly based on rate
+    return current + (target - current) * (1.0f - expf(-rate * dt));
+}

@@ -1,0 +1,92 @@
+/**
+ * @file        motion_config.hpp
+ * @brief       Motion constants & controller tuning 
+ * @author      Jeevan Sanchez
+ * @date        2026-07-30
+ *
+ * PENGUIN
+ */
+
+#pragma once 
+
+#include <Arduino.h>
+
+/// @brief constants for system configuration
+// stance-based hip-servo angles 
+// motor speeds based on levels and actions
+// offsets for scan-pivots
+// pitch depth (angles) for stance 
+namespace MotionConfig {
+    // tune
+    constexpr float DEFAULT_HIP_ANGLE = 270.0f; 
+    constexpr float SQUAT_HIP_ANGLE = 225.0f; 
+    constexpr float STAND_HIP_ANGLE = 200.0f; 
+    constexpr float LEFT_HIP_LEFT_LEAN_ANGLE = 0.0f; 
+    constexpr float RIGHT_HIP_LEFT_LEAN_ANGLE = 0.0f; 
+    constexpr float LEFT_HIP_RIGHT_LEAN_ANGLE = 0.0f; 
+    constexpr float RIGHT_HIP_RIGHT_LEAN_ANGLE = 0.0f; 
+
+    constexpr float CRAWL_SPEED = 50.0F;
+    constexpr float CRUISE_SPEED = 150.0f; 
+    constexpr float TURBO_SPEED = 250.0f; 
+
+    constexpr float SPIN_STARTUP_SPEED = 50.0f;  
+
+    constexpr float PIVOT_OFFST = 30.0f;
+    constexpr float FWD_LEAN_PITCH = 5.0f; 
+
+    // PID constants
+    constexpr float BAL_KP = 40.0f; 
+    constexpr float BAL_KI = 0.0f; 
+    constexpr float BAL_KD = 0.5f; 
+
+    constexpr float VEL_KP = 0.25f; 
+    constexpr float VEL_KI = 0.0f; 
+    constexpr float VEL_KD = 0.005f; 
+
+    constexpr float MAX_HIP_ANGLE = 90;
+}; 
+
+/// @brief timing config for routines
+namespace RoutineConfig {
+    constexpr float SPEED_LERP_RATE = 5.0f;
+    constexpr float PIVOT_LERP_RATE = 6.0f;
+
+    constexpr float DEFAULT_STEP_DURATION = 3.0f;
+
+    constexpr float STARTUP_SQUAT_DURATION = 0.5f;
+    constexpr float STARTUP_PAUSE_DURATION = 0.5f;
+    constexpr float STARTUP_SPIN_DURATION = 3.0f;
+
+    constexpr float DRIVE_CRUISE_DURATION = 5.0f;
+    constexpr float DRIVE_SQUAT_DURATION  = 2.5f;
+    constexpr float DRIVE_TURBO_DURATION  = 2.0f;
+    constexpr float DRIVE_CRAWL_DURATION  = 5.0f;
+
+    constexpr float PATROL_CRUISE_DURATION = 4.0f;
+    constexpr float PATROL_SCAN_DURATION   = 2.0f; 
+
+    constexpr float EVASIVE_REVERSE_DURATION = 2.0f;
+    constexpr float EVASIVE_RECOVER_DURATION = 2.0f;
+}
+
+/// @brief cascade speed structure 
+enum class SpeedLevel {
+    CRAWL,
+    CRUISE, 
+    TURBO
+};
+
+/// @brief getter for speed values (RPM) based on typed speed levels
+/// used to update commands
+/// @param level one of the three speed levels
+/// @return the corresponding float RPM value
+inline float getRPM(SpeedLevel level) {
+    switch(level) {
+        case SpeedLevel::CRAWL: return MotionConfig::CRAWL_SPEED; 
+        case SpeedLevel::CRUISE: return MotionConfig::CRUISE_SPEED; 
+        case SpeedLevel::TURBO: return MotionConfig::TURBO_SPEED;
+        default: return 0.0f; 
+    }
+}
+

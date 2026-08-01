@@ -10,7 +10,7 @@
 #pragma once
 
 #include <Adafruit_MCP23X17.h>
-#include <Servo.h>
+#include <ESP32Servo.h>
 #include "pinouts.hpp"
 
 void test_motors();

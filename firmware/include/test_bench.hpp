@@ -9,7 +9,7 @@
 
  #pragma once 
 
-#include "config.h"
+#include "config.hpp"
 
 #include "test_leds.hpp"
 #include "test_wifi.hpp"

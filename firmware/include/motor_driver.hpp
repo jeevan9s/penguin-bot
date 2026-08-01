@@ -1,0 +1,58 @@
+/**
+ * @file        motor_driver.hpp
+ * @brief       Class definition for DRV8833-controlled N20 MicroGear Motor driver. 
+ * @author      Jeevan Sanchez
+ * @date        2026-07-17
+ * 
+ * Uses the ESP32Encoder wrapper for the ESP Pulse Count Peripheral (PCNT)
+ *
+ * PENGUIN
+ */
+
+#pragma once 
+
+#include <Arduino.h>
+#include "penguin_data.hpp"
+#include <ESP32Encoder.h>
+#include <Adafruit_MCP23X17.h>
+
+extern Adafruit_MCP23X17 mcp;
+
+/// @brief hardware driver class for N20 motors driven by a DRV8833 chip
+class MotorDriver {
+    public:
+
+        /// @brief configure the motor and encoder input pins
+        MotorDriver(uint8_t motorIn1, uint8_t motorIn2, uint8_t encP1, uint8_t encP2); 
+
+        /// @brief setup the encoders using ESP32Encoder half-quadrature
+        /// clear encoder count and start internal timer
+        /// attach motor inputs to ledc channels for PWM input
+        void begin(); 
+
+        /// @brief calculate RPM (10ms window) and position with encoder data and populate MotorData 
+        /// @return the populated MotorData struct with RPM for PID controllers and dashboard visuals
+        MotorData read(); 
+
+        /// @brief write PWM to motor inputs based on direction in params 
+        /// @param pwm desired speed as PWM command [-255, 255]
+        void run(int pwm); 
+
+        /// @brief turn the motor OFF by writing zero-PWM and zero-out RPM tracker
+        void stop(); 
+
+    private:
+        uint8_t _motorIn1; 
+        uint8_t _motorIn2; 
+        uint8_t _encP1; 
+        uint8_t _encP2; 
+
+        uint8_t _in1; 
+        uint8_t _in2; 
+
+        ESP32Encoder _encoder; 
+
+        long _lastPosition; 
+        unsigned long _lastTime; 
+        float _currentRPM;
+};

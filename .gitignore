@@ -50,3 +50,20 @@ Thumbs.db
 # =========================
 __pycache__/
 *.pyc
+
+node_modules/
+
+# Environment variables and secrets
+.env
+.env.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Build outputs (Next.js, Vite, React, etc.)
+dist/
+build/
+.next/
+.nuxt/

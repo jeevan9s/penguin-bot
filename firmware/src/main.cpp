@@ -18,6 +18,8 @@
 #include "balance_controller.hpp"
 #include "velocity_controller.hpp"
 #include "motion_config.hpp"
+#include "tof_driver.hpp"
+#include "oled_driver.hpp"
 
 
 bool menuShown = false;
@@ -26,7 +28,6 @@ HTTPServer http{cameraDriver};
 bool dashboardRunning = false;
 LSM6DSM imu;
 
-
 BalanceController balanceController(MotionConfig::BAL_KP, MotionConfig::BAL_KI, MotionConfig::BAL_KD, MotionConfig::TURBO_SPEED);  
 VelocityController leftVController(MotionConfig::VEL_KP, MotionConfig::VEL_KI, MotionConfig::VEL_KD, 255); 
 VelocityController rightVController(MotionConfig::VEL_KP, MotionConfig::VEL_KI, MotionConfig::VEL_KD, 255); 
@@ -34,7 +35,7 @@ ServoDriver hipL(Pins::MCU::L_SERVO);
 ServoDriver hipR(Pins::MCU::R_SERVO);
 IMUDriver imuDriver;
 BattDataDriver battDriver;
-TOFDriver sensor1(Pins::MCP::TOF_XSHUT_1, 0x31);
+TOFDriver sensor1(Pins::MCP::TOF_XSHUT_1, 0x6A);
 TOFDriver sensor2(Pins::MCP::TOF_XSHUT_2, 0x32);
 TOFDriver sensor3(Pins::MCP::TOF_XSHUT_3, 0x33);
 MotorDriver motorL(Pins::MCU::MOTA_IN1, Pins::MCU::MOTA_IN2, Pins::MCU::ENC_A_PH1, Pins::MCU::ENC_A_PH2);
@@ -121,6 +122,7 @@ void setup()
     Serial.println("IMU --calibrated");
 
     led_startup();
+    // oled();
     displayMenu();
 
     motorL.begin(); 
@@ -138,7 +140,7 @@ void loop()
         blinkP(activeBlinkPin, blinkCount);
     }
 
-    runDash(); 
+    // runDash(); 
 
     scheduler.update(penguin_state);
 
@@ -181,6 +183,10 @@ void loop()
             displayMenu();
             break;
 
+        case ' ':
+            runDash(); 
+            break;
+
         case 'm':
         case 'M':
             displayMenu();
@@ -195,4 +201,5 @@ void loop()
             break;
         }
     }
+    delay (1); 
 }

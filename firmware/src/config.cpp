@@ -10,8 +10,8 @@
 
 #include "config.hpp"
 
-const char* ssid = "Health2024";
-const char* pswd = "Rexdale2024";
+const char* ssid = "JPhone";
+const char* pswd = "jeevan1--";
 
 Adafruit_MCP23X17 mcp;
 

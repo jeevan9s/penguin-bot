@@ -10,6 +10,7 @@
 // testing is just for one motor and servo -- not both
 #include <Arduino.h>
 #include "test_mtr.hpp"
+#include "motion_config.hpp"
 
 Servo servoL;
 Servo servoR;
@@ -35,8 +36,8 @@ void printTicks(unsigned long durationMs) {
 }
 
 void motorSetup() {
-    servoL.attach(Pins::MCU::L_SERVO); 
-    servoR.attach(Pins::MCU::R_SERVO); 
+    servoL.attach(Pins::MCU::L_SERVO, 500, 2500); 
+    servoR.attach(Pins::MCU::R_SERVO, 500, 2500); 
     
     mcp.pinMode(Pins::MCP::VMOT_EN, OUTPUT); 
     mcp.digitalWrite(Pins::MCP::VMOT_EN, HIGH); 
@@ -53,36 +54,17 @@ void motorSetup() {
     attachInterrupt(digitalPinToInterrupt(Pins::MCU::ENC_A_PH1), countPulse, RISING);
 }
 
-void sweepServo()
-{
-    for (int i = 0; i <= 180; i++)
-    {
-        servoL.write(i);
-        Serial.println("sweeping Servo to 180°"); 
-        delay(15);
-    }
 
-    for (int i = 180; i >= 0; i--)
-    {
-        servoL.write(i);
-        Serial.println("sweeping Servo back to 0"); 
-        delay(15);
-    }
+void hipAngleTest() {    
+    for (int usInput = 500; usInput <= 2500; usInput += 250) {
+        Serial.print("pulse width: ");
+        Serial.print(usInput);
+        Serial.println(" us");
 
-    delay (500); 
+        servoR.writeMicroseconds(usInput); 
+        servoL.writeMicroseconds(usInput); 
 
-        for (int i = 0; i <= 180; i++)
-    {
-        servoR.write(i);
-        Serial.println("sweeping Servo to 180°"); 
-        delay(15);
-    }
-
-    for (int i = 180; i >= 0; i--)
-    {
-        servoR.write(i);
-        Serial.println("sweeping Servo back to 0"); 
-        delay(15);
+        delay(1000);
     }
 }
 
@@ -113,20 +95,19 @@ void runDCMotors() {
 }
 
 void test_motors() {
-
-   motorSetup();
+    motorSetup();
 
     for (int i = 0; i < 2; i++) {
         switch(i) {
             case 0:
                 Serial.println("testing SERVOS---");
-                sweepServo(); 
+                hipAngleTest(); 
                 break;
             
-            case 1: 
-                Serial.println("testing N20 motors---");
-                runDCMotors();
-                break;
+            // case 1: 
+            //     Serial.println("testing N20 motors---");
+            //     runDCMotors();
+            //     break;
 
             default:
                 break;

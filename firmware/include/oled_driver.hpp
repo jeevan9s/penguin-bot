@@ -12,4 +12,5 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-void oled(); 
+bool oled(); 
+void oledLoadingScreen(uint8_t percent);

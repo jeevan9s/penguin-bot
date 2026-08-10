@@ -52,7 +52,7 @@ export interface PenguinData {
 }
 
 
-export const DEFAULT_ESP_IP = "172.20.10.12";
+export const DEFAULT_ESP_IP = "10.0.0.169";
 
 export const DEFAULT_PENGUIN_DATA: PenguinData = {
     imu: {

@@ -13,17 +13,17 @@
 #include "tof_driver.hpp"
 
 TOFDriver::TOFDriver(uint8_t shutdownPin, uint8_t addr, float detectionThreshold) : _shutdownPin(shutdownPin), _addr(addr), _detectionThreshold(detectionThreshold) {
-    pinMode(_shutdownPin, OUTPUT);
+    mcp.pinMode(_shutdownPin, OUTPUT);
     off(); 
 }
 
 void TOFDriver::on() {
-    digitalWrite(_shutdownPin, HIGH);
+    mcp.digitalWrite(_shutdownPin, HIGH);
     delay(20); 
 }
 
 void TOFDriver::off() {
-    digitalWrite(_shutdownPin, LOW);
+    mcp.digitalWrite(_shutdownPin, LOW);
     delay(20); 
 }
 
@@ -42,15 +42,25 @@ bool TOFDriver::ping() {
     return (Wire.endTransmission() == 0); // true on ACK
 }
 
+bool TOFDriver::present() {
+    return _present; 
+}
 
 TOFData TOFDriver::read() {
+
+    TOFData data;
+
+    if (!_present) {
+        data.proximity = -1.0;
+        data.obstacleDetected = false;
+        return data;
+    }
 
     if (!_started){
         _sensor.startContinuous(); 
         _started = true;
     }
 
-    TOFData data; 
     uint16_t dist = _sensor.readRangeContinuousMillimeters(); 
 
     if (_sensor.timeoutOccurred() || dist >= 65535) {

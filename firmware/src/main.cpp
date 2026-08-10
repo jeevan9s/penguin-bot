@@ -35,7 +35,7 @@ ServoDriver hipL(Pins::MCU::L_SERVO);
 ServoDriver hipR(Pins::MCU::R_SERVO);
 IMUDriver imuDriver;
 BattDataDriver battDriver;
-TOFDriver sensor1(Pins::MCP::TOF_XSHUT_1, 0x6A);
+TOFDriver sensor1(Pins::MCP::TOF_XSHUT_1, 0x31);
 TOFDriver sensor2(Pins::MCP::TOF_XSHUT_2, 0x32);
 TOFDriver sensor3(Pins::MCP::TOF_XSHUT_3, 0x33);
 MotorDriver motorL(Pins::MCU::MOTA_IN1, Pins::MCU::MOTA_IN2, Pins::MCU::ENC_A_PH1, Pins::MCU::ENC_A_PH2);

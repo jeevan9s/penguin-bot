@@ -13,6 +13,7 @@
 
 #include <Arduino.h>
 #include <VL53L0X.h>
+#include <Adafruit_MCP23X17.h>
 #include "penguin_data.hpp"
 
 /// @brief hardware driver for the VL530LX time-of-flight (ToF) sensor 
@@ -42,9 +43,14 @@ public:
     /// @return true on acknowledgement
     bool ping();
 
+    /// @brief gate reads based on sensor presence
+    /// @return true if sensor is present
+    bool present(); 
+
     /// @brief populate the TOFData structure with proximity data and detection flag
     /// @return the populated TOFData structure for dashboard visuals and decision-based routines
     TOFData read();
+    
 
 private:
     VL53L0X _sensor;
@@ -52,4 +58,7 @@ private:
     uint8_t _shutdownPin;
     float _detectionThreshold;
     bool _started = false; 
+    bool _present; 
 };
+
+extern Adafruit_MCP23X17 mcp;

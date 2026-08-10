@@ -34,6 +34,9 @@ public:
     void release(camera_fb_t *);
 
 private:
+    /// @brief probe the SCCB bus for an attached camera before attempting full initialization
+    bool probe_camera();
+
     /// @brief enable the CAM power (AVDD = 2.8V, DOVDD = 1.2V, DVDD = 3.3V --with local LDOs), configure the camera power-down (PWDN) and reset pins
     void enable_cam();
 

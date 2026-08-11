@@ -12,7 +12,15 @@
 #include <Arduino.h>
 #include "tof_driver.hpp"
 
-TOFDriver::TOFDriver(uint8_t shutdownPin, uint8_t addr, float detectionThreshold) : _shutdownPin(shutdownPin), _addr(addr), _detectionThreshold(detectionThreshold) {}
+namespace
+{
+constexpr uint16_t kMaxSingleStepMm = 300;
+constexpr uint8_t kOutlierConfirmCount = 2;
+constexpr uint16_t kMinReliableRangeMm = 30;
+}
+
+TOFDriver::TOFDriver(uint8_t shutdownPin, uint8_t addr, float detectionThreshold, uint16_t distanceCorrectionMm)
+    : _shutdownPin(shutdownPin), _addr(addr), _detectionThreshold(detectionThreshold), _distanceCorrectionMm(distanceCorrectionMm) {}
 
 void TOFDriver::on() {
     mcp.pinMode(_shutdownPin, OUTPUT);
@@ -29,6 +37,9 @@ void TOFDriver::off() {
 bool TOFDriver::begin() {
     _started = false;
     _present = false;
+    _hasLastValidProximity = false;
+    _lastValidProximity = 0.0f;
+    _outlierCount = 0;
 
     Serial.printf("[TOF 0x%02X] begin on XSHUT %u\n", _addr, _shutdownPin);
     mcp.pinMode(_shutdownPin, OUTPUT);
@@ -88,8 +99,47 @@ TOFData TOFDriver::read() {
         data.proximity = -1.0; 
         data.obstacleDetected = false; 
     } else {
-        data.proximity = (float)dist; 
-        data.obstacleDetected = (data.proximity < _detectionThreshold && data.proximity > 0);
+        uint16_t correctedDist = (dist > _distanceCorrectionMm) ? (dist - _distanceCorrectionMm) : 0;
+
+        if (correctedDist < kMinReliableRangeMm)
+        {
+            data.proximity = -1.0;
+            data.obstacleDetected = false;
+            return data;
+        }
+
+        float candidateProximity = (float)correctedDist;
+
+        if (_hasLastValidProximity)
+        {
+            float delta = fabsf(candidateProximity - _lastValidProximity);
+            if (delta > kMaxSingleStepMm)
+            {
+                if (_outlierCount < 255)
+                {
+                    _outlierCount++;
+                }
+
+                if (_outlierCount < kOutlierConfirmCount)
+                {
+                    // Drop one-off spikes but accept a sustained new level.
+                    candidateProximity = _lastValidProximity;
+                }
+                else
+                {
+                    _outlierCount = 0;
+                }
+            }
+            else
+            {
+                _outlierCount = 0;
+            }
+        }
+
+        data.proximity = candidateProximity;
+        _lastValidProximity = data.proximity;
+        _hasLastValidProximity = true;
+        data.obstacleDetected = (data.proximity >= 0 && data.proximity < _detectionThreshold);
     }
     return data;
 }

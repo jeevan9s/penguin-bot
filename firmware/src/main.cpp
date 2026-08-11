@@ -34,9 +34,10 @@ ServoDriver hipL(Pins::MCU::L_SERVO);
 ServoDriver hipR(Pins::MCU::R_SERVO);
 IMUDriver imuDriver;
 BattDataDriver battDriver;
-TOFDriver sensor1(Pins::MCP::TOF_XSHUT_1, 0x31);
-TOFDriver sensor2(Pins::MCP::TOF_XSHUT_2, 0x32);
-TOFDriver sensor3(Pins::MCP::TOF_XSHUT_3, 0x33);
+constexpr uint16_t TOF_CORRECTION_MM = 60;
+TOFDriver sensor1(Pins::MCP::TOF_XSHUT_1, 0x31, 100.0, TOF_CORRECTION_MM);
+TOFDriver sensor2(Pins::MCP::TOF_XSHUT_2, 0x32, 100.0, TOF_CORRECTION_MM);
+TOFDriver sensor3(Pins::MCP::TOF_XSHUT_3, 0x33, 100.0, TOF_CORRECTION_MM);
 MotorDriver motorL(Pins::MCU::MOTA_IN1, Pins::MCU::MOTA_IN2, Pins::MCU::ENC_A_PH1, Pins::MCU::ENC_A_PH2);
 MotorDriver motorR(Pins::MCU::MOTB_IN1, Pins::MCU::MOTB_IN2, Pins::MCU::ENC_B_PH1, Pins::MCU::ENC_B_PH2);
 
@@ -45,12 +46,108 @@ Behaviour behaviour;
 
 Scheduler scheduler(imuDriver, battDriver, sensor1, sensor2, sensor3, motorL, motorR);
 
+namespace
+{
+bool initializeTofSensor(const char *label, TOFDriver &sensor)
+{
+    sensor.off();
+
+    if (sensor.begin())
+    {
+        Serial.printf("%s --initialized\n", label);
+        return true;
+    }
+
+    Serial.printf("%s init failure\n", label);
+    return false;
+}
+
+void initializeAllTofSensors()
+{
+    // Hold all sensors in reset so only one is brought up at a time from 0x29.
+    sensor1.off();
+    sensor2.off();
+    sensor3.off();
+    delay(30);
+
+    initializeTofSensor("TOF L", sensor1);
+    initializeTofSensor("TOF M", sensor2);
+    initializeTofSensor("TOF R", sensor3);
+}
+
+bool initializeIMU()
+{
+    if (!imuDriver.begin())
+    {
+        Serial.println("IMU init failure");
+        return false;
+    }
+
+    Serial.println("IMU --calibrating | hold still");
+    delay(100);
+    imu.calibrateGyro(200);
+    Serial.println("IMU --calibrated");
+    return true;
+}
+
+void recoverSensors(bool force = false)
+{
+    static uint32_t lastHealthCheck = 0;
+    uint32_t now = millis();
+
+    if (!force && (now - lastHealthCheck < 1000))
+    {
+        return;
+    }
+
+    lastHealthCheck = now;
+
+    if (force)
+    {
+        Serial.println("TOF --manual full recovery");
+        recoverI2C();
+
+        if (!probeI2C(0x20))
+        {
+            Serial.println("MCP --reinitializing");
+            if (!init_mcp())
+            {
+                Serial.println("MCP reinit failure");
+                return;
+            }
+        }
+
+        initializeAllTofSensors();
+        return;
+    }
+
+    if (force || !sensor1.ping())
+    {
+        Serial.println(force ? "TOF L --manual recover" : "TOF L --offline, reinitializing");
+        initializeTofSensor("TOF L", sensor1);
+    }
+
+    if (force || !sensor2.ping())
+    {
+        Serial.println(force ? "TOF M --manual recover" : "TOF M --offline, reinitializing");
+        initializeTofSensor("TOF M", sensor2);
+    }
+
+    if (force || !sensor3.ping())
+    {
+        Serial.println(force ? "TOF R --manual recover" : "TOF R --offline, reinitializing");
+        initializeTofSensor("TOF R", sensor3);
+    }
+}
+}
+
 void displayMenu()
 {
     Serial.println("\n--- PENGUIN ---");
     Serial.println(" [space] : launch dashboard");
     Serial.println(" [t] : launch test bench");
     Serial.println(" [s] : scan I2C bus");
+    Serial.println(" [r] : recover sensors"); 
     Serial.println("------------------------");
 }
 
@@ -77,6 +174,11 @@ void runTaskS()
     Serial.println("\n>> ---scanning I2C bus");
     scanI2C();
     delay(1000);
+}
+
+void runTaskR() {
+    Serial.println("\n>> --recovering sensors");
+    recoverSensors(true);
 }
 void setup()
 {
@@ -105,36 +207,7 @@ void setup()
     }
     oledLoadingScreen(0);
 
-    sensor1.off();
-    sensor2.off();
-    sensor3.off();
-
-    if (sensor1.begin())
-    {
-        Serial.println("TOF L --initialized");
-    }
-    else
-    {
-        Serial.println("TOF L init failure");
-    }
-
-    if (sensor2.begin())
-    {
-        Serial.println("TOF M --initialized");
-    }
-    else
-    {
-        Serial.println("TOF M init failure");
-    }
-
-    if (sensor3.begin())
-    {
-        Serial.println("TOF R --initialized");
-    }
-    else
-    {
-        Serial.println("TOF R init failure");
-    }
+    initializeAllTofSensors();
 
     if (cameraDriver.begin())
     {
@@ -151,11 +224,7 @@ void setup()
     mcp.pinMode(Pins::MCP::WIFI_LED, OUTPUT);
     oledLoadingScreen(50);
 
-    imu.init();
-    Serial.println("IMU --calibrating | hold still");
-    delay(100);
-    imu.calibrateGyro(200);
-    Serial.println("IMU --calibrated");
+    initializeIMU();
     oledLoadingScreen(75);
 
     led_startup();
@@ -184,6 +253,7 @@ void loop()
     // runDash();
 
     scheduler.update(penguin_state);
+    recoverSensors();
 
     static uint32_t last = millis();
     uint32_t now = millis();
@@ -228,6 +298,11 @@ void loop()
 
         case ' ':
             runDash();
+            break;
+
+        case 'r':
+        case 'R':
+            runTaskR(); 
             break;
 
         case 'm':

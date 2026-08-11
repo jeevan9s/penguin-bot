@@ -58,7 +58,7 @@ private:
     uint8_t _shutdownPin;
     float _detectionThreshold;
     bool _started = false; 
-    bool _present; 
+    bool _present = false; 
 };
 
 extern Adafruit_MCP23X17 mcp;

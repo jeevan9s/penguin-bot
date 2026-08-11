@@ -68,7 +68,10 @@ void runTaskT()
 
 void runTaskS()
 {
-    recoverI2C();
+    if (!probeI2C(0x20))
+    {
+        recoverI2C();
+    }
     delay(50);
 
     Serial.println("\n>> ---scanning I2C bus");
@@ -101,6 +104,37 @@ void setup()
         Serial.println("MCP init failure");
     }
     oledLoadingScreen(0);
+
+    sensor1.off();
+    sensor2.off();
+    sensor3.off();
+
+    if (sensor1.begin())
+    {
+        Serial.println("TOF L --initialized");
+    }
+    else
+    {
+        Serial.println("TOF L init failure");
+    }
+
+    if (sensor2.begin())
+    {
+        Serial.println("TOF M --initialized");
+    }
+    else
+    {
+        Serial.println("TOF M init failure");
+    }
+
+    if (sensor3.begin())
+    {
+        Serial.println("TOF R --initialized");
+    }
+    else
+    {
+        Serial.println("TOF R init failure");
+    }
 
     if (cameraDriver.begin())
     {

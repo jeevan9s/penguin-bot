@@ -12,28 +12,49 @@
 #include <Arduino.h>
 #include "tof_driver.hpp"
 
-TOFDriver::TOFDriver(uint8_t shutdownPin, uint8_t addr, float detectionThreshold) : _shutdownPin(shutdownPin), _addr(addr), _detectionThreshold(detectionThreshold) {
-    mcp.pinMode(_shutdownPin, OUTPUT);
-    off(); 
-}
+TOFDriver::TOFDriver(uint8_t shutdownPin, uint8_t addr, float detectionThreshold) : _shutdownPin(shutdownPin), _addr(addr), _detectionThreshold(detectionThreshold) {}
 
 void TOFDriver::on() {
+    mcp.pinMode(_shutdownPin, OUTPUT);
     mcp.digitalWrite(_shutdownPin, HIGH);
     delay(20); 
 }
 
 void TOFDriver::off() {
+    mcp.pinMode(_shutdownPin, OUTPUT);
     mcp.digitalWrite(_shutdownPin, LOW);
     delay(20); 
 }
 
 bool TOFDriver::begin() {
+    _started = false;
+    _present = false;
+
+    Serial.printf("[TOF 0x%02X] begin on XSHUT %u\n", _addr, _shutdownPin);
+    mcp.pinMode(_shutdownPin, OUTPUT);
+    Serial.printf("[TOF 0x%02X] holding XSHUT low\n", _addr);
+    off();
+    delay(20);
+    Serial.printf("[TOF 0x%02X] bringing sensor up at factory address 0x29\n", _addr);
     on(); 
 
-    if (!_sensor.init()) return false; 
+    if (!_sensor.init()) {
+        Serial.printf("[TOF 0x%02X] init failed at 0x29\n", _addr);
+        return false;
+    }
 
+    Serial.printf("[TOF 0x%02X] assigning new address\n", _addr);
     _sensor.setAddress(_addr); 
     _sensor.setTimeout(500); 
+    delay(10);
+
+    _present = ping();
+    if (!_present) {
+        Serial.printf("[TOF 0x%02X] address write did not stick\n", _addr);
+        return false;
+    }
+
+    Serial.printf("[TOF 0x%02X] online\n", _addr);
     return true;
 }
 

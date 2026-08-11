@@ -51,7 +51,7 @@ void WebSocketServer::update(const PenguinState &state)
     String payload;
     serializeJson(doc, payload);
 
-    // Serial.println("websocket PAYLOAD: " + payload); --debug
+    Serial.println("websocket PAYLOAD: " + payload);
 
     ws.textAll(payload);
 }

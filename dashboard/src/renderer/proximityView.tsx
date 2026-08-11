@@ -83,6 +83,10 @@ export default function ProximityView({
 }: ProximityViewProps) {
   const mountRef = useRef<HTMLDivElement>(null);
 
+  const leftCm = distL / 10;
+  const midCm = distM / 10;
+  const rightCm = distR / 10;
+
   const readings: Record<string, number> = {
     left: distL,
     mid: distM,
@@ -97,10 +101,10 @@ export default function ProximityView({
           height="auto"
           viewBox="0 0 440 175"
           role="img"
-          aria-label={`Proximity: left ${distL.toFixed(0)}cm, mid ${distM.toFixed(0)}cm, right ${distR.toFixed(0)}cm`}
+          aria-label={`Proximity: left ${leftCm.toFixed(1)}cm, mid ${midCm.toFixed(1)}cm, right ${rightCm.toFixed(1)}cm`}
         >
           {SECTORS.map((sector) => {
-            const cm = readings[sector.key];
+            const cm = readings[sector.key] / 10;
             const maxRange = 80;
             const noData = hasNoData(cm, maxRange);
             const danger = obstacleDetected && cm > 0 && cm < 15;
@@ -123,15 +127,15 @@ export default function ProximityView({
         <div className="flex flex-col gap-3 font-mono text-xs text-[#f2f2f2]">
           <div>
             <span className="text-[#6b6b6b] block text-[10px]">LEFT</span>
-            {distL.toFixed(0)}cm
+            {leftCm.toFixed(1)}cm
           </div>
           <div>
             <span className="text-[#6b6b6b] block text-[10px]">MID</span>
-            {distM.toFixed(0)}cm
+            {midCm.toFixed(1)}cm
           </div>
           <div>
             <span className="text-[#6b6b6b] block text-[10px]">RIGHT</span>
-            {distR.toFixed(0)}cm
+            {rightCm.toFixed(1)}cm
           </div>
         </div>
       </div>

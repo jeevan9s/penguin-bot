@@ -73,6 +73,11 @@ void scanI2C() {
     }
 }
 
+bool probeI2C(uint8_t address) {
+    Wire.beginTransmission(address);
+    return Wire.endTransmission() == 0;
+}
+
 void recoverI2C() {
     Wire.end(); 
     delay(10);
@@ -81,7 +86,9 @@ void recoverI2C() {
     pinMode(Pins::MCU::SCL, INPUT_PULLUP);
     delay(10);
 
-    if (digitalRead(Pins::MCU::SDA) == LOW) {
+    const bool busStuck = (digitalRead(Pins::MCU::SDA) == LOW);
+
+    if (busStuck) {
         pinMode(Pins::MCU::SCL, OUTPUT);
 
         for (int i = 0; i < 16; i++) {
@@ -90,21 +97,22 @@ void recoverI2C() {
             digitalWrite(Pins::MCU::SCL, HIGH);
             delayMicroseconds(10);
         }
-    }
 
-    pinMode(Pins::MCU::SDA, OUTPUT);
-    digitalWrite(Pins::MCU::SDA, LOW);
-    delayMicroseconds(10);
-    digitalWrite(Pins::MCU::SCL, HIGH); 
-    delayMicroseconds(10);
-    digitalWrite(Pins::MCU::SDA, HIGH);
-    delayMicroseconds(10);
+        pinMode(Pins::MCU::SDA, OUTPUT);
+        digitalWrite(Pins::MCU::SDA, LOW);
+        delayMicroseconds(10);
+        digitalWrite(Pins::MCU::SCL, HIGH);
+        delayMicroseconds(10);
+        digitalWrite(Pins::MCU::SDA, HIGH);
+        delayMicroseconds(10);
+    }
 
     Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL); 
 }
 
 
 // non-blocking led stuff
+
 void blinkP(uint8_t pin, int count) {
     if (blinksRemaining == 0) blinksRemaining = count * 2;
 

@@ -38,6 +38,9 @@ void blinkLED(uint8_t ledPin, int count, int delayMs=200);
 /// @brief scan the I2C bus for devices 
 void scanI2C();
 
+/// @brief probe whether a device responds at the given I2C address
+bool probeI2C(uint8_t address);
+
 /// @brief resets and clears a stuck I2C bus
 void recoverI2C();
 

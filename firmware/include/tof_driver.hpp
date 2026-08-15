@@ -13,6 +13,7 @@
 
 #include <Arduino.h>
 #include <VL53L0X.h>
+#include <Adafruit_MCP23X17.h>
 #include "penguin_data.hpp"
 
 /// @brief hardware driver for the VL530LX time-of-flight (ToF) sensor 
@@ -25,8 +26,9 @@ public:
     /// @brief constructor for shutdown pin setup and default state
     /// @param shutdownPin XSHUT pin for on/off toggle
     /// @param addr configurable I2C address of sensor
-    /// @param detectionThreshold 
-    TOFDriver(uint8_t shutdownPin, uint8_t addr, float detectionThreshold = 100.0);
+    /// @param detectionThreshold obstacle detection threshold in mm
+    /// @param distanceCorrectionMm fixed correction subtracted from readings (mm)
+    TOFDriver(uint8_t shutdownPin, uint8_t addr, float detectionThreshold = 100.0, uint16_t distanceCorrectionMm = 0);
 
     /// @brief turns sensor ON, configures parameterized I2C address and adds a 500ms timeout
     /// @return true on successful initialization
@@ -42,14 +44,26 @@ public:
     /// @return true on acknowledgement
     bool ping();
 
+    /// @brief gate reads based on sensor presence
+    /// @return true if sensor is present
+    bool present(); 
+
     /// @brief populate the TOFData structure with proximity data and detection flag
     /// @return the populated TOFData structure for dashboard visuals and decision-based routines
     TOFData read();
+    
 
 private:
     VL53L0X _sensor;
     uint8_t _addr;
     uint8_t _shutdownPin;
     float _detectionThreshold;
+    uint16_t _distanceCorrectionMm;
     bool _started = false; 
+    bool _present = false; 
+    bool _hasLastValidProximity = false;
+    float _lastValidProximity = 0.0f;
+    uint8_t _outlierCount = 0;
 };
+
+extern Adafruit_MCP23X17 mcp;

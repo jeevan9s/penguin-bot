@@ -50,51 +50,33 @@ void Scheduler::update(PenguinState &state)
 
 void Scheduler::runTofSM(PenguinState &state)
 {
-    switch (_tofStep)
+    if (_t1.ping())
     {
-    case 0:
-        if (_t1.ping())
-        {
-            _t1.on();
-            _t2.off();
-            _t3.off();
-            state.sensL = _t1.read();
-        }
-        else
-        {
-            state.sensL.proximity = -1;  // disconnected
-            state.sensL.obstacleDetected = false; 
-        }
-        break;
-
-    case 1:
-        if (_t2.ping())
-        {
-            _t1.off();
-            _t2.on();
-            _t3.off();
-            state.sensM = _t2.read();
-        }
-        else
-        {
-            state.sensM.proximity = -1; 
-            state.sensM.obstacleDetected = false; 
-        }
-        break;
-    case 2:
-        if (_t3.ping())
-        {
-            _t1.off();
-            _t2.off();
-            _t3.on();
-            state.sensR = _t3.read();
-        }
-        else
-        {
-            state.sensR.proximity = -1; 
-            state.sensR.obstacleDetected = false; 
-        }
-        break;
+        state.sensL = _t1.read();
     }
-    _tofStep = (_tofStep) % 3;
+    else
+    {
+        state.sensL.proximity = -1;
+        state.sensL.obstacleDetected = false;
+    }
+
+    if (_t2.ping())
+    {
+        state.sensM = _t2.read();
+    }
+    else
+    {
+        state.sensM.proximity = -1;
+        state.sensM.obstacleDetected = false;
+    }
+
+    if (_t3.ping())
+    {
+        state.sensR = _t3.read();
+    }
+    else
+    {
+        state.sensR.proximity = -1;
+        state.sensR.obstacleDetected = false;
+    }
 }

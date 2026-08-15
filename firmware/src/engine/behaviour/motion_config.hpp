@@ -18,9 +18,9 @@
 // pitch depth (angles) for stance 
 namespace MotionConfig {
     // tune
-    constexpr float DEFAULT_HIP_ANGLE = 270.0f; 
-    constexpr float SQUAT_HIP_ANGLE = 225.0f; 
-    constexpr float STAND_HIP_ANGLE = 200.0f; 
+    constexpr float DEFAULT_HIP_ANGLE = 40.0f; 
+    constexpr float SQUAT_HIP_ANGLE = 20.0f; 
+    constexpr float STAND_HIP_ANGLE = 70.0f; 
     constexpr float LEFT_HIP_LEFT_LEAN_ANGLE = 0.0f; 
     constexpr float RIGHT_HIP_LEFT_LEAN_ANGLE = 0.0f; 
     constexpr float LEFT_HIP_RIGHT_LEAN_ANGLE = 0.0f; 

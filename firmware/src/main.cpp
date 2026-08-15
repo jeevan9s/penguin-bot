@@ -64,8 +64,7 @@ bool initializeTofSensor(const char *label, TOFDriver &sensor)
 
 void initializeAllTofSensors()
 {
-    // Hold all sensors in reset so only one is brought up at a time from 0x29.
-    sensor1.off();
+\    sensor1.off();
     sensor2.off();
     sensor3.off();
     delay(30);
@@ -250,7 +249,7 @@ void loop()
         blinkP(activeBlinkPin, blinkCount);
     }
 
-    // runDash();
+    runDash();
 
     scheduler.update(penguin_state);
     recoverSensors();

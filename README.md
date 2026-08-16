@@ -512,6 +512,11 @@ All implementations can be found in the [`firmware/src`](firmware/src) directory
 
 ### Architecture
 
+<p align="center">
+  <img src="/media/images/flow.png" width="850">
+</p>
+
+
 The firmware design is divided into three distinct layers:
 
 - **HAL Drivers**

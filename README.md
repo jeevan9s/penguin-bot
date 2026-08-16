@@ -705,18 +705,16 @@ The app simply listens to the streamed Websocket, extracts the payload, and popu
   <img src="/media/images/penguin_face.jpg" width="850">
 </p>
 
-
-
 <p align="center">
   <img src="/media/images/penguin_lobotomy.jpg" width="850">
 </p>
 
 <p align="center">
-  <img src="/media/images/penguin_leg.jpg" width="850">
+  <img src="/media/images/leg_v1.jpg" width="850">
 </p>
 
 
 
 ---
 Jeevan Sanchez, 2026
-```
+

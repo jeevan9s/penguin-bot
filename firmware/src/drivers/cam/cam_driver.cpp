@@ -99,9 +99,20 @@ camera_fb_t *CAMDriver::capture()
 {
     camera_fb_t *fb = esp_camera_fb_get(); // pointer to a frame buffer
 
-    if (!fb)
-        return nullptr; // capture failure
+    static uint32_t failCount = 0;
+    static uint32_t okCount = 0;
 
+    if (!fb)
+    {
+        failCount++;
+        if (failCount % 20 == 1)
+        {
+            Serial.printf("CAM --fb_get failed (fails=%u, ok=%u)\n", failCount, okCount);
+        }
+        return nullptr; // capture failure
+    }
+
+    okCount++;
     return fb;
 }
 

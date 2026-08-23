@@ -64,7 +64,7 @@ bool initializeTofSensor(const char *label, TOFDriver &sensor)
 
 void initializeAllTofSensors()
 {
-\    sensor1.off();
+   sensor1.off();
     sensor2.off();
     sensor3.off();
     delay(30);
@@ -87,6 +87,29 @@ bool initializeIMU()
     imu.calibrateGyro(200);
     Serial.println("IMU --calibrated");
     return true;
+}
+
+constexpr uint8_t kMaxTofRetries = 5;
+uint8_t tofRetryCountL = 0;
+uint8_t tofRetryCountM = 0;
+uint8_t tofRetryCountR = 0;
+
+/// @brief attempts reinit while under the retry cap, logging a single give-up message once exhausted
+void retryTofSensor(const char *label, TOFDriver &sensor, uint8_t &retryCount)
+{
+    if (retryCount >= kMaxTofRetries)
+    {
+        return;
+    }
+
+    retryCount++;
+    Serial.printf("%s --offline, reinitializing (%u/%u)\n", label, retryCount, kMaxTofRetries);
+    initializeTofSensor(label, sensor);
+
+    if (retryCount == kMaxTofRetries)
+    {
+        Serial.printf("%s --giving up, use 'r' to force recovery\n", label);
+    }
 }
 
 void recoverSensors(bool force = false)
@@ -116,26 +139,38 @@ void recoverSensors(bool force = false)
             }
         }
 
+        tofRetryCountL = 0;
+        tofRetryCountM = 0;
+        tofRetryCountR = 0;
         initializeAllTofSensors();
         return;
     }
 
-    if (force || !sensor1.ping())
+    if (!sensor1.ping())
     {
-        Serial.println(force ? "TOF L --manual recover" : "TOF L --offline, reinitializing");
-        initializeTofSensor("TOF L", sensor1);
+        retryTofSensor("TOF L", sensor1, tofRetryCountL);
+    }
+    else
+    {
+        tofRetryCountL = 0;
     }
 
-    if (force || !sensor2.ping())
+    if (!sensor2.ping())
     {
-        Serial.println(force ? "TOF M --manual recover" : "TOF M --offline, reinitializing");
-        initializeTofSensor("TOF M", sensor2);
+        retryTofSensor("TOF M", sensor2, tofRetryCountM);
+    }
+    else
+    {
+        tofRetryCountM = 0;
     }
 
-    if (force || !sensor3.ping())
+    if (!sensor3.ping())
     {
-        Serial.println(force ? "TOF R --manual recover" : "TOF R --offline, reinitializing");
-        initializeTofSensor("TOF R", sensor3);
+        retryTofSensor("TOF R", sensor3, tofRetryCountR);
+    }
+    else
+    {
+        tofRetryCountR = 0;
     }
 }
 }
@@ -179,6 +214,7 @@ void runTaskR() {
     Serial.println("\n>> --recovering sensors");
     recoverSensors(true);
 }
+
 void setup()
 {
     Serial.begin(921600);
@@ -248,8 +284,6 @@ void loop()
     {
         blinkP(activeBlinkPin, blinkCount);
     }
-
-    runDash();
 
     scheduler.update(penguin_state);
     recoverSensors();

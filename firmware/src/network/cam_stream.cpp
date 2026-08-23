@@ -43,9 +43,10 @@ size_t CameraStream::fillChunk(StreamState* state, uint8_t* buffer, size_t maxLe
     while (written < maxLen) {
 
         if (state->needNewFrame) {
+            // single attempt only -- retrying here blocks the AsyncTCP task and can trip the watchdog
             camera_fb_t* fb = state->camera->capture();
-            if (!fb) {
 
+            if (!fb) {
                 break;
             }
             state->frame = fb;

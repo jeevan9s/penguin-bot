@@ -61,7 +61,7 @@ void enable_cam() {
 
 void setup_cam() {
     if (camera_initialized) return;
-    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL);
+    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL, 100000);
     Wire.setClock(100000);
 
     startCameraClock();

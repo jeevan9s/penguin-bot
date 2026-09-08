@@ -269,8 +269,8 @@ void setup()
     motorL.begin();
     motorR.begin();
     oledLoadingScreen(90);
-    hipL.begin(MotionConfig::DEFAULT_HIP_ANGLE, MotionConfig::MAX_HIP_ANGLE);
-    hipR.begin(MotionConfig::DEFAULT_HIP_ANGLE, MotionConfig::MAX_HIP_ANGLE);
+    hipL.begin(MotionConfig::DEFAULT_HIP_MICROSECONDS, MotionConfig::MAX_HIP_MICROSECONDS);
+    hipR.begin(MotionConfig::DEFAULT_HIP_MICROSECONDS, MotionConfig::MAX_HIP_MICROSECONDS);
     oledLoadingScreen(95);
 
     behaviour.begin();
@@ -313,6 +313,10 @@ void loop()
     if (Serial.available() > 0)
     {
         char choice = Serial.read();
+        while (Serial.available() > 0)
+        {
+            Serial.read();
+        }
         menuShown = true;
 
         switch (choice)

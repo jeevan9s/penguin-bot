@@ -11,7 +11,6 @@
 extern Adafruit_MCP23X17 mcp;
 
 void test_leds(void) {
-    Serial.begin(38400); 
     Serial.println("PENGUIN ---LED testing");
 
 

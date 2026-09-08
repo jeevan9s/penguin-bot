@@ -24,7 +24,7 @@ public:
 
     static void stand(PenguinCommands& commands);
 
-   static void squat(PenguinCommands& commands, int squatAngle = MotionConfig::SQUAT_HIP_ANGLE);
+    static void squat(PenguinCommands& commands, int squatMicroseconds = MotionConfig::SQUAT_HIP_MICROSECONDS);
 
    static void leanFWD(PenguinCommands& commands);
 

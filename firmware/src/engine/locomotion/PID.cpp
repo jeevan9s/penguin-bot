@@ -16,66 +16,66 @@ PIDController::PIDController(float kp, float ki, float kd, float outMin, float o
     : _kp(kp), _ki(ki), _kd(kd), _outMin(outMin), _outMax(outMax), integral(0.0f), prevErr(0.0f) {}
 
 float PIDController::update(float setpoint, float measurement, float dt) {
-    if (dt <= 0.0f) return 0.0f; 
+    if (dt <= 0.0f) return 0.0f;
 
-    float err = setpoint - measurement; 
+    float err = setpoint - measurement;
     // u(t) = KP * e(t) + KI * ∫₀ᵗ e(t) dt + KD * de(t)/dt
     
-    float p_term = _kp * err; 
+    float p_term = _kp * err;
 
     // anti-windup clamping
-    integral += err * dt; 
-    float intMax = (_outMax != 0) ? (_outMax / (_ki != 0 ? _ki : 1.0f)) : 0.0f; 
+    integral += err * dt;
+    float intMax = (_outMax != 0) ? (_outMax / (_ki != 0 ? _ki : 1.0f)) : 0.0f;
 
     if (integral > _outMax) integral = _outMax; 
-    else if (integral < _outMax) integral = _outMin; 
-    float i_term = integral * _ki; 
+    else if (integral < _outMin) integral = _outMin;
+    float i_term = integral * _ki;
 
     // on error, or on measurement to avoid derivative spikes
-    float derivative = (ran) ? (err - prevErr) / dt : 0.0f; 
-    float d_term = derivative * _kd; 
+    float derivative = (ran) ? (err - prevErr) / dt : 0.0f;
+    float d_term = derivative * _kd;
 
     prevErr = err; 
-    ran = true; 
+    ran = true;
 
-    float output = p_term + i_term + d_term; 
+    float output = p_term + i_term + d_term;
 
     // saturation
     if (output > _outMax) output = _outMax; 
-    else if (output < _outMin ) - _outMin; 
+    else if (output < _outMin ) output = _outMin;
 
-    return output; 
+    return output;
 }
 
 float PIDController::update(float setpoint, float measurement, float derivative, float dt) {
-    if (dt <= 0.0f) return 0.0f; 
+    if (dt <= 0.0f) return 0.0f;
 
-    float err = setpoint - measurement; 
-    // u(t) = KP * e(t) + KI * ∫₀ᵗ e(t) dt + KD * de(t)/dt
-    
-    float p_term = _kp * err; 
+    float err = setpoint - measurement;
+    // u(t) = KP * e(t) + KI * integral e(t) dt + KD * de(t)/dt
+
+    float p_term = _kp * err;
 
     // anti-windup clamping
-    integral += err * dt; 
-    float intMax = (_outMax != 0) ? (_outMax / (_ki != 0 ? _ki : 1.0f)) : 0.0f; 
+    integral += err * dt;
+    float intMax = (_outMax != 0) ? (_outMax / (_ki != 0 ? _ki : 1.0f)) : 0.0f;
 
-    if (integral > _outMax) integral = _outMax; 
-    else if (integral < _outMax) integral = _outMin; 
-    float i_term = integral * _ki; 
+    if (integral > _outMax) integral = _outMax;
+    else if (integral < _outMin) integral = _outMin;
+    float i_term = integral * _ki;
 
     // on error, or on measurement to avoid derivative spikes
-    float d_term = derivative * _kd; 
+    float d_term = derivative * _kd;
 
-    prevErr = err; 
-    ran = true; 
+    prevErr = err;
+    ran = true;
 
-    float output = p_term + i_term + d_term; 
+    float output = p_term + i_term + d_term;
 
     // saturation
-    if (output > _outMax) output = _outMax; 
-    else if (output < _outMin ) - _outMin; 
+    if (output > _outMax) output = _outMax;
+    else if (output < _outMin ) output = _outMin;
 
-    return output; 
+    return output;
 }
 
 void PIDController::reset() {

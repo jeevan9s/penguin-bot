@@ -13,7 +13,7 @@ bool CAMDriver::begin()
 {
     if (camera_initialized)
         return true;
-    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL);
+    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL, 100000);
     Wire.setClock(100000);
 
     enable_clk();
@@ -51,7 +51,7 @@ bool CAMDriver::begin()
     config.grab_mode = CAMERA_GRAB_LATEST;
     esp_err_t err = esp_camera_init(&config);
 
-    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL);
+    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL, 100000);
     Wire.setClock(100000);
 
     if (err != ESP_OK)
@@ -62,6 +62,12 @@ bool CAMDriver::begin()
     camera_initialized = true;
 
     sensor_t *s = esp_camera_sensor_get();
+    if (!s)
+    {
+        esp_camera_deinit();
+        camera_initialized = false;
+        return false;
+    }
     s->set_framesize(s, FRAMESIZE_VGA);
     s->set_quality(s, 10);
     s->set_contrast(s, 1);
@@ -76,7 +82,7 @@ bool CAMDriver::probe_camera()
 {
     static const uint8_t sccb_addresses[] = {0x30, 0x3C};
 
-    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL);
+    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL, 100000);
     Wire.setClock(100000);
     delay(50);
 

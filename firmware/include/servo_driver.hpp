@@ -19,16 +19,16 @@ public:
     /// @param pin Servo motor input pin
     ServoDriver(uint8_t pin);
 
-    /// @brief configure servo angle bounds and attach pin
-    void begin(int minAngle = 0, int maxAngle = 180);
+    /// @brief configure servo pulse bounds and attach pin
+    void begin(int minMicroseconds = 500, int maxMicroseconds = 2500);
 
-    /// @brief constrain angle to bounds and write to Servo
-    void write(int angle);
+    /// @brief constrain pulse width to bounds and write to Servo
+    void write(int microseconds);
 
 private:
     uint8_t _pin;
     Servo _servo;
-    int _targetAngle;
+    int _targetMicroseconds;
     int _minLimit;
     int _maxLimit;
 };

@@ -65,7 +65,7 @@ void blinkLED(uint8_t ledPin, int count, int delayMs) {
 
 void scanI2C() {
     Serial.println("scanning I2C bus...");
-    for(byte address = 1; address < 127; address++) {
+    for (uint8_t address = 1; address < 127; address++) {
         Wire.beginTransmission(address);
         if (Wire.endTransmission() == 0) {
             Serial.printf("Found device at 0x%02X\n", address);
@@ -79,35 +79,35 @@ bool probeI2C(uint8_t address) {
 }
 
 void recoverI2C() {
-    Wire.end(); 
+    Wire.end();
     delay(10);
 
     pinMode(Pins::MCU::SDA, INPUT_PULLUP);
     pinMode(Pins::MCU::SCL, INPUT_PULLUP);
     delay(10);
 
-    const bool busStuck = (digitalRead(Pins::MCU::SDA) == LOW);
+    const bool busStuck = digitalRead(Pins::MCU::SDA) == LOW || digitalRead(Pins::MCU::SCL) == LOW;
 
     if (busStuck) {
         pinMode(Pins::MCU::SCL, OUTPUT);
 
-        for (int i = 0; i < 16; i++) {
+        for (uint8_t i = 0; i < 9; i++) {
             digitalWrite(Pins::MCU::SCL, LOW);
             delayMicroseconds(10);
-            digitalWrite(Pins::MCU::SCL, HIGH);
+            pinMode(Pins::MCU::SCL, INPUT_PULLUP);
             delayMicroseconds(10);
         }
 
         pinMode(Pins::MCU::SDA, OUTPUT);
         digitalWrite(Pins::MCU::SDA, LOW);
         delayMicroseconds(10);
-        digitalWrite(Pins::MCU::SCL, HIGH);
+        pinMode(Pins::MCU::SCL, INPUT_PULLUP);
         delayMicroseconds(10);
-        digitalWrite(Pins::MCU::SDA, HIGH);
+        pinMode(Pins::MCU::SDA, INPUT_PULLUP);
         delayMicroseconds(10);
     }
 
-    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL); 
+    Wire.begin(Pins::MCU::SDA, Pins::MCU::SCL, 100000);
 }
 
 

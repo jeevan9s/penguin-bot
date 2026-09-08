@@ -21,23 +21,23 @@ void Locomotion::update(const PenguinState &state, const PenguinCommands &comman
     WheelTargets targets = calculateWheelTargets(commands, balanceOutput); // convert to differential-drive inputs
 
     // update left/right velocity controllers with PID-produced differential-drive inputs
-    float leftPWM = _leftVController.update(state.motorL, targets.leftRPM, dt); 
-    float rightPWM = _rightVController.update(state.motorR, targets.rightRPM, dt); 
+    float leftPWM = _leftVController.update(state.motorL, targets.leftRPM, dt);
+    float rightPWM = _rightVController.update(state.motorR, targets.rightRPM, dt);
 
-    _motorL.run(leftPWM); 
-    _motorR.run(leftPWM);     
+    _motorL.run(leftPWM);
+    _motorR.run(rightPWM);
 
     // observe commands for hip-servo writes
-    _hipL.write(commands.leftHipAngle); 
-    _hipR.write(commands.rightHipAngle); 
+    _hipL.write(commands.leftHipMicroseconds);
+    _hipR.write(commands.rightHipMicroseconds);
 }
 
 // L/R_SPEED = FWD_INPUT - TURN_INPUT + CORRECTION_INPUT
 WheelTargets Locomotion::calculateWheelTargets(const PenguinCommands &commands, float balanceOutput) {
-    WheelTargets targets; 
+    WheelTargets targets;
 
-    targets.leftRPM = commands.forwardRPM - commands.turnRPM + balanceOutput; 
-    targets.rightRPM = commands.forwardRPM - commands.turnRPM + balanceOutput; 
+    targets.leftRPM = commands.forwardRPM - commands.turnRPM + balanceOutput;
+    targets.rightRPM = commands.forwardRPM + commands.turnRPM + balanceOutput;
 
-    return targets; 
+    return targets;
 } 

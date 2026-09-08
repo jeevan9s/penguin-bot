@@ -18,13 +18,13 @@
 // pitch depth (angles) for stance 
 namespace MotionConfig {
     // tune
-    constexpr float DEFAULT_HIP_ANGLE = 40.0f; 
-    constexpr float SQUAT_HIP_ANGLE = 20.0f; 
-    constexpr float STAND_HIP_ANGLE = 70.0f; 
-    constexpr float LEFT_HIP_LEFT_LEAN_ANGLE = 0.0f; 
-    constexpr float RIGHT_HIP_LEFT_LEAN_ANGLE = 0.0f; 
-    constexpr float LEFT_HIP_RIGHT_LEAN_ANGLE = 0.0f; 
-    constexpr float RIGHT_HIP_RIGHT_LEAN_ANGLE = 0.0f; 
+    constexpr float DEFAULT_HIP_MICROSECONDS = 1500.0f;
+    constexpr float SQUAT_HIP_MICROSECONDS = 1200.0f;
+    constexpr float STAND_HIP_MICROSECONDS = 1700.0f;
+    constexpr float LEFT_HIP_LEFT_LEAN_MICROSECONDS = 1500.0f;
+    constexpr float RIGHT_HIP_LEFT_LEAN_MICROSECONDS = 1500.0f;
+    constexpr float LEFT_HIP_RIGHT_LEAN_MICROSECONDS = 1500.0f;
+    constexpr float RIGHT_HIP_RIGHT_LEAN_MICROSECONDS = 1500.0f;
 
     constexpr float CRAWL_SPEED = 50.0F;
     constexpr float CRUISE_SPEED = 150.0f; 
@@ -44,7 +44,7 @@ namespace MotionConfig {
     constexpr float VEL_KI = 0.0f; 
     constexpr float VEL_KD = 0.005f; 
 
-    constexpr float MAX_HIP_ANGLE = 90;
+    constexpr float MAX_HIP_MICROSECONDS = 2000.0f;
 }; 
 
 /// @brief timing config for routines

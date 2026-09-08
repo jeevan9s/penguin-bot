@@ -30,6 +30,10 @@ void run_test_bench()
         }
 
         char choice = Serial.read();
+        while (Serial.available() > 0)
+        {
+            Serial.read();
+        }
 
         switch (choice)
         {

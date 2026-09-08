@@ -19,8 +19,8 @@ struct PenguinCommands {
 
     float targetPitch; // deg
 
-    float leftHipAngle; // deg
-    float rightHipAngle; 
+    float leftHipMicroseconds;
+    float rightHipMicroseconds;
 };
 
 // light structure for updating left/right wheel target speeds

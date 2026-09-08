@@ -12,14 +12,14 @@
 
 void MotionPrimitives::stand(PenguinCommands &commands) {
     commands.targetPitch = 0.0f; 
-    commands.leftHipAngle = MotionConfig::STAND_HIP_ANGLE;
-    commands.rightHipAngle = MotionConfig::STAND_HIP_ANGLE;
+    commands.leftHipMicroseconds = MotionConfig::STAND_HIP_MICROSECONDS;
+    commands.rightHipMicroseconds = MotionConfig::STAND_HIP_MICROSECONDS;
 }
 
-void MotionPrimitives::squat(PenguinCommands &commands, int squatAngle) {
+void MotionPrimitives::squat(PenguinCommands &commands, int squatMicroseconds) {
     commands.targetPitch = 0.0f;
-    commands.leftHipAngle = squatAngle; 
-    commands.rightHipAngle = squatAngle; 
+    commands.leftHipMicroseconds = squatMicroseconds;
+    commands.rightHipMicroseconds = squatMicroseconds;
 }
 
 void MotionPrimitives::leanFWD(PenguinCommands &commands) {
@@ -32,14 +32,14 @@ void MotionPrimitives::leanREV(PenguinCommands &commands) {
 
 void MotionPrimitives::leanLeft(PenguinCommands &commands) {
     commands.targetPitch = 0.0f; 
-    commands.leftHipAngle = MotionConfig::LEFT_HIP_LEFT_LEAN_ANGLE; 
-    commands.rightHipAngle = MotionConfig::RIGHT_HIP_LEFT_LEAN_ANGLE; 
+    commands.leftHipMicroseconds = MotionConfig::LEFT_HIP_LEFT_LEAN_MICROSECONDS;
+    commands.rightHipMicroseconds = MotionConfig::RIGHT_HIP_LEFT_LEAN_MICROSECONDS;
 }
 
 void MotionPrimitives::leanRight(PenguinCommands &commands) {
     commands.targetPitch = 0.0f; 
-    commands.leftHipAngle = MotionConfig::LEFT_HIP_RIGHT_LEAN_ANGLE; 
-    commands.rightHipAngle = MotionConfig::RIGHT_HIP_RIGHT_LEAN_ANGLE; 
+    commands.leftHipMicroseconds = MotionConfig::LEFT_HIP_RIGHT_LEAN_MICROSECONDS;
+    commands.rightHipMicroseconds = MotionConfig::RIGHT_HIP_RIGHT_LEAN_MICROSECONDS;
 }
 
 void MotionPrimitives::stop(PenguinCommands &commands) {

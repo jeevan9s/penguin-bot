@@ -11,16 +11,16 @@
 #include <Arduino.h>
 #include "servo_driver.hpp"
 
-ServoDriver::ServoDriver(uint8_t pin) : _pin(pin), _targetAngle(90), _minLimit(0), _maxLimit(180) {}
+ServoDriver::ServoDriver(uint8_t pin) : _pin(pin), _targetMicroseconds(1500), _minLimit(500), _maxLimit(2500) {}
 
-void ServoDriver::begin(int minAngle, int maxAngle) {
-    _minLimit = minAngle; 
-    _maxLimit = maxAngle; 
-    _servo.attach(_pin);
+void ServoDriver::begin(int minMicroseconds, int maxMicroseconds) {
+    _minLimit = min(minMicroseconds, maxMicroseconds);
+    _maxLimit = max(minMicroseconds, maxMicroseconds);
+    _servo.attach(_pin, _minLimit, _maxLimit);
 }
 
-void ServoDriver::write(int angle) {
-    _targetAngle = constrain(angle, _minLimit, _maxLimit); 
-    _servo.write(_targetAngle); 
+void ServoDriver::write(int microseconds) {
+    _targetMicroseconds = constrain(microseconds, _minLimit, _maxLimit);
+    _servo.writeMicroseconds(_targetMicroseconds);
 }
 
